@@ -1,0 +1,45 @@
+nav {
+	bottom: 125px;
+	display: inline-block;
+	height: 250px;
+	min-width: 900px;
+	position: absolute;
+	width: 100%;
+}
+	nav div.pipe {
+		display: inline-block;
+		height: 250px;
+		position: relative;
+		vertical-align: bottom;
+		width: 200px;
+	}
+		nav div.pipe a {
+			height: auto;
+			text-align: center;
+			width: auto;
+		}
+		nav div.pipe a h1 {
+			font-size: 1.1em;
+			margin-bottom: 5px;
+			width: auto;
+		}
+		nav div.pipe a img {
+			bottom: 0;
+			margin: 0 auto;
+			position: absolute;
+		}
+	nav div.pipes {
+		margin-left: auto;
+		position: relative;
+		width: 900px;
+	}
+	
+section {
+	min-height: 100%;
+	width: 100%;
+	z-index: 500;
+}
+
+#canvas {
+	height: calc(100% - 125px);
+}

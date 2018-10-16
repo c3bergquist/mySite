@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cory Bergquist</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
+	<meta name="author" content="Cory Bergquist">
+	<meta name="description" content="The portfolio of Cory Bergquist.">
+	<meta name="keywords" content="cory bergquist, 8bitRedux, portfolio, game design, developer">
+	
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/computer.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/css/PressStartP2.css" rel="stylesheet" type="text/css"/>
+	
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<section id="world">
+		<canvas id="canvas"></canvas>
+		<div class="bricks transition"></div>
+	</section>
+	
+	<section id="about">
+	</section>
+	
+	<div>
+		<div class="dirt transition"></div>
+		<div class="dirt offset transition"></div>
+	</div>
+	
+	<section id="portfolio">
+		<div class="content">
+			<h2>Portfolio</h2>
+
+			<div class="indent">
+				<h3>Art!</h3>
+				<p>Coming soon!</p>
+
+				<h3>Games!</h3>
+				<p>Coming soon!</p>
+
+				<h3>Websites!</h3>
+				<a href="http://www.ottonechiro.com/" target="_blank">Ottone Chiropractic Center</a>
+			</div>
+		</div>			
+	</section>
+	
+	<div>
+		<div class="dirt transition"></div>
+		<div class="concrete"></div>
+	</div>
+	
+	<section id="contact" class="content">
+		<h2>Want to get in contact with me?</h2>
+		<p><strong><span id="playSound"></span><a id="shoot" href="#">Shoot me an email!</a> I usually respond pretty quickly.</strong></p>
+		<p>cory3bergquist AT gmail DOT com</p>
+	</section>
+
+	<footer>
+		<p>Copyright &copy; 2013 Cory Bergquist. All rights reserved.</p>
+	</footer>
+	
+	<script>
+		var shoot = document.getElementById('shoot');
+		shoot.addEventListener('click', function (e) {
+			e.preventDefault();
+			playSound('sounds/targetAquired.mp3');
+		});
+		
+		function playSound(soundfile) {			
+			document.getElementById('playSound').innerHTML = '<embed src="' + soundfile + '" hidden="true" autostart="true" loop="false" />';
+		}
+	</script>
+	<script src="assets/js/world-functions.js"></script>
+	<script src="assets/js/style-helper.js"></script>
+	<script src="assets/js/scroll-functions.js"></script>
+</body>
+</html>
