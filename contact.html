@@ -18,12 +18,30 @@
 </head>
 
 <body>
-	<section id="world">
-		<canvas id="canvas"></canvas>
-		<div class="bricks transition"></div>
+
+	<section id="contact" class="content">
+		<h2>Want to get in contact with me?</h2>
+		<p><strong><span id="playSound"></span><a id="shoot" href="#">Shoot me an email!</a> I usually respond pretty quickly.</strong></p>
+		<p>cory3bergquist AT gmail DOT com</p>
 	</section>
 
+	<footer>
+		<p>Copyright &copy; 2013 Cory Bergquist. All rights reserved.</p>
+	</footer>
+	
+	<script>
+		var shoot = document.getElementById('shoot');
+		shoot.addEventListener('click', function (e) {
+			e.preventDefault();
+			playSound('sounds/targetAquired.mp3');
+		});
+		
+		function playSound(soundfile) {			
+			document.getElementById('playSound').innerHTML = '<embed src="' + soundfile + '" hidden="true" autostart="true" loop="false" />';
+		}
+	</script>
 	<script src="assets/js/world-functions.js"></script>
 	<script src="assets/js/style-helper.js"></script>
+	<script src="assets/js/scroll-functions.js"></script>
 </body>
 </html>

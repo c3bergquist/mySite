@@ -12,18 +12,20 @@ var canvas = document.getElementById('canvas'),
 	menuImg = new Image(),
 	keys = [],
 	friction = 0.9,
-	gravity = 0.4,
+	gravity = 0.5,
 	boxes = [],
 	player = {
 		x: 130,
 		y: height - 125,
-		width: 75,
+		width: 100,
 		height: 100,
 		speed: 7,
+		jumpForce: 7,
 		velX: 0,
 		velY: 0,
 		direction: 1, // 0 = left, 1 = right
 		jumping: false,
+		goingDownPipe: false,
 		grounded: false,
 		image: new Image()
 	},
@@ -32,7 +34,7 @@ var canvas = document.getElementById('canvas'),
 	sprite = {
 		x: 538,
 		y: 0,
-		w: 82,
+		w: 100,
 		h: 100
 	},
 	runTimer = 0;
@@ -53,19 +55,19 @@ boxes.push({
 boxes.push({
 	x: (width/2)-113,
 	y: height-116,
-	width: 100,
+	width: 96,
 	height: 116
 });
 boxes.push({
 	x: (width/2)+150,
 	y: height-116,
-	width: 100,
+	width: 96,
 	height: 116
 });
 boxes.push({
 	x: (width/2)+400,
 	y: height-116,
-	width: 100,
+	width: 96,
 	height: 116
 });
  
@@ -76,8 +78,6 @@ ctx.save();
 
 function update() {
 	checkKeys();
-
-	player.velX *= friction;
 
 	ctx.clearRect(0, 0, width, height);
 	ctx.beginPath();
@@ -90,20 +90,33 @@ function update() {
 	else {
 		ctx.drawImage(menuImg, 75, 75, (height/1.5), (height/3));
 	}
-		
-	checkBoxes();
+	
+	player.grounded = false;
 	
 	setSprite();
 	drawPlayer();
 	
-	if(player.grounded){
-		player.velY = 0;
+	drawBoxes();
+	
+	if (!player.goingDownPipe) {
+		checkBoxes();
 	}
-	else {
+	
+	if (player.velX > 0.9 || player.velX < -0.9) {
+		player.velX *= friction;
+	} else {
+		player.velX = 0;
+	}
+	
+	if (player.grounded){
+		player.velY = 0;
+	} else {
 		player.velY += gravity;
 		player.y += player.velY;
 	}
+	
 	player.x += player.velX;
+	
 	if (player.x >= width-player.width) {
 		player.x = width-player.width;
 	}
@@ -150,8 +163,8 @@ function checkKeys() {
 	// A
 	if (keys[65]) {
 		player.direction = 0;
-
-		if (player.velX > -player.speed) {
+		
+		if (player.velX <= 0 && player.velX > -player.speed) {
 			player.velX -= 1;
 		}
 	}
@@ -159,7 +172,7 @@ function checkKeys() {
 	if (keys[68]) {
 		player.direction = 1;
 		
-		if (player.velX < player.speed) {
+		if (player.velX >= 0 && player.velX < player.speed) {
 			player.velX += 1;
 		}
 	}
@@ -168,7 +181,7 @@ function checkKeys() {
 		if (!player.jumping && player.grounded) {
 			player.jumping = true;
 			player.grounded = false;
-			player.velY = -player.speed * 2;
+			player.velY = -player.jumpForce * 2;
 		}
 	}
 }
@@ -200,31 +213,36 @@ function drawPlayer() {
 	ctx.drawImage(player.image, sprite.x, 0, sprite.w, ph, player.x, player.y, pw, ph);
 }
 
-function checkBoxes() {
+function drawBoxes() {
 	for (var i = 0; i < boxes.length; i++) {
-		if(i == 0) {
+		if (i == 0) {
 			boxes[i].y = height;
 		} else {
-			boxes[i].y = height-116;
+			boxes[i].y = height - 116;
 		}
 		
 		ctx.drawImage(pipeImg, boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+	}
+}
 
+function checkBoxes() {
+	for (var i = 0; i < boxes.length; i++) {
 		var dir = colCheck(player, boxes[i]);
 
 		if (dir === 'l' || dir === 'r') {
 			player.velX = 0;
-			player.jumping = false;
 		}
-		else if (dir === 'b') {
+		
+		if (dir === 'b') {
 			player.grounded = true;
 			player.jumping = false;
 			
 			if(i > 0 && keys[83]) {
-				goDownPipe(i);
+				goDownPipe(i, boxes[i]);
 			}
 		}
-		else if (dir === 't') {
+		
+		if (dir === 't') {
 			player.velY *= -1;
 		}
 	}
@@ -278,72 +296,106 @@ var counter = 0;
 
 function setSprite() {
 	if(!player.jumping) {
-		if((Math.round(player.velX) > 0) || ((Math.round(player.velX) > 0) && (keys[68]))) { // Running right or slowing down facing right
-			runRight();
-		} else if((Math.round(player.velX) > 0) && (keys[65])) { // Pressing left while moving right
+		if(player.velX > 0 && keys[65]) { // Pressing left while moving right
 			stopRight();
-		} else if((Math.round(player.velX) < 0) || ((Math.round(player.velX) > 0) && (keys[65]))) { // Running left or slowing down facing left
-			runLeft();
-		} else if((Math.round(player.velX) < 0) && (keys[68])) { // Pressing right while moving left
+		} else if(player.velX > 1) { // Running right or slowing down facing right
+			runRight();
+		} else if(player.velX < -1 && keys[68]) { // Pressing right while moving left
 			stopLeft();
+		} else if(player.velX < -1) { // Running left or slowing down facing left
+			runLeft();
 		} else { // No movement, check direction and set idle pose
 			if(player.direction == 1) {
-				sprite.x = 538;
-			}else {
-				sprite.x = 456;
+				idleRight();
+			} else {
+				idleLeft();
 			}
 			
 			counter = 0;
 		}
 	} else {
 		if(player.direction == 1) {
-			sprite.x = 968;
+			sprite.x = 1375;
 		}else {
 			sprite.x = 0;
 		}
 	}
 }
 
+function idleRight() {
+	sprite.x = 750;
+}
+
+function idleLeft() {
+	sprite.x = 625;
+}
+
 function runRight() {
-	sprite.x = 620;
+	if (counter < 150) {
+		counter = counter + (1 * player.velX);
+	} else { 
+		counter = 0;
+	}
+	
+	if (counter <= 50) {
+		sprite.x = 875;
+	} else if (counter > 50 && counter <= 100) {
+		sprite.x = 1000;
+	} else if (counter > 100 && counter <= 150) {
+		sprite.x = 1125;
+	}
 }
 
 function stopRight() {
-	sprite.x = 128;
+	sprite.x = 125;
 }
 
 function runLeft() {
-	sprite.x = 374;
+	if (counter < 150) {
+		counter = counter - (1 * player.velX);
+	} else { 
+		counter = 0;
+	}
+	
+	if (counter <= 50) {
+		sprite.x = 500;
+	} else if (counter > 50 && counter <= 100) {
+		sprite.x = 375;
+	} else if (counter > 100 && counter <= 150) {
+		sprite.x = 250;
+	}
 }
 
 function stopLeft() {
-	sprite.x = 866;
+	sprite.x = 1250;
 }
 
-function goDownPipe(pipe) {
+function goDownPipe(number, pipe) {
+	player.goingDownPipe = true;
+		
 	var st = setInterval(function() {
-			if(player.height > 0) {
-				ph -= 1;
-				player.height -= 1;
-			}
+			gravity = 0;
+			player.goingDownPipe = true;
+			player.x = player.x - ((player.x - pipe.x) / 10);
+			player.y += 1;
 		}, 10);
 
-	if(pipe == '1') {
+	if(number == '1') {
 		setTimeout(function() {
 				clearInterval(st);
-				$('#about').goTo();
+				//$('#about').goTo();
 			}, 1150);
 	}
-	if(pipe == '2') {
+	if(number == '2') {
 		setTimeout(function() {
 				clearInterval(st);
-				$('#portfolio').goTo(); 
+				//$('#portfolio').goTo(); 
 			}, 1150);
 	}
-	if(pipe == '3') {
+	if(number == '3') {
 		setTimeout(function() {
 				clearInterval(st);
-				$('#contact').goTo(); 
+				//$('#contact').goTo(); 
 			}, 1150);
 	}
 }

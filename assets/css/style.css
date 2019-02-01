@@ -44,6 +44,10 @@ footer {
 
 .bricks {
 	background-image: url(../images/brick.png);
+	background-position: left top;
+	background-repeat: repeat;
+	height: 125px;
+	width: 100%;
 }
 
 .concrete {
@@ -89,9 +93,3 @@ footer {
 
 .offset { }
 
-.transition {
-	background-repeat: repeat;
-	background-position: left top;
-	height: 500px;
-	width: 100%;
-}
