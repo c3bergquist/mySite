@@ -9,37 +9,12 @@ html, body {
 html {
   font-size: 62.5%; }
 
-/* cyrillic */
 @font-face {
-  font-family: 'Press Start 2P';
+  font-family: Emulogic;
   font-style: normal;
   font-weight: 400;
-  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7o6VKeqlTLmz9wgW802Ijrr8.woff2) format("woff2");
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-
-/* greek */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7o98XTtHtBdEH02X-npdYcaI.woff2) format("woff2");
-  unicode-range: U+0370-03FF; }
-
-/* latin-ext */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7o4HIgCyF_r7uhNjO5r5pEXE.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
-
-/* latin */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7oyZSq-wt96avU8gpaxOIt84.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+  src: url("../src/fonts/emulogic/emulogic.ttf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* Variables */
 .super-mario-bros {
@@ -52,6 +27,20 @@ html {
   @media screen and (min-width: 1224px) {
     .super-mario-bros {
       background-position: left 50%; } }
+  .super-mario-bros__bricks {
+    background-image: url("../src/images/brick.png");
+    background-position: left top;
+    background-repeat: repeat;
+    background-size: 50px;
+    bottom: 0;
+    height: 75px;
+    left: 0;
+    position: absolute;
+    width: 100%; }
+    @media screen and (min-width: 1224px) {
+      .super-mario-bros__bricks {
+        background-size: auto;
+        height: 125px; } }
   .super-mario-bros__underlay {
     background-image: url("../src/images/marioMe_sprites.png");
     background-position: 110% bottom;
@@ -68,15 +57,15 @@ html {
     width: 100%; }
     @media screen and (min-width: 1224px) {
       .super-mario-bros__underlay {
-        background: initial;
+        background: none;
         display: block;
         height: calc(100% - 125px);
         padding: 0; } }
     .super-mario-bros__underlay__links {
       display: block;
       flex-grow: 1;
-      font-family: 'Press Start 2P';
-      font-size: 25px;
+      font-family: "Emulogic";
+      font-size: 24px;
       padding-left: 50px;
       position: relative;
       width: 100%; }
@@ -84,7 +73,7 @@ html {
         .super-mario-bros__underlay__links {
           bottom: 225px;
           flex-grow: 0;
-          font-size: 20px;
+          font-size: 18px;
           height: 20px;
           margin: 0;
           padding: 0;
@@ -108,7 +97,7 @@ html {
           position: absolute;
           text-align: center;
           text-rendering: auto;
-          top: -10px;
+          top: -3px;
           -webkit-font-smoothing: antialiased; }
         @media screen and (min-width: 1224px) {
           .super-mario-bros__underlay__links__link::after {
@@ -135,7 +124,7 @@ html {
           display: block; }
         @media screen and (min-width: 1224px) {
           .super-mario-bros__underlay__links__link--about {
-            left: calc(50% - 116px);
+            left: calc(50% - 110px);
             top: auto; }
             .super-mario-bros__underlay__links__link--about:focus::after {
               display: block; }
@@ -147,7 +136,7 @@ html {
             display: block; }
           @media screen and (min-width: 1224px) {
             .super-mario-bros__underlay__links__link--portfolio {
-              left: calc(50% + 108px);
+              left: calc(50% + 118px);
               top: auto; }
               .super-mario-bros__underlay__links__link--portfolio:focus::after {
                 display: block; }
@@ -159,7 +148,7 @@ html {
             display: block; }
           @media screen and (min-width: 1224px) {
             .super-mario-bros__underlay__links__link--contact {
-              left: calc(50% + 378px);
+              left: calc(50% + 387px);
               top: auto; }
               .super-mario-bros__underlay__links__link--contact:focus::after {
                 display: block; }
@@ -184,21 +173,6 @@ html {
       .super-mario-bros__world {
         display: block;
         position: relative; } }
-
-.super-mario-bros__bricks {
-  background-image: url("../src/images/brick.png");
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: 50px;
-  bottom: 0;
-  height: 75px;
-  left: 0;
-  position: absolute;
-  width: 100%; }
-  @media screen and (min-width: 1224px) {
-    .super-mario-bros__bricks {
-      background-size: auto;
-      height: 125px; } }
 
 @keyframes up-down {
   from {

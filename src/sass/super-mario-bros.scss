@@ -12,6 +12,23 @@
 		background-position: left 50%;
 	}
 	
+	&__bricks {
+		background-image: url('../src/images/brick.png');
+		background-position: left top;
+		background-repeat: repeat;
+		background-size: 50px;
+		bottom: 0;
+		height: 75px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		
+		@media #{$large-screen} {
+			background-size: auto;
+			height: 125px;
+		}
+	}
+	
 	&__underlay {
 		background-image: url('../src/images/marioMe_sprites.png');
 		background-position: 110% bottom;
@@ -28,7 +45,7 @@
 		width: 100%;
 		
 		@media #{$large-screen} {
-			background: initial;
+			background: none;
 			display: block;
 			height: calc(100% - 125px);
 			padding: 0;
@@ -37,8 +54,8 @@
 		&__links {
 			display: block;
 			flex-grow: 1;
-			font-family: 'Press Start 2P';
-			font-size: 25px;
+			font-family: $font-emulogic;
+			font-size: 24px;
 			padding-left: 50px;
 			position: relative;
 			width: 100%;
@@ -46,7 +63,7 @@
 			@media #{$large-screen} {
 				bottom: 225px;
 				flex-grow: 0;
-				font-size: 20px;
+				font-size: 18px;
 				height: 20px;
 				margin: 0;
 				padding: 0;
@@ -66,7 +83,7 @@
 				&::before {
 					content: "\f061";
 					display: none;
-					font-family: "Font Awesome 5 Free";
+					font-family: $font-font-awesome;
 					font-size: 35px;
 					font-style: normal;
 					font-variant: normal;
@@ -75,7 +92,7 @@
 					position: absolute;
 					text-align: center;
 					text-rendering: auto;
-					top: -10px;
+					top: -3px;
 					-webkit-font-smoothing: antialiased;
 				}
 				
@@ -113,7 +130,7 @@
 					}
 					
 					@media #{$large-screen} {
-						left: calc(50% - 116px);
+						left: calc(50% - 110px);
 						top: auto;
 					
 						&:focus {
@@ -138,7 +155,7 @@
 					}
 					
 					@media #{$large-screen} {
-						left: calc(50% + 108px);
+						left: calc(50% + 118px);
 						top: auto;
 					
 						&:focus {
@@ -163,7 +180,7 @@
 					}
 					
 					@media #{$large-screen} {
-						left: calc(50% + 378px);
+						left: calc(50% + 387px);
 						top: auto;
 						
 						&:focus {
@@ -204,31 +221,6 @@
 			display: block;
 			position: relative;
 		}
-	}
-	
-	
-	
-	
-	
-}
-
-
-
-
-.super-mario-bros__bricks {
-	background-image: url('../src/images/brick.png');
-	background-position: left top;
-	background-repeat: repeat;
-	background-size: 50px;
-	bottom: 0;
-	height: 75px;
-	left: 0;
-	position: absolute;
-	width: 100%;
-	
-	@media #{$large-screen} {
-		background-size: auto;
-		height: 125px;
 	}
 }
 
