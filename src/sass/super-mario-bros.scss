@@ -1,0 +1,248 @@
+@import './variables.scss';
+
+.super-mario-bros {
+	background-color: #6699ff;
+	background-image: url('../src/images/headerBG.png');
+	background-position: 100% 40%;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	
+	@media #{$large-screen} {
+		background-position: left 50%;
+	}
+	
+	&__underlay {
+		background-image: url('../src/images/marioMe_sprites.png');
+		background-position: 110% bottom;
+		background-repeat: no-repeat;
+		background-size: 180%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		height: calc(100% - 75px);
+		left: 0;
+		padding: 25px;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		
+		@media #{$large-screen} {
+			background: initial;
+			display: block;
+			height: calc(100% - 125px);
+			padding: 0;
+		}
+		
+		&__links {
+			display: block;
+			flex-grow: 1;
+			font-family: 'Press Start 2P';
+			font-size: 25px;
+			padding-left: 50px;
+			position: relative;
+			width: 100%;
+			
+			@media #{$large-screen} {
+				bottom: 225px;
+				flex-grow: 0;
+				font-size: 20px;
+				height: 20px;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+			}
+			
+			&__link {
+				color: $black;
+				display: block;
+				position: absolute;
+				text-decoration: none;
+				
+				&:focus {
+					outline: none;
+				}
+				
+				&::before {
+					content: "\f061";
+					display: none;
+					font-family: "Font Awesome 5 Free";
+					font-size: 35px;
+					font-style: normal;
+					font-variant: normal;
+					font-weight: 900;
+					left: -50px;
+					position: absolute;
+					text-align: center;
+					text-rendering: auto;
+					top: -10px;
+					-webkit-font-smoothing: antialiased;
+				}
+				
+				@media #{$large-screen} {
+					&::after {
+						animation-duration: 1.0s;
+						animation-iteration-count: infinite;
+						animation-name: up-down;
+						animation-timing-function: linear;
+						content: "\f063";
+						display: none;
+						font-family: "Font Awesome 5 Free";
+						font-size: 35px;
+						font-style: normal;
+						font-variant: normal;
+						font-weight: 900;
+						margin-top: 35px;
+						position: relative;
+						text-align: center;
+						text-rendering: auto;
+						transform-origin: bottom center;
+						-webkit-font-smoothing: antialiased;
+					}
+					
+					&::before {
+						display: none;
+					}
+				}
+				
+				&--about {
+					&:focus {
+						&::before {
+							display: block;
+						}
+					}
+					
+					@media #{$large-screen} {
+						left: calc(50% - 116px);
+						top: auto;
+					
+						&:focus {
+							&::after {
+								display: block;
+							}
+							
+							&::before {
+								display: none;
+							}
+						}
+					}
+				}
+				
+				&--portfolio {
+					top: 30%;
+					
+					&:focus {
+						&::before {
+							display: block;
+						}
+					}
+					
+					@media #{$large-screen} {
+						left: calc(50% + 108px);
+						top: auto;
+					
+						&:focus {
+							&::after {
+								display: block;
+							}
+							
+							&::before {
+								display: none;
+							}
+						}
+					}
+				}
+				
+				&--contact {
+					top: 60%;
+					
+					&:focus {
+						&::before {
+							display: block;
+						}
+					}
+					
+					@media #{$large-screen} {
+						left: calc(50% + 378px);
+						top: auto;
+						
+						&:focus {
+							&::after {
+								display: block;
+							}
+							
+							&::before {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		&__logo {
+			display: block;
+			flex-grow: 0;
+			margin-bottom: 25px;
+			max-width: 330px;
+			position: relative;
+			width: 100%;
+			
+			@media #{$large-screen} {
+				margin: 0 auto;
+				max-width: 750px;
+				top: 8%;
+				width: 50%;
+			}
+		}
+	}
+	
+	&__world {
+		display: none;
+		
+		@media #{$large-screen} {
+			display: block;
+			position: relative;
+		}
+	}
+	
+	
+	
+	
+	
+}
+
+
+
+
+.super-mario-bros__bricks {
+	background-image: url('../src/images/brick.png');
+	background-position: left top;
+	background-repeat: repeat;
+	background-size: 50px;
+	bottom: 0;
+	height: 75px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	
+	@media #{$large-screen} {
+		background-size: auto;
+		height: 125px;
+	}
+}
+
+
+@keyframes up-down {
+	from {
+		transform: translate3d(0,0,0);
+	}
+
+	50% {
+		transform: translate3d(0,-20px,0);
+	}
+
+	to {
+		transform: translate3d(0,0,0);
+	}
+}

@@ -5,17 +5,18 @@ var sass = require('gulp-sass');
 
 // Compile Sass
 gulp.task('sass', function(){
-  return gulp.src('./src/sass/style.scss')
+  return gulp.src('./src/sass/main.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('./src/css'))
+	.pipe(rename('style.css'))
+    .pipe(gulp.dest('./dist'))
 });
 
 // Compile Sass
 gulp.task('js', function(){
   return gulp.src('./src/js/main.js')
     .pipe(jsImport({hideConsole: true}))
-	.pipe(rename('scripts.js'))
-    .pipe(gulp.dest('./src/js'))
+	.pipe(rename('script.js'))
+    .pipe(gulp.dest('./dist'))
 });
 
 /**************************************************
@@ -59,8 +60,8 @@ gulp.task('js', function(){
 
 // Watch task
 gulp.task('watch', function() {
-    gulp.watch('./src/sass/*.scss', gulp.series('sass'));
-	//gulp.watch('src/js/**/*.js',['styles']);
+    gulp.watch('./src/sass/**/*.scss', gulp.series('sass'));
+	gulp.watch('./src/js/**/*.js', gulp.series('js'));
 });
 
 

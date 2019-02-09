@@ -1,7 +1,8 @@
 @import './reset.scss';
 
-@import './variables.scss';
 @import './pressStartP2.scss';
+
+@import './super-mario-bros.scss';
 
 @charset "utf-8";
 /* CSS Document */
@@ -14,14 +15,7 @@ body {
 	margin: 0;
 }
 
-canvas {
-	background: #6699ff url(../images/headerBG.png) repeat-x left 25%;
-	display: block;
-	font-family: 'Press Start 2P';
-	margin: 0;
-	padding: 0;
-	position: relative;
-}
+
 
 footer {
 	height: 75px;
@@ -40,23 +34,17 @@ footer {
 /*		Classes		*/
 
 .bgFade {
-	background: transparent url(../images/bgFade.png) repeat-x left top;
+	background: transparent url(../src/images/bgFade.png) repeat-x left top;
 	background-size: auto 100%;
 	position: relative;
 	width: 100%;
 	z-index: 1000;
 }
 
-.bricks {
-	background-image: url(../images/brick.png);
-	background-position: left top;
-	background-repeat: repeat;
-	height: 125px;
-	width: 100%;
-}
+
 
 .concrete {
-	background-image: url(../images/portalWall.png);
+	background-image: url(../src/images/portalWall.png);
 }
 
 .content {
@@ -82,7 +70,7 @@ footer {
 	}
 
 .dirt {
-	background-image: url(../images/dirt.png);
+	background-image: url(../src/images/dirt.png);
 }
 
 .indent {
@@ -90,7 +78,7 @@ footer {
 }
 
 .inventory {
-	background: url(../images/inventory.png) no-repeat left top/800px;
+	background: url(../src/images/inventory.png) no-repeat left top/800px;
 	height: 500px;
 	margin: 0 auto;
 	width: 800px;

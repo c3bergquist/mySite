@@ -3,13 +3,12 @@
 	window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-var canvas = document.getElementById('canvas'),
+var canvas = document.getElementById('world'),
 	ctx = canvas.getContext('2d'),
 	doc = $(document),
 	width = $(window).width(),
 	height = $(window).height() - 125,
 	pipeImg = new Image(),
-	menuImg = new Image(),
 	keys = [],
 	friction = 0.9,
 	gravity = 0.5,
@@ -41,7 +40,6 @@ var canvas = document.getElementById('canvas'),
 
 player.image.src = 'src/images/marioMe_sprites.png';
 pipeImg.src = 'src/images/pipe.png';
-menuImg.src = 'src/images/cbMenu.png';
 
 // Floor
 boxes.push({
@@ -83,16 +81,7 @@ function update() {
 
 	ctx.clearRect(0, 0, width, height);
 	ctx.beginPath();
-	
-	drawText();
-	
-	if(height > 600) {
-		ctx.drawImage(menuImg, (width/2)-(height/3), 100, (height/1.5), (height/3));
-	}
-	else {
-		ctx.drawImage(menuImg, 75, 75, (height/1.5), (height/3));
-	}
-	
+		
 	player.grounded = false;
 	
 	setSprite();
@@ -166,53 +155,32 @@ function respawn() {
 }
 
 function checkKeys() {
-	// A
-	if (keys[65]) {
+	// Left arrow
+	if (keys[37]) {
 		player.direction = 0;
 		
 		if (player.velX <= 0 && player.velX > -player.speed) {
 			player.velX -= 1;
 		}
 	}
-	// D
-	if (keys[68]) {
+	
+	// Right arrow
+	if (keys[39]) {
 		player.direction = 1;
 		
 		if (player.velX >= 0 && player.velX < player.speed) {
 			player.velX += 1;
 		}
 	}
-	// W
-	if (keys[87]) {
+	
+	// Up arrow 
+	if (keys[38]) {
 		if (!player.jumping && player.grounded) {
 			player.jumping = true;
 			player.grounded = false;
 			player.velY = -player.jumpForce * 2;
 		}
 	}
-}
-
-function drawText() {
-	ctx.fillStyle = '#000';
-	ctx.font = 'bold 25px sans-serif';
-	ctx.textBaseline = 'bottom';
-	
-	if(height > 600) {
-		ctx.fillText('W = Jump', 50, 75);
-		ctx.fillText('A/D = Left/Right', 50, 105);
-		ctx.fillText('S = Enter Pipe', 50, 135);
-	}
-	else {
-		ctx.fillText('W = Jump', 75, 100 + (height/3));
-		ctx.fillText('A/D = Left/Right', 75, 130 + (height/3));
-		ctx.fillText('S = Enter Pipe', 75, 160 + (height/3));
-	}
-	
-	ctx.font = 'bold 30px sans-serif';
-	
-	ctx.fillText('About', boxes[1].x + 4, boxes[1].y - 100);
-	ctx.fillText('Portfolio', boxes[2].x - 15, boxes[2].y - 100);
-	ctx.fillText('Contact', boxes[3].x - 10, boxes[3].y - 100);
 }
 
 function drawPlayer() {
@@ -243,7 +211,7 @@ function checkBoxes() {
 			player.grounded = true;
 			player.jumping = false;
 			
-			if(i > 0 && keys[83]) {
+			if(i > 0 && keys[40]) {
 				goDownPipe(i, boxes[i]);
 			}
 		}
@@ -302,11 +270,11 @@ var counter = 0;
 
 function setSprite() {
 	if(!player.jumping) {
-		if(player.velX > 0 && keys[65]) { // Pressing left while moving right
+		if(player.velX > 0 && keys[37]) { // Pressing left while moving right
 			stopRight();
 		} else if(player.velX > 1) { // Running right or slowing down facing right
 			runRight();
-		} else if(player.velX < -1 && keys[68]) { // Pressing right while moving left
+		} else if(player.velX < -1 && keys[39]) { // Pressing right while moving left
 			stopLeft();
 		} else if(player.velX < -1) { // Running left or slowing down facing left
 			runLeft();
@@ -427,21 +395,21 @@ canvas.addEventListener('click', function (e) {
 });
 
 window.addEventListener('keydown', function (e) {
-	if(e.keyCode == 65 || e.keyCode == 68 || e.keyCode == 83 || e.keyCode == 87) {
+	if(e.keyCode == 37 || e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 38) {
 		e.preventDefault();
 		keys[e.keyCode] = true;
 		
-		if(e.keyCode == 65) {
-			keys[68] = false;
+		if(e.keyCode == 37) {
+			keys[39] = false;
 		}
 		
-		if(e.keyCode == 68) {
-			keys[65] = false;
+		if(e.keyCode == 39) {
+			keys[37] = false;
 		}
 		
-		if(e.keyCode == 83) {
-			keys[65] = false;
-			keys[68] = false;
+		if(e.keyCode == 40) {
+			keys[37] = false;
+			keys[39] = false;
 		}
 	}
 });

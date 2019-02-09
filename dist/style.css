@@ -1,0 +1,273 @@
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%; }
+
+html {
+  font-size: 62.5%; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7o6VKeqlTLmz9wgW802Ijrr8.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* greek */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7o98XTtHtBdEH02X-npdYcaI.woff2) format("woff2");
+  unicode-range: U+0370-03FF; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7o4HIgCyF_r7uhNjO5r5pEXE.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Press Start 2P"), local("PressStart2P-Regular"), url(../src/fonts/pressStartP2/8Lg6LX8-ntOHUQnvQ0E7oyZSq-wt96avU8gpaxOIt84.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+/* Variables */
+.super-mario-bros {
+  background-color: #6699ff;
+  background-image: url("../src/images/headerBG.png");
+  background-position: 100% 40%;
+  background-repeat: repeat-x;
+  height: 100%;
+  width: 100%; }
+  @media screen and (min-width: 1224px) {
+    .super-mario-bros {
+      background-position: left 50%; } }
+  .super-mario-bros__underlay {
+    background-image: url("../src/images/marioMe_sprites.png");
+    background-position: 110% bottom;
+    background-repeat: no-repeat;
+    background-size: 180%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 75px);
+    left: 0;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    width: 100%; }
+    @media screen and (min-width: 1224px) {
+      .super-mario-bros__underlay {
+        background: initial;
+        display: block;
+        height: calc(100% - 125px);
+        padding: 0; } }
+    .super-mario-bros__underlay__links {
+      display: block;
+      flex-grow: 1;
+      font-family: 'Press Start 2P';
+      font-size: 25px;
+      padding-left: 50px;
+      position: relative;
+      width: 100%; }
+      @media screen and (min-width: 1224px) {
+        .super-mario-bros__underlay__links {
+          bottom: 225px;
+          flex-grow: 0;
+          font-size: 20px;
+          height: 20px;
+          margin: 0;
+          padding: 0;
+          position: absolute; } }
+      .super-mario-bros__underlay__links__link {
+        color: #000;
+        display: block;
+        position: absolute;
+        text-decoration: none; }
+        .super-mario-bros__underlay__links__link:focus {
+          outline: none; }
+        .super-mario-bros__underlay__links__link::before {
+          content: "\f061";
+          display: none;
+          font-family: "Font Awesome 5 Free";
+          font-size: 35px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 900;
+          left: -50px;
+          position: absolute;
+          text-align: center;
+          text-rendering: auto;
+          top: -10px;
+          -webkit-font-smoothing: antialiased; }
+        @media screen and (min-width: 1224px) {
+          .super-mario-bros__underlay__links__link::after {
+            animation-duration: 1.0s;
+            animation-iteration-count: infinite;
+            animation-name: up-down;
+            animation-timing-function: linear;
+            content: "\f063";
+            display: none;
+            font-family: "Font Awesome 5 Free";
+            font-size: 35px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 900;
+            margin-top: 35px;
+            position: relative;
+            text-align: center;
+            text-rendering: auto;
+            transform-origin: bottom center;
+            -webkit-font-smoothing: antialiased; }
+          .super-mario-bros__underlay__links__link::before {
+            display: none; } }
+        .super-mario-bros__underlay__links__link--about:focus::before {
+          display: block; }
+        @media screen and (min-width: 1224px) {
+          .super-mario-bros__underlay__links__link--about {
+            left: calc(50% - 116px);
+            top: auto; }
+            .super-mario-bros__underlay__links__link--about:focus::after {
+              display: block; }
+            .super-mario-bros__underlay__links__link--about:focus::before {
+              display: none; } }
+        .super-mario-bros__underlay__links__link--portfolio {
+          top: 30%; }
+          .super-mario-bros__underlay__links__link--portfolio:focus::before {
+            display: block; }
+          @media screen and (min-width: 1224px) {
+            .super-mario-bros__underlay__links__link--portfolio {
+              left: calc(50% + 108px);
+              top: auto; }
+              .super-mario-bros__underlay__links__link--portfolio:focus::after {
+                display: block; }
+              .super-mario-bros__underlay__links__link--portfolio:focus::before {
+                display: none; } }
+        .super-mario-bros__underlay__links__link--contact {
+          top: 60%; }
+          .super-mario-bros__underlay__links__link--contact:focus::before {
+            display: block; }
+          @media screen and (min-width: 1224px) {
+            .super-mario-bros__underlay__links__link--contact {
+              left: calc(50% + 378px);
+              top: auto; }
+              .super-mario-bros__underlay__links__link--contact:focus::after {
+                display: block; }
+              .super-mario-bros__underlay__links__link--contact:focus::before {
+                display: none; } }
+    .super-mario-bros__underlay__logo {
+      display: block;
+      flex-grow: 0;
+      margin-bottom: 25px;
+      max-width: 330px;
+      position: relative;
+      width: 100%; }
+      @media screen and (min-width: 1224px) {
+        .super-mario-bros__underlay__logo {
+          margin: 0 auto;
+          max-width: 750px;
+          top: 8%;
+          width: 50%; } }
+  .super-mario-bros__world {
+    display: none; }
+    @media screen and (min-width: 1224px) {
+      .super-mario-bros__world {
+        display: block;
+        position: relative; } }
+
+.super-mario-bros__bricks {
+  background-image: url("../src/images/brick.png");
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 50px;
+  bottom: 0;
+  height: 75px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+  @media screen and (min-width: 1224px) {
+    .super-mario-bros__bricks {
+      background-size: auto;
+      height: 125px; } }
+
+@keyframes up-down {
+  from {
+    transform: translate3d(0, 0, 0); }
+  50% {
+    transform: translate3d(0, -20px, 0); }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+/* CSS Document */
+body, html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  background-color: #4a4a4a;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; }
+
+footer {
+  height: 75px; }
+
+footer p {
+  font-family: 'Press Start 2P';
+  margin: 0;
+  padding-top: 9px;
+  text-align: center; }
+
+/*		IDs			*/
+/*		Classes		*/
+.bgFade {
+  background: transparent url(../src/images/bgFade.png) repeat-x left top;
+  background-size: auto 100%;
+  position: relative;
+  width: 100%;
+  z-index: 1000; }
+
+.concrete {
+  background-image: url(../src/images/portalWall.png); }
+
+.content {
+  background-color: #999;
+  clear: both;
+  margin: 0 auto;
+  min-width: 900px;
+  padding: 25px;
+  position: relative;
+  width: 1000px; }
+
+.content h2 {
+  font-family: 'Press Start 2P';
+  font-size: 1.4em;
+  margin: 0; }
+
+.content p {
+  font-size: .9em;
+  line-height: 20px; }
+
+.content strong {
+  font-size: 1em; }
+
+.dirt {
+  background-image: url(../src/images/dirt.png); }
+
+.indent {
+  padding-left: 15px; }
+
+.inventory {
+  background: url(../src/images/inventory.png) no-repeat left top/800px;
+  height: 500px;
+  margin: 0 auto;
+  width: 800px; }
