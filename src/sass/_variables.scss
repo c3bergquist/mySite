@@ -4,7 +4,7 @@ $medium-screen: "screen and (min-width : 480px) and (max-width : 1223px)";
 $large-screen: "screen and (min-width : 1224px)";
 
 $font-emulogic: 'Emulogic';
-$font-font-awesome: 'Font Awesome 5 Free';
+$font-font-awesome: 'Font Awesome 5 Free', $font-emulogic;
 
 $black: #000;
 

@@ -122,8 +122,6 @@ function rebuildWorld() {
 	var width = $(window).width(),
 		height = $(window).height() - 125;
 		
-	respawn();
-	
 	// Floor
 	boxes[0].x = -5;
 	boxes[0].y = height;
@@ -145,6 +143,8 @@ function rebuildWorld() {
 	boxes[3].y = height - 116;
 	boxes[3].width = 100;
 	boxes[3].height = 116;
+	
+	respawn();
 }
 
 function respawn() {
@@ -155,8 +155,8 @@ function respawn() {
 }
 
 function checkKeys() {
-	// Left arrow
-	if (keys[37]) {
+	// Left or A
+	if (keys[37] || keys[65]) {
 		player.direction = 0;
 		
 		if (player.velX <= 0 && player.velX > -player.speed) {
@@ -164,8 +164,8 @@ function checkKeys() {
 		}
 	}
 	
-	// Right arrow
-	if (keys[39]) {
+	// Right or D
+	if (keys[39] || keys[68]) {
 		player.direction = 1;
 		
 		if (player.velX >= 0 && player.velX < player.speed) {
@@ -173,8 +173,8 @@ function checkKeys() {
 		}
 	}
 	
-	// Up arrow 
-	if (keys[38]) {
+	// Up or W 
+	if (keys[38] || keys[87]) {
 		if (!player.jumping && player.grounded) {
 			player.jumping = true;
 			player.grounded = false;
@@ -211,7 +211,7 @@ function checkBoxes() {
 			player.grounded = true;
 			player.jumping = false;
 			
-			if(i > 0 && keys[40]) {
+			if(i > 0 && (keys[40] || keys[83])) {
 				goDownPipe(i, boxes[i]);
 			}
 		}
@@ -265,16 +265,15 @@ function setSprites() {
 	sprites.push();
 }
 
-
 var counter = 0;
 
 function setSprite() {
 	if(!player.jumping) {
-		if(player.velX > 0 && keys[37]) { // Pressing left while moving right
+		if(player.velX > 0 && (keys[37] || keys[65])) { // Pressing left while moving right
 			stopRight();
 		} else if(player.velX > 1) { // Running right or slowing down facing right
 			runRight();
-		} else if(player.velX < -1 && keys[39]) { // Pressing right while moving left
+		} else if(player.velX < -1 && (keys[39] || keys[68])) { // Pressing right while moving left
 			stopLeft();
 		} else if(player.velX < -1) { // Running left or slowing down facing left
 			runLeft();
@@ -374,7 +373,7 @@ function goDownPipe(number, pipe) {
 	}
 }
 
-canvas.addEventListener('click', function (e) {
+canvas.addEventListener('click touch', function (e) {
     var clickedX = e.pageX - this.offsetLeft;
     var clickedY = e.pageY - this.offsetTop;
     	
@@ -395,22 +394,28 @@ canvas.addEventListener('click', function (e) {
 });
 
 window.addEventListener('keydown', function (e) {
-	if(e.keyCode == 37 || e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 38) {
-		e.preventDefault();
-		keys[e.keyCode] = true;
+	e.preventDefault();
+	keys[e.keyCode] = true;
+	
+	// Left or A
+	if(e.keyCode == 37 || e.keyCode == 65) {
+		keys[39] = false;
+		keys[68] = false;
+	}
+	
+	// Right or D
+	if(e.keyCode == 39 || e.keyCode == 68) {
+		keys[37] = false;
+		keys[65] = false;
+	}
+	
+	// Down or S
+	if(e.keyCode == 40 || e.keyCode == 83) {
+		keys[37] = false;
+		keys[65] = false;
 		
-		if(e.keyCode == 37) {
-			keys[39] = false;
-		}
-		
-		if(e.keyCode == 39) {
-			keys[37] = false;
-		}
-		
-		if(e.keyCode == 40) {
-			keys[37] = false;
-			keys[39] = false;
-		}
+		keys[39] = false;
+		keys[68] = false;
 	}
 });
  
@@ -422,7 +427,7 @@ window.addEventListener('load', function () {
 	update();
 });
 
-$(window).resize(function() {
+window.addEventListener('resize', function() {
 	rebuildWorld();
 
 	width = $(window).width();

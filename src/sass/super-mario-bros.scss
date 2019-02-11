@@ -61,18 +61,34 @@
 				animation-name: up-down;
 				animation-timing-function: linear;
 				display: block;
-				left: 10%;
+				left: 5%;
 				position: absolute;
 				top: 10%;
 				transform-origin: bottom center;
+				width: 170px;
 			}
 			
 			&__text {
-				bottom: 80px;
 				font-family: $font-font-awesome;
 				font-size: 18px;
-				left: 11px;
+				font-weight: 600;
+				margin: 0;
+				padding: 0;
 				position: relative;
+				text-align: center;
+				width: 100%;
+				
+				&--bottom {
+					bottom: 100px;
+				}
+				
+				&--middle {
+					bottom: 110px;
+				}
+				
+				&--top {
+					bottom: 120px;
+				}
 			}
 		}
 		

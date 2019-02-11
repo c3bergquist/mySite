@@ -71,16 +71,26 @@ html {
           animation-name: up-down;
           animation-timing-function: linear;
           display: block;
-          left: 10%;
+          left: 5%;
           position: absolute;
           top: 10%;
-          transform-origin: bottom center; } }
+          transform-origin: bottom center;
+          width: 170px; } }
       .super-mario-bros__underlay__lakitu-henry__text {
-        bottom: 80px;
-        font-family: "Font Awesome 5 Free";
+        font-family: "Font Awesome 5 Free", "Emulogic";
         font-size: 18px;
-        left: 11px;
-        position: relative; }
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        width: 100%; }
+        .super-mario-bros__underlay__lakitu-henry__text--bottom {
+          bottom: 100px; }
+        .super-mario-bros__underlay__lakitu-henry__text--middle {
+          bottom: 110px; }
+        .super-mario-bros__underlay__lakitu-henry__text--top {
+          bottom: 120px; }
     .super-mario-bros__underlay__links {
       display: block;
       flex-grow: 1;
@@ -107,7 +117,7 @@ html {
         .super-mario-bros__underlay__links__link::before {
           content: "\f061";
           display: none;
-          font-family: "Font Awesome 5 Free";
+          font-family: "Font Awesome 5 Free", "Emulogic";
           font-size: 35px;
           font-style: normal;
           font-variant: normal;
