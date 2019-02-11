@@ -5,6 +5,7 @@
 	background-image: url('../src/images/headerBG.png');
 	background-position: 100% 40%;
 	background-repeat: repeat-x;
+	font-family: $font-emulogic;
 	height: 100%;
 	width: 100%;
 	
@@ -16,7 +17,7 @@
 		background-image: url('../src/images/brick.png');
 		background-position: left top;
 		background-repeat: repeat;
-		background-size: 50px;
+		background-size: 10%;
 		bottom: 0;
 		height: 75px;
 		left: 0;
@@ -51,10 +52,33 @@
 			padding: 0;
 		}
 		
+		&__lakitu-henry {
+			display: none;
+			
+			@media #{$large-screen} {
+				animation-duration: 1.0s;
+				animation-iteration-count: infinite;
+				animation-name: up-down;
+				animation-timing-function: linear;
+				display: block;
+				left: 10%;
+				position: absolute;
+				top: 10%;
+				transform-origin: bottom center;
+			}
+			
+			&__text {
+				bottom: 80px;
+				font-family: $font-font-awesome;
+				font-size: 18px;
+				left: 11px;
+				position: relative;
+			}
+		}
+		
 		&__links {
 			display: block;
 			flex-grow: 1;
-			font-family: $font-emulogic;
 			font-size: 24px;
 			padding-left: 50px;
 			position: relative;
