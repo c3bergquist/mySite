@@ -6,9 +6,8 @@
 var canvas = document.getElementById('world'),
 	ctx = canvas.getContext('2d'),
 	doc = $(document),
-	width = $(window).width(),
-	height = $(window).height() - 125,
-	pipeImg = new Image(),
+	width = window.innerWidth,
+	height = window.innerHeight - 125,
 	keys = [],
 	friction = 0.9,
 	gravity = 0.5,
@@ -38,8 +37,7 @@ var canvas = document.getElementById('world'),
 	},
 	runTimer = 0;
 
-player.image.src = 'src/images/marioMe_sprites.png';
-pipeImg.src = 'src/images/pipe.png';
+player.image.src = '../src/images/marioMe_sprites.png';
 
 // Floor
 boxes.push({
@@ -49,22 +47,24 @@ boxes.push({
 	height: 10
 });
 
+var firstPipe = (width / 2) - 200;
+
 // Pipes
 boxes.push({
-	x: (width/2)-113,
-	y: height-116,
+	x: firstPipe,
+	y: height - 116,
 	width: 96,
 	height: 116
 });
 boxes.push({
-	x: (width/2)+150,
-	y: height-116,
+	x: firstPipe + 250,
+	y: height - 116,
 	width: 96,
 	height: 116
 });
 boxes.push({
-	x: (width/2)+400,
-	y: height-116,
+	x: firstPipe + 500,
+	y: height - 116,
 	width: 96,
 	height: 116
 });
@@ -75,6 +75,8 @@ canvas.height = height;
 ctx.save();
 
 function update() {
+	rebuildWorld();
+	
 	if (!player.goingDownPipe) {
 		checkKeys();
 	}
@@ -119,8 +121,8 @@ function update() {
 }
 
 function rebuildWorld() {
-	var width = $(window).width(),
-		height = $(window).height() - 125;
+	var width = window.innerWidth,
+		height = window.innerHeight - 125;
 		
 	// Floor
 	boxes[0].x = -5;
@@ -128,23 +130,23 @@ function rebuildWorld() {
 	boxes[0].width = width + 10;
 	boxes[0].height = 10;
 
+	var firstPipe = (width / 2) - 200;
+	
 	// Pipes
-	boxes[1].x = (width/2) - 113;
+	boxes[1].x = firstPipe;
 	boxes[1].y = height - 116;
-	boxes[1].width = 100;
+	boxes[1].width = 96;
 	boxes[1].height = 116;
 	
-	boxes[2].x = (width/2) + 150;
+	boxes[2].x = firstPipe + 250;
 	boxes[2].y = height - 116;
-	boxes[2].width = 100;
+	boxes[2].width = 96;
 	boxes[2].height = 116;
 
-	boxes[3].x = (width/2) + 400;
+	boxes[3].x = firstPipe + 500;
 	boxes[3].y = height - 116;
-	boxes[3].width = 100;
-	boxes[3].height = 116;
-	
-	respawn();
+	boxes[3].width = 96;
+	boxes[3].height = 116;	
 }
 
 function respawn() {
@@ -194,8 +196,6 @@ function drawBoxes() {
 		} else {
 			boxes[i].y = height - 116;
 		}
-		
-		ctx.drawImage(pipeImg, boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
 	}
 }
 
@@ -394,28 +394,31 @@ canvas.addEventListener('click touch', function (e) {
 });
 
 window.addEventListener('keydown', function (e) {
-	e.preventDefault();
-	keys[e.keyCode] = true;
-	
-	// Left or A
-	if(e.keyCode == 37 || e.keyCode == 65) {
-		keys[39] = false;
-		keys[68] = false;
-	}
-	
-	// Right or D
-	if(e.keyCode == 39 || e.keyCode == 68) {
-		keys[37] = false;
-		keys[65] = false;
-	}
-	
-	// Down or S
-	if(e.keyCode == 40 || e.keyCode == 83) {
-		keys[37] = false;
-		keys[65] = false;
+	if(e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 ||
+	   e.keyCode == 65 || e.keyCode == 83 || e.keyCode == 68 || e.keyCode == 87) {
+		e.preventDefault();
+		keys[e.keyCode] = true;
 		
-		keys[39] = false;
-		keys[68] = false;
+		// Left or A
+		if(e.keyCode == 37 || e.keyCode == 65) {
+			keys[39] = false;
+			keys[68] = false;
+		}
+		
+		// Right or D
+		if(e.keyCode == 39 || e.keyCode == 68) {
+			keys[37] = false;
+			keys[65] = false;
+		}
+		
+		// Down or S
+		if(e.keyCode == 40 || e.keyCode == 83) {
+			keys[37] = false;
+			keys[65] = false;
+			
+			keys[39] = false;
+			keys[68] = false;
+		}
 	}
 });
  
@@ -429,9 +432,10 @@ window.addEventListener('load', function () {
 
 window.addEventListener('resize', function() {
 	rebuildWorld();
+	respawn();
 
-	width = $(window).width();
-	height = $(window).height() - 125;
+	width = window.innerWidth;
+	height = window.innerHeight - 125;
 
 	canvas.width = width;
 	canvas.height = height;

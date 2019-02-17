@@ -1,7 +1,16 @@
-var gulp = require('gulp');
-var jsImport = require('gulp-js-import');
-var rename = require('gulp-rename');
-var sass = require('gulp-sass');
+var gulp = require('gulp'),
+	htmlmin = require('gulp-htmlmin');
+	jsImport = require('gulp-js-import'),
+	rename = require('gulp-rename'),
+	sass = require('gulp-sass'),
+	uglify = require('gulp-uglify');
+
+// Minify HTML
+gulp.task('html', () => {
+  return gulp.src('./*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('dist'));
+});
 
 // Compile Sass
 gulp.task('sass', function(){
@@ -11,11 +20,12 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('./dist'))
 });
 
-// Compile Sass
+// Compile Js
 gulp.task('js', function(){
   return gulp.src('./src/js/main.js')
     .pipe(jsImport({hideConsole: true}))
 	.pipe(rename('script.js'))
+	.pipe(uglify())
     .pipe(gulp.dest('./dist'))
 });
 
@@ -55,21 +65,9 @@ gulp.task('js', function(){
 	
 **************************************************/
 
-// Clean output directory
-//gulp.task('clean', () => del(['dist']));
-
 // Watch task
 gulp.task('watch', function() {
-    gulp.watch('./src/sass/**/*.scss', gulp.series('sass'));
+	gulp.watch('./*.html', gulp.series('html'));
+	gulp.watch('./src/sass/**/*.scss', gulp.series('sass'));
 	gulp.watch('./src/js/**/*.js', gulp.series('js'));
 });
-
-
-// Gulp task to minify all files
-/*gulp.task('default', ['clean'], function() {
-  runSequence(
-    'styles',
-    'scripts',
-    'pages'
-  );
-});*/

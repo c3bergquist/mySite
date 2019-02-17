@@ -18,6 +18,7 @@
   "homepage": "https://github.com/CoryBerg/mySite#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-js-import": "^1.0.6",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",

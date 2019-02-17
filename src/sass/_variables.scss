@@ -1,11 +1,26 @@
 /* Variables */
 
-$medium-screen: "screen and (min-width : 480px) and (max-width : 1223px)";
-$large-screen: "screen and (min-width : 1224px)";
+$small-screen: "screen and (max-width : 480px)";
+$medium-screen: "screen and (max-width : 1223px)";
+
+
+
+
 
 $font-emulogic: 'Emulogic';
 $font-font-awesome: 'Font Awesome 5 Free', $font-emulogic;
 
+
+
+/* Colors */
+
 $black: #000;
+$white: #fff;
+
+$super-mario-bros-blue: #6699ff;
 
 
+
+/* Font Awesome Content */
+
+$down-arrow: '\f063';

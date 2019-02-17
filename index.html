@@ -11,37 +11,73 @@
 	
 	<title>Cory Bergquist</title>
 	
-	<link href="./dist/style.css" rel="stylesheet" type="text/css"/>
+	<link href="./style.css" rel="stylesheet" type="text/css"/>
 	
-	<link href="./src/fontawesome-free-5.7.1-web\css\all.css" rel="stylesheet" type="text/css"/>
+	<link href="../src/fontawesome-free-5.7.1-web\css\all.css" rel="stylesheet" type="text/css"/>
 	
-	<script src="./src/js/jquery-3.3.1.min.js"></script>
+	<script src="../src/js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
 	<section class="super-mario-bros">
 		<div class="super-mario-bros__underlay">
-			<div class="super-mario-bros__underlay__lakitu-henry">
-				<img class="super-mario-bros__underlay__lakitu-henry__cloud" src="./src/images/lakitu-henry.png" />
-				<p class="super-mario-bros__underlay__lakitu-henry__text super-mario-bros__underlay__lakitu-henry__text--top"><i class="fas fa-arrow-up"></i>/<i class="fas fa-arrow-down"></i>/<i class="fas fa-arrow-left"></i>/<i class="fas fa-arrow-right"></i></p>
-				<p class="super-mario-bros__underlay__lakitu-henry__text super-mario-bros__underlay__lakitu-henry__text--middle">W/S/A/D</p>
-				<p class="super-mario-bros__underlay__lakitu-henry__text super-mario-bros__underlay__lakitu-henry__text--bottom">Or click a pipe!</p>
-			</div>
-			
-			<img class="super-mario-bros__underlay__logo" src="./src/images/cbMenu.png" />
-			
-			<div class="super-mario-bros__underlay__links">
-				<a href="./about.html" class="super-mario-bros__underlay__links__link super-mario-bros__underlay__links__link--about">About</a>
-				<a href="./portfolio.html" class="super-mario-bros__underlay__links__link super-mario-bros__underlay__links__link--portfolio">Portfolio</a>
-				<a href="./contact.html" class="super-mario-bros__underlay__links__link super-mario-bros__underlay__links__link--contact">Contact</a>
+			<ul class="super-mario-bros__names-list">
+				<li class="super-mario-bros__names-list__name-item super-mario-bros__names-list__name-item--about">
+					<p class="super-mario-bros__name">About</p>
+				</li>
+				
+				<li class="super-mario-bros__names-list__name-item super-mario-bros__names-list__name-item--portfolio">
+					<p class="super-mario-bros__name">Portfolio</p>
+				</li>
+				
+				<li class="super-mario-bros__names-list__name-item super-mario-bros__names-list__name-item--contact">
+					<p class="super-mario-bros__name">Contact</p>
+				</li>
+			</ul>
+		</div>
+	
+		<canvas class="super-mario-bros__world" id="world"></canvas>
+		
+		<div class="super-mario-bros__overlay">
+			<img class="super-mario-bros__logo" src="../src/images/cbMenu.png" />
+		
+			<div class="super-mario-bros__lakitu-henry">
+				<img class="super-mario-bros__lakitu-henry__cloud" src="../src/images/lakitu-henry.png" />
+				
+				<div class="super-mario-bros__lakitu-henry__instructions">
+					<p class="super-mario-bros__lakitu-henry__control"><i class="fas fa-arrow-up"></i>/<i class="fas fa-arrow-down"></i>/<i class="fas fa-arrow-left"></i>/<i class="fas fa-arrow-right"></i></p>
+					<p class="super-mario-bros__lakitu-henry__control">W/S/A/D</p>
+					<p class="super-mario-bros__lakitu-henry__control"><span class="desktop-only">Or </span>click a pipe!</p>
+				</div>
 			</div>
 		</div>
 		
-		<canvas class="super-mario-bros__world" id="world"></canvas>
+		<ul class="super-mario-bros__link-list">
+			<li class="super-mario-bros__link-list__link-item super-mario-bros__link-list__link-item--about">
+				<a href="./about.html" class="super-mario-bros__link">
+					<span class="super-mario-bros__link__text">About</span>
+					<img class="super-mario-bros__link__image" src="../src/images/pipe.png" alt="about" />
+				</a>
+			</li>
+			
+			<li class="super-mario-bros__link-list__link-item super-mario-bros__link-list__link-item--portfolio">
+				<a href="./portfolio.html" class="super-mario-bros__link">
+					<span class="super-mario-bros__link__text">Portfolio</span>
+					<img class="super-mario-bros__link__image" src="../src/images/pipe.png" alt="portfolio" />
+				</a>
+			</li>
+			
+			<li class="super-mario-bros__link-list__link-item super-mario-bros__link-list__link-item--contact">
+				<a href="./contact.html" class="super-mario-bros__link">
+					<span class="super-mario-bros__link__text">Contact</span>
+					<img class="super-mario-bros__link__image" src="../src/images/pipe.png" alt="contact" />
+				</a>
+			</li>
+		</ul>
 		
 		<div class="super-mario-bros__bricks"></div>
 	</section>
 
-	<script src="./dist/script.js"></script>
+	<script src="./script.js"></script>
 </body>
 </html>
