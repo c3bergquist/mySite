@@ -29,42 +29,6 @@ gulp.task('js', function(){
     .pipe(gulp.dest('./dist'))
 });
 
-/**************************************************
-
-	Minification Tasks
-	
-**************************************************/
-
-// Minify HTML
-//gulp.task('pages', function() {
-  //return gulp.src(['./src/**/*.html'])
-    //.pipe(htmlmin({
-      //collapseWhitespace: true,
-      //removeComments: true
-    //}))
-    //.pipe(gulp.dest('./dist'));
-//});
-
-// Minify CSS
-//gulp.task('minify-styles', function() {
-  //return gulp.src('./src/sass/**/*.scss')
-    //.pipe(uglify())
-    //.pipe(gulp.dest('./dist/css'))
-//});
-
-// Minify JavaScript
-//gulp.task('scripts', function() {
-  //return gulp.src('./src/js/**/*.js')
-    //.pipe(uglify())
-    //.pipe(gulp.dest('./dist/js'))
-//});
-
-/**************************************************
-
-	Main Tasks
-	
-**************************************************/
-
 // Watch task
 gulp.task('watch', function() {
 	gulp.watch('./*.html', gulp.series('html'));
