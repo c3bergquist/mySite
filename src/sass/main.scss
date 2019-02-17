@@ -1,39 +1,12 @@
+@charset "utf-8";
+/* Start imports */
+
 @import './reset.scss';
 
 @import './fonts.scss';
 
 @import './global.scss';
 @import './super-mario-bros.scss';
-
-@charset "utf-8";
-/* CSS Document */
-
-
-footer {
-	height: 75px;
-}
-	footer p {
-		font-family: 'Press Start 2P';
-		margin: 0;
-		padding-top: 9px;
-		text-align: center;
-	}
-
-/*		IDs			*/
-
-
-
-/*		Classes		*/
-
-.bgFade {
-	background: transparent url(../src/images/bgFade.png) repeat-x left top;
-	background-size: auto 100%;
-	position: relative;
-	width: 100%;
-	z-index: 1000;
-}
-
-
 
 .concrete {
 	background-image: url(../src/images/portalWall.png);
@@ -48,25 +21,9 @@ footer {
 	position: relative;
 	width: 1000px;
 }
-	.content h2 {
-		font-family: 'Press Start 2P';
-		font-size: 1.4em;
-		margin: 0;
-	}
-	.content p {
-		font-size: .9em;
-		line-height: 20px;
-	}
-	.content strong {
-		font-size: 1em;
-	}
 
 .dirt {
 	background-image: url(../src/images/dirt.png);
-}
-
-.indent {
-	padding-left: 15px;
 }
 
 .inventory {
@@ -75,6 +32,3 @@ footer {
 	margin: 0 auto;
 	width: 800px;
 }
-
-.offset { }
-

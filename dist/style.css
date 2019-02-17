@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Start imports */
 html, body {
   box-sizing: border-box;
   min-height: 100%;
@@ -25,6 +26,14 @@ html {
 @media screen and (max-width: 1223px) {
   .desktop-only {
     display: none; } }
+
+@keyframes up-down {
+  from {
+    transform: translate3d(0, 0, 0); }
+  50% {
+    transform: translate3d(0, 20px, 0); }
+  to {
+    transform: translate3d(0, 0, 0); } }
 
 /* Variables */
 /* Colors */
@@ -209,7 +218,8 @@ html {
               content: "About \a" ""; } }
         @media screen and (max-width: 480px) {
           .super-mario-bros__link-list__link-item--about {
-            margin-left: 50px; } }
+            margin-left: 50px;
+            margin-top: 0; } }
       @media screen and (max-width: 1223px) {
         .super-mario-bros__link-list__link-item--portfolio::before {
           content: "Portfolio \a" ""; } }
@@ -330,33 +340,6 @@ html {
   .super-mario-bros img {
     image-rendering: pixelated; }
 
-@keyframes up-down {
-  from {
-    transform: translate3d(0, 0, 0); }
-  50% {
-    transform: translate3d(0, 20px, 0); }
-  to {
-    transform: translate3d(0, 0, 0); } }
-
-/* CSS Document */
-footer {
-  height: 75px; }
-
-footer p {
-  font-family: 'Press Start 2P';
-  margin: 0;
-  padding-top: 9px;
-  text-align: center; }
-
-/*		IDs			*/
-/*		Classes		*/
-.bgFade {
-  background: transparent url(../src/images/bgFade.png) repeat-x left top;
-  background-size: auto 100%;
-  position: relative;
-  width: 100%;
-  z-index: 1000; }
-
 .concrete {
   background-image: url(../src/images/portalWall.png); }
 
@@ -369,23 +352,8 @@ footer p {
   position: relative;
   width: 1000px; }
 
-.content h2 {
-  font-family: 'Press Start 2P';
-  font-size: 1.4em;
-  margin: 0; }
-
-.content p {
-  font-size: .9em;
-  line-height: 20px; }
-
-.content strong {
-  font-size: 1em; }
-
 .dirt {
   background-image: url(../src/images/dirt.png); }
-
-.indent {
-  padding-left: 15px; }
 
 .inventory {
   background: url(../src/images/inventory.png) no-repeat left top/800px;

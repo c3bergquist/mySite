@@ -15,7 +15,7 @@ gulp.task('html', () => {
 // Compile Sass
 gulp.task('sass', function(){
   return gulp.src('./src/sass/main.scss')
-    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(sass())
 	.pipe(rename('style.css'))
     .pipe(gulp.dest('./dist'))
 });

@@ -1,1 +1,1 @@
-@import './src/js/world-functions.js';
+@import './src/js/super-mario-bros.js';

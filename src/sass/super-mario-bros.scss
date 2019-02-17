@@ -229,6 +229,7 @@
 				
 				@media #{$small-screen} {
 					margin-left: 50px;
+					margin-top: 0;
 				}
 			}
 			
@@ -396,20 +397,5 @@
 	
 	img {
 		image-rendering: pixelated;
-	}
-}
-
-
-@keyframes up-down {
-	from {
-		transform: translate3d(0,0,0);
-	}
-
-	50% {
-		transform: translate3d(0,20px,0);
-	}
-
-	to {
-		transform: translate3d(0,0,0);
 	}
 }
