@@ -7,9 +7,9 @@ var gulp = require('gulp'),
 
 // Minify HTML
 gulp.task('html', () => {
-  return gulp.src('./*.html')
+  return gulp.src('./src/html/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('./'));
 });
 
 // Compile Sass
@@ -31,7 +31,7 @@ gulp.task('js', function(){
 
 // Watch task
 gulp.task('watch', function() {
-	gulp.watch('./*.html', gulp.series('html'));
+	gulp.watch('./src/html/*.html', gulp.series('html'));
 	gulp.watch('./src/sass/**/*.scss', gulp.series('sass'));
 	gulp.watch('./src/js/**/*.js', gulp.series('js'));
 });

@@ -37,7 +37,7 @@ var canvas = document.getElementById('world'),
 	},
 	runTimer = 0;
 
-player.image.src = '../src/images/marioMe_sprites.png';
+player.image.src = './src/images/marioMe_sprites.png';
 
 // Floor
 boxes.push({
@@ -75,8 +75,6 @@ canvas.height = height;
 ctx.save();
 
 function update() {
-	rebuildWorld();
-	
 	if (!player.goingDownPipe) {
 		checkKeys();
 	}
