@@ -5,9 +5,8 @@
 
 var canvas = document.getElementById('world'),
 	ctx = canvas.getContext('2d'),
-	doc = $(document),
-	width = window.innerWidth,
-	height = window.innerHeight - 125,
+	width = canvas.offsetWidth,
+	height = canvas.offsetHeight,
 	keys = [],
 	friction = 0.9,
 	gravity = 0.5,
@@ -43,7 +42,7 @@ player.image.src = './src/images/marioMe_sprites.png';
 boxes.push({
 	x: -5,
 	y: height,
-	width: width+10,
+	width: width + 10,
 	height: 10
 });
 
@@ -69,8 +68,8 @@ boxes.push({
 	height: 116
 });
  
-canvas.width = width;
-canvas.height = height;
+ctx.canvas.width = width;
+ctx.canvas.height = height;
 
 ctx.save();
 
@@ -78,6 +77,8 @@ function update() {
 	if (!player.goingDownPipe) {
 		checkKeys();
 	}
+	
+	getCanvasSize();
 
 	ctx.clearRect(0, 0, width, height);
 	ctx.beginPath();
@@ -118,10 +119,14 @@ function update() {
 	requestAnimationFrame(update);
 }
 
+function getCanvasSize() {
+	width = canvas.offsetWidth;
+	height = canvas.offsetHeight;
+}
+
 function rebuildWorld() {
-	var width = window.innerWidth,
-		height = window.innerHeight - 125;
-		
+	getCanvasSize();
+	
 	// Floor
 	boxes[0].x = -5;
 	boxes[0].y = height;
@@ -144,7 +149,10 @@ function rebuildWorld() {
 	boxes[3].x = firstPipe + 500;
 	boxes[3].y = height - 116;
 	boxes[3].width = 96;
-	boxes[3].height = 116;	
+	boxes[3].height = 116;
+	
+	ctx.canvas.width = width;
+	ctx.canvas.height = height;
 }
 
 function respawn() {
@@ -371,26 +379,6 @@ function goDownPipe(number, pipe) {
 	}
 }
 
-canvas.addEventListener('click touch', function (e) {
-    var clickedX = e.pageX - this.offsetLeft;
-    var clickedY = e.pageY - this.offsetTop;
-    	
-    for (var i = 1; i < boxes.length; i++) {
-        if (clickedX > boxes[i].x && clickedX < boxes[i].x + boxes[i].width &&
-			clickedY > boxes[i].y && clickedY < boxes[i].y + boxes[i].height) {
-            if(i == 1) {
-				window.location.href = './about.html';
-			}
-			if(i == 2) {
-				window.location.href = './portfolio.html';
-			}
-			if(i == 3) {
-				window.location.href = './contact.html';
-			}
-        }
-    }
-});
-
 window.addEventListener('keydown', function (e) {
 	if(e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 ||
 	   e.keyCode == 65 || e.keyCode == 83 || e.keyCode == 68 || e.keyCode == 87) {
@@ -430,11 +418,6 @@ window.addEventListener('load', function () {
 
 window.addEventListener('resize', function() {
 	rebuildWorld();
+	
 	respawn();
-
-	width = window.innerWidth;
-	height = window.innerHeight - 125;
-
-	canvas.width = width;
-	canvas.height = height;
 });

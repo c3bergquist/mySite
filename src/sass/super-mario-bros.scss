@@ -16,7 +16,8 @@
 	}
 	
 	@media #{$small-screen} {
-		background-position: 100% 30%;
+		background-position: 100% 40%;
+		overflow: hidden;
 	}
 	
 	&__bricks {
@@ -384,7 +385,9 @@
 	
 	&__world {
 		display: block;
+		height: calc(100vh - 125px);
 		position: relative;
+		width: 100vw;
 		
 		@media #{$medium-screen} {
 			display: none;

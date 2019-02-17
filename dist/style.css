@@ -44,7 +44,8 @@ html {
       position: absolute; } }
   @media screen and (max-width: 480px) {
     .super-mario-bros {
-      background-position: 100% 30%; } }
+      background-position: 100% 40%;
+      overflow: hidden; } }
   .super-mario-bros__bricks {
     background-image: url("../src/images/brick.png");
     background-position: left top;
@@ -320,7 +321,9 @@ html {
         height: calc(100% - 10%); } }
   .super-mario-bros__world {
     display: block;
-    position: relative; }
+    height: calc(100vh - 125px);
+    position: relative;
+    width: 100vw; }
     @media screen and (max-width: 1223px) {
       .super-mario-bros__world {
         display: none; } }
