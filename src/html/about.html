@@ -18,7 +18,66 @@
 	<script src="./dist/jquery-3.3.1.min.js"></script>
 </head>
 
+<!-- Adapted from Jhey Tompkins' post on https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8 -->
+
 <body class="majoras-mask">
-	<div></div>
+	<div class="majoras-mask__carousel">
+		<input class="majoras-mask__carousel__activator" type="radio" name="carousel" id="F" checked="checked"/>
+		<input class="majoras-mask__carousel__activator" type="radio" name="carousel" id="G"/>
+		<input class="majoras-mask__carousel__activator" type="radio" name="carousel" id="H"/>
+		<input class="majoras-mask__carousel__activator" type="radio" name="carousel" id="I"/>
+		<input class="majoras-mask__carousel__activator" type="radio" name="carousel" id="J"/>
+		
+		<div class="majoras-mask__carousel__controls">
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--backward" for="J"></label>
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--forward" for="G"></label>
+		</div>
+		
+		<div class="majoras-mask__carousel__controls">
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--backward" for="F"></label>
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--forward" for="H"></label>
+		</div>
+		
+		<div class="majoras-mask__carousel__controls">
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--backward" for="G"></label>
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--forward" for="I"></label>
+		</div>
+		
+		<div class="majoras-mask__carousel__controls">
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--backward" for="H"></label>
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--forward" for="J"></label>
+		</div>
+		
+		<div class="majoras-mask__carousel__controls">
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--backward" for="I"></label>
+			<label class="majoras-mask__carousel__control majoras-mask__carousel__control--forward" for="F"></label>
+		</div>
+		
+		<ul class="majoras-mask__carousel__track">
+			<li class="majoras-mask__carousel__slide">
+				<h1>What's with all the video game references?</h1>
+			</li>
+			<li class="majoras-mask__carousel__slide">
+				<h1>Super Mario Bros.</h1>
+			</li>
+			<li class="majoras-mask__carousel__slide">
+				<h1>The Legend of Zelda: Majora's Mask</h1>
+			</li>
+			<li class="majoras-mask__carousel__slide">
+				<h1>Minecraft</h1>
+			</li>
+			<li class="majoras-mask__carousel__slide">
+				<h1>Portal</h1>
+			</li>
+		</ul>
+	
+		<div class="majoras-mask__carousel__indicators">
+			<label class="majoras-mask__carousel__indicator" for="F"></label>
+			<label class="majoras-mask__carousel__indicator" for="G"></label>
+			<label class="majoras-mask__carousel__indicator" for="H"></label>
+			<label class="majoras-mask__carousel__indicator" for="I"></label>
+			<label class="majoras-mask__carousel__indicator" for="J"></label>
+		</div>
+	</div>
 </body>
 </html>
