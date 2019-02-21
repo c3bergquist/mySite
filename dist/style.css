@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* Start imports */
-@import url("https://fonts.googleapis.com/css?family=Roboto:900");
 html, body {
   box-sizing: border-box;
   min-height: 100%;
@@ -428,9 +427,19 @@ html {
 /* Colors */
 /* Font Awesome Content */
 .majoras-mask {
-  display: inline-block;
+  background-color: #222;
+  background-image: url("../src/images/empty-face.png");
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  color: #fff;
+  display: block;
   font-family: "PT Sans";
-  overflow: hidden; }
+  overflow: hidden;
+  text-align: center; }
+  @media screen and (max-width: 480px) {
+    .majoras-mask {
+      background-size: 75%; } }
   .majoras-mask__carousel {
     border-radius: 5px;
     height: 100vh;
@@ -573,23 +582,22 @@ html {
     .majoras-mask__carousel__controls {
       display: none; }
     .majoras-mask__carousel__indicator {
-      background-color: #fafafa;
       border-radius: 100%;
       cursor: pointer;
       display: inline-block;
-      height: 30px;
+      height: 50px;
       margin: 0 2.5px 0 2.5px;
       opacity: 0.35;
-      width: 30px;
+      width: 50px;
       z-index: 2; }
       .majoras-mask__carousel__indicator:hover {
         opacity: 0.75; }
       .majoras-mask__carousel__indicator:nth-of-type(1) {
-        background-image: url("https://unsplash.it/300?random");
+        background-image: url("../src/images/empty-face.png");
         background-size: cover;
         background-position: center; }
       .majoras-mask__carousel__indicator:nth-of-type(2) {
-        background-image: url("https://unsplash.it/600?random");
+        background-image: url("../src/images/mario-face.png");
         background-size: cover;
         background-position: center; }
       .majoras-mask__carousel__indicator:nth-of-type(3) {
@@ -610,6 +618,9 @@ html {
       top: 5%;
       width: 100%; }
     .majoras-mask__carousel__slide {
+      background-position: 50% 25%;
+      background-repeat: no-repeat;
+      background-size: 50%;
       display: block;
       height: 100%;
       left: 0;
@@ -620,16 +631,11 @@ html {
       top: 0; }
       .majoras-mask__carousel__slide:nth-of-type(1) {
         -webkit-transform: translateX(0%);
-        transform: translateX(0%);
-        background-image: url("https://unsplash.it/300?random");
-        background-size: cover;
-        background-position: center; }
+        transform: translateX(0%); }
       .majoras-mask__carousel__slide:nth-of-type(2) {
-        -webkit-transform: translateX(100%);
+        background-image: url("../src/images/mario-face.png");
         transform: translateX(100%);
-        background-image: url("https://unsplash.it/600?random");
-        background-size: cover;
-        background-position: center; }
+        -webkit-transform: translateX(100%); }
       .majoras-mask__carousel__slide:nth-of-type(3) {
         -webkit-transform: translateX(200%);
         transform: translateX(200%);
@@ -673,12 +679,6 @@ html {
     line-height: 50px;
     text-align: center;
     width: 100%; }
-
-html,
-body {
-  background-color: #111;
-  text-align: center;
-  color: #fff; }
 
 .concrete {
   background-image: url(../src/images/portalWall.png); }
