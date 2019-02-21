@@ -629,6 +629,9 @@ html {
       position: absolute;
       right: 0;
       top: 0; }
+      @media screen and (max-width: 480px) {
+        .majoras-mask__carousel__slide {
+          background-size: 75%; } }
       .majoras-mask__carousel__slide:nth-of-type(1) {
         -webkit-transform: translateX(0%);
         transform: translateX(0%); }
@@ -662,6 +665,10 @@ html {
       padding: 0 25px;
       position: absolute;
       width: 100%; }
+      @media screen and (max-width: 480px) {
+        .majoras-mask__carousel__slide-content {
+          font-size: 16px;
+          line-height: 18px; } }
     .majoras-mask__carousel__track {
       bottom: 0;
       left: 0;
@@ -679,6 +686,10 @@ html {
     line-height: 50px;
     text-align: center;
     width: 100%; }
+    @media screen and (max-width: 480px) {
+      .majoras-mask__h1 {
+        font-size: 24px;
+        line-height: 24px; } }
 
 .concrete {
   background-image: url(../src/images/portalWall.png); }
