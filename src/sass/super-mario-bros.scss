@@ -5,6 +5,7 @@
 	background-image: url('../src/images/headerBG.png');
 	background-position: left 50%;
 	background-repeat: repeat-x;
+	color: $black;
 	font-family: $font-emulogic;
 	height: 100%;
 	width: 100%;
@@ -208,7 +209,7 @@
 			
 			@media #{$small-screen} {
 				display: block;
-				margin: 50px 0 50px 50px;
+				margin: 50px 0 50px 15%;
 				width: auto;
 				
 				&::before {
@@ -228,7 +229,7 @@
 				}
 				
 				@media #{$small-screen} {
-					margin-left: 50px;
+					margin-left: 15%;
 					margin-top: 0;
 				}
 			}
@@ -360,6 +361,23 @@
 		}
 	}
 	
+	&__sprite-sheet {
+		display: none;
+		
+		@media #{$small-screen} {
+			bottom: 10%;
+			display: block;
+			overflow: hidden;
+			padding-right: 25px;
+			position: absolute;
+			
+			&__image {
+				margin: 0 0 -1px -100%;
+				width:200%;
+			}
+		}
+	}
+	
 	&__underlay {
 		background: none;
 		display: block;
@@ -372,15 +390,6 @@
 		
 		@media #{$medium-screen} {
 			display: none;
-		}
-		
-		@media #{$small-screen} {
-			background-image: url('../src/images/marioMe_sprites.png');
-			background-position: 110% bottom;
-			background-repeat: no-repeat;
-			background-size: 180%;
-			display: block;
-			height: calc(100% - 10%);
 		}
 	}
 	

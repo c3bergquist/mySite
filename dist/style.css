@@ -122,6 +122,7 @@ html {
   background-image: url("../src/images/headerBG.png");
   background-position: left 50%;
   background-repeat: repeat-x;
+  color: #000;
   font-family: "Emulogic";
   height: 100%;
   width: 100%; }
@@ -284,7 +285,7 @@ html {
       @media screen and (max-width: 480px) {
         .super-mario-bros__link-list__link-item {
           display: block;
-          margin: 50px 0 50px 50px;
+          margin: 50px 0 50px 15%;
           width: auto; }
           .super-mario-bros__link-list__link-item::before {
             display: none; } }
@@ -297,7 +298,7 @@ html {
               content: "About \a" ""; } }
         @media screen and (max-width: 480px) {
           .super-mario-bros__link-list__link-item--about {
-            margin-left: 50px;
+            margin-left: 15%;
             margin-top: 0; } }
       @media screen and (max-width: 1223px) {
         .super-mario-bros__link-list__link-item--portfolio::before {
@@ -388,6 +389,18 @@ html {
         height: auto;
         margin-bottom: 0;
         padding: 25px; } }
+  .super-mario-bros__sprite-sheet {
+    display: none; }
+    @media screen and (max-width: 480px) {
+      .super-mario-bros__sprite-sheet {
+        bottom: 10%;
+        display: block;
+        overflow: hidden;
+        padding-right: 25px;
+        position: absolute; }
+        .super-mario-bros__sprite-sheet__image {
+          margin: 0 0 -1px -100%;
+          width: 200%; } }
   .super-mario-bros__underlay {
     background: none;
     display: block;
@@ -400,14 +413,6 @@ html {
     @media screen and (max-width: 1223px) {
       .super-mario-bros__underlay {
         display: none; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__underlay {
-        background-image: url("../src/images/marioMe_sprites.png");
-        background-position: 110% bottom;
-        background-repeat: no-repeat;
-        background-size: 180%;
-        display: block;
-        height: calc(100% - 10%); } }
   .super-mario-bros__world {
     display: block;
     height: calc(100vh - 125px);
@@ -437,7 +442,10 @@ html {
     text-align: center;
     width: 100vw; }
     .majoras-mask__carousel__activator {
-      /*display: none;*/ }
+      left: -999px;
+      position: absolute;
+      top: -999px;
+      z-index: -999; }
       .majoras-mask__carousel__activator:nth-of-type(1):checked ~ .majoras-mask__carousel__track {
         -webkit-transform: translateX(0%);
         transform: translateX(0%); }
@@ -555,11 +563,11 @@ html {
       .majoras-mask__carousel__control:hover {
         opacity: 1; }
       .majoras-mask__carousel__control--backward {
-        left: 10px;
+        left: 5%;
         -webkit-transform: rotate(-135deg);
         transform: rotate(-135deg); }
       .majoras-mask__carousel__control--forward {
-        right: 10px;
+        right: 5%;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg); }
     .majoras-mask__carousel__controls {
@@ -598,9 +606,9 @@ html {
         background-position: center; }
     .majoras-mask__carousel__indicators {
       position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center; }
+      text-align: center;
+      top: 5%;
+      width: 100%; }
     .majoras-mask__carousel__slide {
       display: block;
       height: 100%;
@@ -640,6 +648,14 @@ html {
         background-image: url("https://unsplash.it/1500?random");
         background-size: cover;
         background-position: center; }
+    .majoras-mask__carousel__slide-content {
+      background-color: #000;
+      bottom: 5%;
+      font-size: 18px;
+      margin: 0 auto;
+      padding: 0 25px;
+      position: absolute;
+      width: 100%; }
     .majoras-mask__carousel__track {
       bottom: 0;
       left: 0;
@@ -651,22 +667,18 @@ html {
       transition: -webkit-transform 0.5s ease 0s;
       transition: transform 0.5s ease 0s;
       transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s; }
+  .majoras-mask__h1 {
+    color: #fafafa;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%; }
 
 html,
 body {
   background-color: #111;
   text-align: center;
   color: #fff; }
-
-h1 {
-  font-size: 50px;
-  line-height: 50px;
-  color: #fafafa;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  margin-top: -25px; }
 
 .concrete {
   background-image: url(../src/images/portalWall.png); }
