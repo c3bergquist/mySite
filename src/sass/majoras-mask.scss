@@ -300,6 +300,10 @@
 			text-align: center;
 			top: 2%;
 			width: 100%;
+			
+			@media #{$small-screen} {
+				top: 10%;
+			}
 		}
 		
 		&__slide {
@@ -362,8 +366,10 @@
 			width: 100%;
 			
 			@media #{$small-screen} {
+				bottom: 0;
 				font-size: 16px;
 				line-height: 18px;
+				padding: 0 25px;
 			}
 		}
 		
@@ -401,6 +407,12 @@
 		text-align: left;
 		top: 2%;
 		z-index: 1000;
+		
+		@media #{$small-screen} {
+			text-align: center;
+			top: 5%;
+			width: 100%;
+		}
 	}
 	
 	&__nav-link {
