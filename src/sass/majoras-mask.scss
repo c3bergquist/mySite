@@ -373,6 +373,10 @@
 				overflow: scroll;
 				padding: 0 25px 25px;
 			}
+			
+			@media #{$small-screen} {
+				max-height: 250px;
+			}
 		}
 		
 		&__track {

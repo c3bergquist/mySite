@@ -680,6 +680,9 @@ html {
           max-height: 300px;
           overflow: scroll;
           padding: 0 25px 25px; } }
+      @media screen and (max-width: 480px) {
+        .majoras-mask__carousel__slide-content {
+          max-height: 250px; } }
     .majoras-mask__carousel__track {
       bottom: 0;
       left: 0;
