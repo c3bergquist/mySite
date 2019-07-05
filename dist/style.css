@@ -677,6 +677,8 @@ html {
           bottom: 0;
           font-size: 16px;
           line-height: 18px;
+          max-height: 300px;
+          overflow: scroll;
           padding: 0 25px; } }
     .majoras-mask__carousel__track {
       bottom: 0;
@@ -709,7 +711,7 @@ html {
     @media screen and (max-width: 480px) {
       .majoras-mask__nav {
         text-align: center;
-        top: 5%;
+        top: 3%;
         width: 100%; } }
   .majoras-mask__nav-link {
     color: #999;

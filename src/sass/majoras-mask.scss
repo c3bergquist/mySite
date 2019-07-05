@@ -369,6 +369,8 @@
 				bottom: 0;
 				font-size: 16px;
 				line-height: 18px;
+				max-height: 300px;
+				overflow: scroll;
 				padding: 0 25px;
 			}
 		}
@@ -410,7 +412,7 @@
 		
 		@media #{$small-screen} {
 			text-align: center;
-			top: 5%;
+			top: 3%;
 			width: 100%;
 		}
 	}
