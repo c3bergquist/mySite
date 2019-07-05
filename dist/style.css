@@ -625,7 +625,7 @@ html {
       text-align: center;
       top: 2%;
       width: 100%; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 1223px) {
         .majoras-mask__carousel__indicators {
           top: 10%; } }
     .majoras-mask__carousel__slide {
@@ -672,14 +672,14 @@ html {
       padding: 0 150px;
       position: absolute;
       width: 100%; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 1223px) {
         .majoras-mask__carousel__slide-content {
           bottom: 0;
           font-size: 16px;
           line-height: 18px;
           max-height: 300px;
           overflow: scroll;
-          padding: 0 25px; } }
+          padding: 0 25px 25px; } }
     .majoras-mask__carousel__track {
       bottom: 0;
       left: 0;
@@ -708,7 +708,7 @@ html {
     text-align: left;
     top: 2%;
     z-index: 1000; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 1223px) {
       .majoras-mask__nav {
         text-align: center;
         top: 3%;

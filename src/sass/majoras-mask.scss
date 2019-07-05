@@ -301,7 +301,7 @@
 			top: 2%;
 			width: 100%;
 			
-			@media #{$small-screen} {
+			@media #{$medium-screen} {
 				top: 10%;
 			}
 		}
@@ -365,13 +365,13 @@
 			position: absolute;
 			width: 100%;
 			
-			@media #{$small-screen} {
+			@media #{$medium-screen} {
 				bottom: 0;
 				font-size: 16px;
 				line-height: 18px;
 				max-height: 300px;
 				overflow: scroll;
-				padding: 0 25px;
+				padding: 0 25px 25px;
 			}
 		}
 		
@@ -410,7 +410,7 @@
 		top: 2%;
 		z-index: 1000;
 		
-		@media #{$small-screen} {
+		@media #{$medium-screen} {
 			text-align: center;
 			top: 3%;
 			width: 100%;
