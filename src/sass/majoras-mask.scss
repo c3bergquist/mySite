@@ -1,12 +1,12 @@
 @import './variables.scss';
 
 .majoras-mask {
-	background-color: $dark-grey;
-	background-image: url('../src/images/empty-face.png');
-	background-position: 50% 25%;
+	background-color: $off-black;
+	background-image: url('../src/images/link-me.png');
+	background-position: 50% 35%;
 	background-repeat: no-repeat;
-	background-size: 50%;
-	color: #fff;
+	background-size: 40%;
+	color: $white;
 	display: block;
 	font-family: $font-pt-sans;
 	overflow: hidden;
@@ -265,25 +265,25 @@
 			}
 			
 			&:nth-of-type(1) {
-				background-image: url('../src/images/empty-face.png');
+				background-image: url('../src/images/link-me.png');
 				background-size: cover;
 				background-position: center;
 			}
 			
 			&:nth-of-type(2) {
-				background-image: url('../src/images/mario-face.png');
+				background-image: url('../src/images/mario-mask.png');
 				background-size: cover;
 				background-position: center;
 			}
 			
 			&:nth-of-type(3) {
-				background-image: url("https://unsplash.it/900?random");
+				background-image: url('../src/images/majoras-mask.png');
 				background-size: cover;
 				background-position: center;
 			}
 			
 			&:nth-of-type(4) {
-				background-image: url("https://unsplash.it/1200?random");
+				background-image: url('../src/images/minecraft-mask.png');
 				background-size: cover;
 				background-position: center;
 			}
@@ -298,14 +298,14 @@
 		&__indicators {
 			position: absolute;
 			text-align: center;
-			top: 5%;
+			top: 2%;
 			width: 100%;
 		}
 		
 		&__slide {
-			background-position: 50% 25%;
+			background-position: 50% 35%;
 			background-repeat: no-repeat;
-			background-size: 50%;
+			background-size: 40%;
 			display: block;
 			height: 100%;
 			left: 0;
@@ -325,27 +325,21 @@
 			}
 			
 			&:nth-of-type(2) {
-				background-image: url('../src/images/mario-face.png');
+				background-image: url('../src/images/mario-mask.png');
 				transform: translateX(100%);
 				-webkit-transform: translateX(100%);
 			}
 			
 			&:nth-of-type(3) {
-				-webkit-transform: translateX(200%);
+				background-image: url('../src/images/majoras-mask.png');
 				transform: translateX(200%);
-				
-				background-image: url("https://unsplash.it/900?random");
-				background-size: cover;
-				background-position: center;
+				-webkit-transform: translateX(200%);
 			}
 			
 			&:nth-of-type(4) {
-				-webkit-transform: translateX(300%);
+				background-image: url('../src/images/minecraft-mask.png');
 				transform: translateX(300%);
-				
-				background-image: url("https://unsplash.it/1200?random");
-				background-size: cover;
-				background-position: center;
+				-webkit-transform: translateX(300%);
 			}
 			
 			&:nth-of-type(5) {
@@ -363,7 +357,7 @@
 			bottom: 5%;
 			font-size: 18px;
 			margin: 0 auto;
-			padding: 0 25px;
+			padding: 0 150px;
 			position: absolute;
 			width: 100%;
 			
@@ -397,6 +391,26 @@
 		@media #{$small-screen} {
 			font-size: 24px;
 			line-height: 24px;
+		}
+	}
+	
+	&__nav {
+		font-size: 16px;
+		font-weight: 700;
+		position: absolute;
+		text-align: left;
+		top: 2%;
+		z-index: 1000;
+	}
+	
+	&__nav-link {
+		color: $grey;
+		text-decoration: none;
+		padding: 0 25px;
+		
+		&:focus,
+		&:hover {
+			color: $white;
 		}
 	}
 }

@@ -374,7 +374,8 @@ function goDownPipe(number, pipe) {
 	if(number == '3') {
 		setTimeout(function() {
 				clearInterval(st);
-				window.location.href = './contact.html';
+				window.open('./resume.html', '_blank');
+				window.location.reload(false); 
 			}, 1150);
 	}
 }

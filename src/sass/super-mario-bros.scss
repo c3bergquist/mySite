@@ -242,10 +242,10 @@
 				}
 			}
 			
-			&--contact {
+			&--resume {
 				@media #{$medium-screen} {
 					&::before {
-						content: 'Contact \a' $down-arrow;
+						content: 'Resume \a' $down-arrow;
 					}
 				}
 			}
@@ -323,8 +323,8 @@
 				}
 			}
 			
-			&--contact {
-				margin-left: 105px;
+			&--resume {
+				margin-left: 115px;
 				
 				@media #{$medium-screen} {
 					margin-left: 10%;

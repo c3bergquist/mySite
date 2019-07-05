@@ -21,6 +21,14 @@ html {
   src: url("../src/fonts/emulogic/emulogic.ttf");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
+/* Minecraft */
+@font-face {
+  font-family: Minecraft;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/fonts/minecraft/Minecraft.ttf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* PT Sans */
 @font-face {
   font-family: 'PT Sans';
@@ -303,8 +311,8 @@ html {
         .super-mario-bros__link-list__link-item--portfolio::before {
           content: "Portfolio \a" ""; } }
       @media screen and (max-width: 1223px) {
-        .super-mario-bros__link-list__link-item--contact::before {
-          content: "Contact \a" ""; } }
+        .super-mario-bros__link-list__link-item--resume::before {
+          content: "Resume \a" ""; } }
   .super-mario-bros__logo {
     display: block;
     flex-grow: 0;
@@ -360,13 +368,13 @@ html {
         @media screen and (max-width: 480px) {
           .super-mario-bros__names-list__name-item--portfolio {
             top: 30%; } }
-      .super-mario-bros__names-list__name-item--contact {
-        margin-left: 105px; }
+      .super-mario-bros__names-list__name-item--resume {
+        margin-left: 115px; }
         @media screen and (max-width: 1223px) {
-          .super-mario-bros__names-list__name-item--contact {
+          .super-mario-bros__names-list__name-item--resume {
             margin-left: 10%; } }
         @media screen and (max-width: 480px) {
-          .super-mario-bros__names-list__name-item--contact {
+          .super-mario-bros__names-list__name-item--resume {
             top: 60%; } }
   .super-mario-bros__overlay {
     display: block;
@@ -427,11 +435,11 @@ html {
 /* Colors */
 /* Font Awesome Content */
 .majoras-mask {
-  background-color: #222;
-  background-image: url("../src/images/empty-face.png");
-  background-position: 50% 25%;
+  background-color: #111;
+  background-image: url("../src/images/link-me.png");
+  background-position: 50% 35%;
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 40%;
   color: #fff;
   display: block;
   font-family: "PT Sans";
@@ -593,19 +601,19 @@ html {
       .majoras-mask__carousel__indicator:hover {
         opacity: 0.75; }
       .majoras-mask__carousel__indicator:nth-of-type(1) {
-        background-image: url("../src/images/empty-face.png");
+        background-image: url("../src/images/link-me.png");
         background-size: cover;
         background-position: center; }
       .majoras-mask__carousel__indicator:nth-of-type(2) {
-        background-image: url("../src/images/mario-face.png");
+        background-image: url("../src/images/mario-mask.png");
         background-size: cover;
         background-position: center; }
       .majoras-mask__carousel__indicator:nth-of-type(3) {
-        background-image: url("https://unsplash.it/900?random");
+        background-image: url("../src/images/majoras-mask.png");
         background-size: cover;
         background-position: center; }
       .majoras-mask__carousel__indicator:nth-of-type(4) {
-        background-image: url("https://unsplash.it/1200?random");
+        background-image: url("../src/images/minecraft-mask.png");
         background-size: cover;
         background-position: center; }
       .majoras-mask__carousel__indicator:nth-of-type(5) {
@@ -615,12 +623,12 @@ html {
     .majoras-mask__carousel__indicators {
       position: absolute;
       text-align: center;
-      top: 5%;
+      top: 2%;
       width: 100%; }
     .majoras-mask__carousel__slide {
-      background-position: 50% 25%;
+      background-position: 50% 35%;
       background-repeat: no-repeat;
-      background-size: 50%;
+      background-size: 40%;
       display: block;
       height: 100%;
       left: 0;
@@ -636,21 +644,17 @@ html {
         -webkit-transform: translateX(0%);
         transform: translateX(0%); }
       .majoras-mask__carousel__slide:nth-of-type(2) {
-        background-image: url("../src/images/mario-face.png");
+        background-image: url("../src/images/mario-mask.png");
         transform: translateX(100%);
         -webkit-transform: translateX(100%); }
       .majoras-mask__carousel__slide:nth-of-type(3) {
-        -webkit-transform: translateX(200%);
+        background-image: url("../src/images/majoras-mask.png");
         transform: translateX(200%);
-        background-image: url("https://unsplash.it/900?random");
-        background-size: cover;
-        background-position: center; }
+        -webkit-transform: translateX(200%); }
       .majoras-mask__carousel__slide:nth-of-type(4) {
-        -webkit-transform: translateX(300%);
+        background-image: url("../src/images/minecraft-mask.png");
         transform: translateX(300%);
-        background-image: url("https://unsplash.it/1200?random");
-        background-size: cover;
-        background-position: center; }
+        -webkit-transform: translateX(300%); }
       .majoras-mask__carousel__slide:nth-of-type(5) {
         -webkit-transform: translateX(400%);
         transform: translateX(400%);
@@ -662,7 +666,7 @@ html {
       bottom: 5%;
       font-size: 18px;
       margin: 0 auto;
-      padding: 0 25px;
+      padding: 0 150px;
       position: absolute;
       width: 100%; }
       @media screen and (max-width: 480px) {
@@ -690,6 +694,41 @@ html {
       .majoras-mask__h1 {
         font-size: 24px;
         line-height: 24px; } }
+  .majoras-mask__nav {
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    text-align: left;
+    top: 2%;
+    z-index: 1000; }
+  .majoras-mask__nav-link {
+    color: #999;
+    text-decoration: none;
+    padding: 0 25px; }
+    .majoras-mask__nav-link:focus, .majoras-mask__nav-link:hover {
+      color: #fff; }
+
+/* Variables */
+/* Colors */
+/* Font Awesome Content */
+.minecraft {
+  background-image: url("../src/images/under-construction.png");
+  background-position: center;
+  background-size: cover;
+  font-family: "Minecraft"; }
+  .minecraft .under-construction {
+    background-color: #333333cc;
+    color: #fff;
+    font-size: 24px;
+    margin: 30px;
+    max-width: 800px;
+    padding: 15px; }
+    .minecraft .under-construction a {
+      color: #fff; }
+      .minecraft .under-construction a:focus, .minecraft .under-construction a:hover {
+        color: #999; }
+    .minecraft .under-construction p {
+      margin: 0; }
 
 .concrete {
   background-image: url(../src/images/portalWall.png); }
