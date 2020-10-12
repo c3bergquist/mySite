@@ -15,8 +15,9 @@
 		top: 340px;
 		width: 72px;
 		
-		&:hover {
+		&:hover, &:focus {
 			border: 4px solid $white;
+			outline: none;
 			
 			.toggle-hidden {
 				display: block;

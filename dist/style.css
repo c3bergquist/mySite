@@ -739,9 +739,10 @@ html {
     position: relative;
     top: 340px;
     width: 72px; }
-    .minecraft__project:hover {
-      border: 4px solid #fff; }
-      .minecraft__project:hover .toggle-hidden {
+    .minecraft__project:hover, .minecraft__project:focus {
+      border: 4px solid #fff;
+      outline: none; }
+      .minecraft__project:hover .toggle-hidden, .minecraft__project:focus .toggle-hidden {
         display: block; }
     .minecraft__project__details {
       background-color: #1e0f1efa;
