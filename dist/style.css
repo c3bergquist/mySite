@@ -320,7 +320,7 @@ html {
     max-width: 750px;
     position: relative;
     top: 8%;
-    width: 50%; }
+    width: 25%; }
     @media screen and (max-width: 1223px) {
       .super-mario-bros__logo {
         margin-top: 5%;
@@ -731,6 +731,55 @@ html {
   background-position: center;
   background-size: cover;
   font-family: "Minecraft"; }
+  .minecraft__project {
+    border: 4px solid transparent;
+    display: inline-block;
+    height: 72px;
+    left: 24px;
+    position: relative;
+    top: 340px;
+    width: 72px; }
+    .minecraft__project:hover {
+      border: 4px solid #fff; }
+      .minecraft__project:hover .toggle-hidden {
+        display: block; }
+    .minecraft__project__details {
+      background-color: #1e0f1efa;
+      border: 4px groove #2e0a65;
+      border-radius: 5px;
+      display: none;
+      margin: -25px 35px;
+      padding: 10px;
+      position: absolute;
+      width: 400px;
+      z-index: 100; }
+      .minecraft__project__details__detail {
+        color: #5555ff;
+        font-size: 2.4em;
+        font-style: italic;
+        margin: 0;
+        text-shadow: 2px 2px #1e0f1e; }
+        .minecraft__project__details__detail--grey {
+          color: #999;
+          text-shadow: 2px 2px #222; }
+        .minecraft__project__details__detail--white {
+          color: #fff;
+          text-shadow: 2px 2px #222; }
+      .minecraft__project__details__name {
+        color: #fff;
+        font-size: 2.4em;
+        font-weight: 400;
+        margin: 0 0 10px;
+        text-shadow: 2px 2px #999; }
+    .minecraft__project__image {
+      width: 100%; }
+  .minecraft__projects {
+    max-height: 750px; }
+    .minecraft__projects__container {
+      background-image: url("../src/images/minecraft-inventory.png");
+      height: 656px;
+      margin: 0 auto;
+      width: 696px; }
   .minecraft .under-construction {
     background-color: #333333cc;
     color: #fff;

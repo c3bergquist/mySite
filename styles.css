@@ -24,7 +24,7 @@ body {
 
 footer {
 	background-color: #ddd;
-	margin-top: 30px;
+	margin-top: 25px;
 	padding: 30px;
 }
 
@@ -63,7 +63,7 @@ section {
 }
 
 .contact-list li {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .contact-list li:last-child {
@@ -90,6 +90,7 @@ section {
 
 .header__title {
 	display: block;
+	padding-top: 5px;
 }
 
 .header__contact {
@@ -105,7 +106,7 @@ section {
 .job {
 	display: flex;
 	flex-direction: row;
-	margin: 0 0 30px;
+	margin: 0 0 15px;
 }
 
 .job:last-child {
@@ -131,7 +132,7 @@ section {
 }
 
 .job__duties li {
-	margin: 10px 0 0;
+	margin: 5px 0 0;
 }
 
 .profile {
