@@ -1,17 +1,96 @@
-@charset "UTF-8";
 /* Start imports */
-html, body {
-  box-sizing: border-box;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  min-width: 100%; }
+@import url(../node_modules/normalize.css/normalize.css);
+@import url(../node_modules/@fortawesome/fontawesome-free/css/all.min.css);
+/* Montserrat */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Regular.ttf");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
 
-html {
-  font-size: 62.5%; }
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Regular.ttf");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
 
-* {
-  box-sizing: border-box; }
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Regular.ttf");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Regular.ttf");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Regular.ttf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Bold.ttf");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Bold.ttf");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Bold.ttf");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Bold.ttf");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/fonts/Montserrat/Montserrat-Bold.ttf");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* Emulogic */
 @font-face {
@@ -107,11 +186,93 @@ html {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* Variables */
-/* Colors */
+/* Sitewide Colors */
+/* NES Colors */
 /* Font Awesome Content */
-@media screen and (max-width: 1223px) {
+body,
+html {
+  height: 100%;
+  height: 100vh;
+  min-height: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  width: 100%; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400; }
+
+@media screen and (min-width: 961px) {
   .desktop-only {
     display: none; } }
+
+.l-container {
+  margin: 0 auto;
+  width: 90%; }
+
+.l-full-height {
+  height: 100%; }
+
+.a-rainbow-party:hover {
+  animation: rainbow 2s ease infinite; }
+
+@keyframes change-about-icon {
+  from {
+    content: '\f05a'; }
+  40% {
+    content: '\f05a'; }
+  50% {
+    content: '\f059'; }
+  to {
+    content: '\f059'; } }
+
+@keyframes change-portfolio-icon {
+  from {
+    content: '\f466'; }
+  40% {
+    content: '\f466'; }
+  50% {
+    content: '\f49e'; }
+  to {
+    content: '\f49e'; } }
+
+@keyframes change-resume-icon {
+  from {
+    content: '\f508'; }
+  40% {
+    content: '\f508'; }
+  50% {
+    content: '\f15b'; }
+  to {
+    content: '\f15b'; } }
+
+@keyframes rainbow {
+  from {
+    color: red; }
+  9% {
+    color: orange; }
+  27% {
+    color: yellow; }
+  43% {
+    color: green; }
+  59% {
+    color: blue; }
+  75% {
+    color: indigo; }
+  91% {
+    color: violet; }
+  to {
+    color: red; } }
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0); }
+  20% {
+    transform: rotateZ(-25deg); }
+  70% {
+    transform: rotateZ(385deg); }
+  to {
+    transform: rotateZ(360deg); } }
 
 @keyframes up-down {
   from {
@@ -122,730 +283,134 @@ html {
     transform: translate3d(0, 0, 0); } }
 
 /* Variables */
-/* Colors */
+/* Sitewide Colors */
+/* NES Colors */
 /* Font Awesome Content */
-.super-mario-bros {
-  background-color: #6699ff;
-  background-image: url("../src/images/headerBG.png");
-  background-position: left 50%;
-  background-repeat: repeat-x;
-  color: #000;
-  font-family: "Emulogic";
-  height: 100%;
+.c-header {
   width: 100%; }
-  @media screen and (max-width: 1223px) {
-    .super-mario-bros {
-      height: auto;
-      min-height: 100%;
-      position: absolute; } }
-  @media screen and (max-width: 480px) {
-    .super-mario-bros {
-      background-position: 100% 40%;
-      overflow: hidden; } }
-  .super-mario-bros__bricks {
-    background-image: url("../src/images/brick.png");
-    background-position: left top;
-    background-repeat: repeat;
-    background-size: auto;
-    bottom: 0;
-    height: 125px;
-    left: 0;
-    position: absolute;
-    width: 100%; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__bricks {
-        position: absolute; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__bricks {
-        background-size: 10%;
-        height: 10%; } }
-  .super-mario-bros__lakitu-henry {
-    animation-duration: 1.0s;
-    animation-iteration-count: infinite;
-    animation-name: up-down;
-    animation-timing-function: linear;
-    display: block;
-    left: 5%;
-    position: absolute;
-    text-align: center;
-    top: 10%;
-    transform-origin: bottom center;
-    width: 200px; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__lakitu-henry {
-        left: 0;
-        margin: 50px auto;
-        position: relative; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__lakitu-henry {
-        display: none; } }
-    .super-mario-bros__lakitu-henry__control {
-      margin: 0 auto 15px auto; }
-      .super-mario-bros__lakitu-henry__control:last-child {
-        margin: 0 auto; }
-      @media screen and (max-width: 1223px) {
-        .super-mario-bros__lakitu-henry__control {
-          display: none; }
-          .super-mario-bros__lakitu-henry__control:last-child {
-            display: block; } }
-    .super-mario-bros__lakitu-henry__instructions {
-      background-color: #fff;
-      border: 5px solid #000;
-      font-family: "Font Awesome 5 Free", "Emulogic";
-      font-size: 18px;
-      font-weight: 600;
-      margin-top: -5px;
-      padding: 15px;
-      position: relative;
-      width: 100%; }
-  .super-mario-bros__link {
-    display: block;
-    height: 116px;
-    text-decoration: none; }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__link {
-        height: auto; } }
-    .super-mario-bros__link:focus, .super-mario-bros__link:hover {
-      outline: none; }
-      .super-mario-bros__link:focus::before, .super-mario-bros__link:hover::before {
-        animation-duration: 1.0s;
-        animation-iteration-count: infinite;
-        animation-name: up-down;
-        animation-timing-function: linear;
-        color: #000;
-        content: "";
-        display: block;
-        font-family: "Font Awesome 5 Free", "Emulogic";
-        font-size: 35px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 900;
-        position: absolute;
-        text-align: center;
-        text-rendering: auto;
-        top: -75px;
-        transform-origin: bottom center;
-        width: 100%;
-        -webkit-font-smoothing: antialiased; }
-        @media screen and (max-width: 1223px) {
-          .super-mario-bros__link:focus::before, .super-mario-bros__link:hover::before {
-            display: none; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__link__image {
-        display: none; } }
-    .super-mario-bros__link__text {
-      display: none; }
-      @media screen and (max-width: 480px) {
-        .super-mario-bros__link__text {
-          color: #000;
-          display: block;
-          font-size: 18px; } }
-  .super-mario-bros__link-list {
-    bottom: 125px;
-    display: block;
-    flex-grow: 0;
-    font-size: 18px;
-    height: 116px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 100%; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__link-list {
-        flex-direction: column;
-        position: absolute;
-        text-align: center; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__link-list {
-        bottom: auto;
-        height: auto;
-        padding: 25px;
-        position: relative;
-        text-align: left; } }
-    .super-mario-bros__link-list__link-item {
-      display: inline-block;
-      list-style-type: none;
-      margin: 0 4px 0 150px;
-      position: relative;
-      width: 96px; }
-      @media screen and (max-width: 1223px) {
-        .super-mario-bros__link-list__link-item {
-          margin-left: 10%; }
-          .super-mario-bros__link-list__link-item::before {
-            align-items: center;
-            color: #000;
-            content: "";
-            display: flex;
-            flex-direction: column;
-            font-family: "Font Awesome 5 Free", "Emulogic";
-            font-size: 18px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 600;
-            justify-content: center;
-            overflow: visible;
-            position: absolute;
-            text-rendering: auto;
-            top: -75px;
-            width: 100%;
-            -webkit-font-smoothing: antialiased; } }
-      @media screen and (max-width: 480px) {
-        .super-mario-bros__link-list__link-item {
-          display: block;
-          margin: 50px 0 50px 15%;
-          width: auto; }
-          .super-mario-bros__link-list__link-item::before {
-            display: none; } }
-      .super-mario-bros__link-list__link-item--about {
-        margin-left: calc(50% - 200px); }
-        @media screen and (max-width: 1223px) {
-          .super-mario-bros__link-list__link-item--about {
-            margin-left: 0; }
-            .super-mario-bros__link-list__link-item--about::before {
-              content: "About \a" ""; } }
-        @media screen and (max-width: 480px) {
-          .super-mario-bros__link-list__link-item--about {
-            margin-left: 15%;
-            margin-top: 0; } }
-      @media screen and (max-width: 1223px) {
-        .super-mario-bros__link-list__link-item--portfolio::before {
-          content: "Portfolio \a" ""; } }
-      @media screen and (max-width: 1223px) {
-        .super-mario-bros__link-list__link-item--resume::before {
-          content: "Resume \a" ""; } }
-  .super-mario-bros__logo {
-    display: block;
-    flex-grow: 0;
-    margin: 0 auto;
-    max-width: 750px;
-    position: relative;
-    top: 8%;
-    width: 25%; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__logo {
-        margin-top: 5%;
-        width: 90%; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__logo {
-        margin: 0;
-        width: 100%; } }
-  .super-mario-bros__name {
-    margin: 0;
-    text-align: center;
-    min-width: 96px; }
-  .super-mario-bros__names-list {
-    bottom: 225px;
-    display: block;
-    flex-grow: 0;
-    font-size: 18px;
-    height: 20px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 100%; }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__names-list {
-        flex-grow: 1;
-        font-size: 24px;
-        padding-left: 50px;
-        position: relative; } }
-    .super-mario-bros__names-list__name-item {
-      color: #000;
-      display: inline-block;
-      list-style-type: none;
-      position: relative;
-      text-decoration: none; }
-      .super-mario-bros__names-list__name-item--about {
-        margin-left: calc(50% - 200px); }
-        @media screen and (max-width: 1223px) {
-          .super-mario-bros__names-list__name-item--about {
-            margin-left: 0; } }
-      .super-mario-bros__names-list__name-item--portfolio {
-        margin-left: 120px; }
-        @media screen and (max-width: 1223px) {
-          .super-mario-bros__names-list__name-item--portfolio {
-            margin-left: 10%; } }
-        @media screen and (max-width: 480px) {
-          .super-mario-bros__names-list__name-item--portfolio {
-            top: 30%; } }
-      .super-mario-bros__names-list__name-item--resume {
-        margin-left: 115px; }
-        @media screen and (max-width: 1223px) {
-          .super-mario-bros__names-list__name-item--resume {
-            margin-left: 10%; } }
-        @media screen and (max-width: 480px) {
-          .super-mario-bros__names-list__name-item--resume {
-            top: 60%; } }
-  .super-mario-bros__overlay {
-    display: block;
-    height: calc(100% - 125px);
-    left: 0;
-    overflow: hidden;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    width: 100%; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__overlay {
-        height: auto;
-        margin-bottom: 350px;
-        min-height: calc(100%  - 125px);
-        position: relative; } }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__overlay {
-        height: auto;
-        margin-bottom: 0;
-        padding: 25px; } }
-  .super-mario-bros__sprite-sheet {
-    display: none; }
-    @media screen and (max-width: 480px) {
-      .super-mario-bros__sprite-sheet {
-        bottom: 10%;
-        display: block;
-        overflow: hidden;
-        padding-right: 25px;
-        position: absolute; }
-        .super-mario-bros__sprite-sheet__image {
-          margin: 0 0 -1px -100%;
-          width: 200%; } }
-  .super-mario-bros__underlay {
-    background: none;
-    display: block;
-    height: calc(100% - 125px);
-    left: 0;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    width: 100%; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__underlay {
-        display: none; } }
-  .super-mario-bros__world {
-    display: block;
-    height: calc(100vh - 125px);
-    position: relative;
-    width: 100vw; }
-    @media screen and (max-width: 1223px) {
-      .super-mario-bros__world {
-        display: none; } }
-  .super-mario-bros img {
-    image-rendering: pixelated; }
-
-/* Variables */
-/* Colors */
-/* Font Awesome Content */
-.majoras-mask {
-  background-color: #111;
-  background-image: url("../src/images/link-me.png");
-  background-position: 50% 35%;
-  background-repeat: no-repeat;
-  background-size: 40%;
-  color: #fff;
-  display: block;
-  font-family: "PT Sans";
-  overflow: hidden;
-  text-align: center; }
-  @media screen and (max-width: 480px) {
-    .majoras-mask {
-      background-size: 75%; } }
-  .majoras-mask__carousel {
-    border-radius: 5px;
-    height: 100vh;
-    list-style: none;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    width: 100vw; }
-    .majoras-mask__carousel__activator {
-      left: -999px;
-      position: absolute;
-      top: -999px;
-      z-index: -999; }
-      .majoras-mask__carousel__activator:nth-of-type(1):checked ~ .majoras-mask__carousel__track {
-        -webkit-transform: translateX(0%);
-        transform: translateX(0%); }
-      .majoras-mask__carousel__activator:nth-of-type(1):checked ~ .majoras-mask__carousel__slide:nth-of-type(1) {
-        transition: opacity 0.5s, -webkit-transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
-        top: 0;
-        left: 0;
-        right: 0;
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1); }
-      .majoras-mask__carousel__activator:nth-of-type(1):checked ~ .majoras-mask__carousel__controls:nth-of-type(1) {
-        display: block;
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(1):checked ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(1) {
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(1):focus ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(1) {
-        border: 3px solid #fff; }
-      .majoras-mask__carousel__activator:nth-of-type(2):checked ~ .majoras-mask__carousel__track {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%); }
-      .majoras-mask__carousel__activator:nth-of-type(2):checked ~ .majoras-mask__carousel__slide:nth-of-type(2) {
-        transition: opacity 0.5s, -webkit-transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
-        top: 0;
-        left: 0;
-        right: 0;
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1); }
-      .majoras-mask__carousel__activator:nth-of-type(2):checked ~ .majoras-mask__carousel__controls:nth-of-type(2) {
-        display: block;
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(2):checked ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(2) {
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(2):focus ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(2) {
-        border: 3px solid #fff; }
-      .majoras-mask__carousel__activator:nth-of-type(3):checked ~ .majoras-mask__carousel__track {
-        -webkit-transform: translateX(-200%);
-        transform: translateX(-200%); }
-      .majoras-mask__carousel__activator:nth-of-type(3):checked ~ .majoras-mask__carousel__slide:nth-of-type(3) {
-        transition: opacity 0.5s, -webkit-transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
-        top: 0;
-        left: 0;
-        right: 0;
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1); }
-      .majoras-mask__carousel__activator:nth-of-type(3):checked ~ .majoras-mask__carousel__controls:nth-of-type(3) {
-        display: block;
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(3):checked ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(3) {
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(3):focus ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(3) {
-        border: 3px solid #fff; }
-      .majoras-mask__carousel__activator:nth-of-type(4):checked ~ .majoras-mask__carousel__track {
-        -webkit-transform: translateX(-300%);
-        transform: translateX(-300%); }
-      .majoras-mask__carousel__activator:nth-of-type(4):checked ~ .majoras-mask__carousel__slide:nth-of-type(4) {
-        transition: opacity 0.5s, -webkit-transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
-        top: 0;
-        left: 0;
-        right: 0;
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1); }
-      .majoras-mask__carousel__activator:nth-of-type(4):checked ~ .majoras-mask__carousel__controls:nth-of-type(4) {
-        display: block;
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(4):checked ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(4) {
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(4):focus ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(4) {
-        border: 3px solid #fff; }
-      .majoras-mask__carousel__activator:nth-of-type(5):checked ~ .majoras-mask__carousel__track {
-        -webkit-transform: translateX(-400%);
-        transform: translateX(-400%); }
-      .majoras-mask__carousel__activator:nth-of-type(5):checked ~ .majoras-mask__carousel__slide:nth-of-type(5) {
-        transition: opacity 0.5s, -webkit-transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s;
-        transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
-        top: 0;
-        left: 0;
-        right: 0;
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1); }
-      .majoras-mask__carousel__activator:nth-of-type(5):checked ~ .majoras-mask__carousel__controls:nth-of-type(5) {
-        display: block;
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(5):checked ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(5) {
-        opacity: 1; }
-      .majoras-mask__carousel__activator:nth-of-type(5):focus ~ .majoras-mask__carousel__indicators .majoras-mask__carousel__indicator:nth-of-type(5) {
-        border: 3px solid #fff; }
-    .majoras-mask__carousel__control {
-      border-color: #fafafa;
-      border-style: solid;
-      border-width: 5px 5px 0 0;
-      cursor: pointer;
-      display: block;
-      height: 30px;
-      margin-top: -15px;
-      opacity: 0.35;
-      outline: 0;
-      position: absolute;
-      top: 50%;
-      width: 30px;
-      z-index: 3; }
-      .majoras-mask__carousel__control:hover {
-        opacity: 1; }
-      .majoras-mask__carousel__control--backward {
-        left: 5%;
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg); }
-      .majoras-mask__carousel__control--forward {
-        right: 5%;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg); }
-    .majoras-mask__carousel__controls {
-      display: none; }
-    .majoras-mask__carousel__indicator {
-      border-radius: 100%;
-      cursor: pointer;
-      display: inline-block;
-      height: 50px;
-      margin: 0 2.5px 0 2.5px;
-      opacity: 0.35;
-      width: 50px;
-      z-index: 2; }
-      .majoras-mask__carousel__indicator:hover {
-        opacity: 0.75; }
-      .majoras-mask__carousel__indicator:nth-of-type(1) {
-        background-image: url("../src/images/link-me.png");
-        background-size: cover;
-        background-position: center; }
-      .majoras-mask__carousel__indicator:nth-of-type(2) {
-        background-image: url("../src/images/mario-mask.png");
-        background-size: cover;
-        background-position: center; }
-      .majoras-mask__carousel__indicator:nth-of-type(3) {
-        background-image: url("../src/images/majoras-mask.png");
-        background-size: cover;
-        background-position: center; }
-      .majoras-mask__carousel__indicator:nth-of-type(4) {
-        background-image: url("../src/images/minecraft-mask.png");
-        background-size: cover;
-        background-position: center; }
-      .majoras-mask__carousel__indicator:nth-of-type(5) {
-        background-image: url("https://unsplash.it/1500?random");
-        background-size: cover;
-        background-position: center; }
-    .majoras-mask__carousel__indicators {
-      position: absolute;
-      text-align: center;
-      top: 2%;
-      width: 100%; }
-      @media screen and (max-width: 1223px) {
-        .majoras-mask__carousel__indicators {
-          top: 10%; } }
-    .majoras-mask__carousel__slide {
-      background-position: 50% 35%;
-      background-repeat: no-repeat;
-      background-size: 40%;
-      display: block;
-      height: 100%;
-      left: 0;
-      opacity: 1;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      top: 0; }
-      @media screen and (max-width: 480px) {
-        .majoras-mask__carousel__slide {
-          background-size: 75%; } }
-      .majoras-mask__carousel__slide:nth-of-type(1) {
-        -webkit-transform: translateX(0%);
-        transform: translateX(0%); }
-      .majoras-mask__carousel__slide:nth-of-type(2) {
-        background-image: url("../src/images/mario-mask.png");
-        transform: translateX(100%);
-        -webkit-transform: translateX(100%); }
-      .majoras-mask__carousel__slide:nth-of-type(3) {
-        background-image: url("../src/images/majoras-mask.png");
-        transform: translateX(200%);
-        -webkit-transform: translateX(200%); }
-      .majoras-mask__carousel__slide:nth-of-type(4) {
-        background-image: url("../src/images/minecraft-mask.png");
-        transform: translateX(300%);
-        -webkit-transform: translateX(300%); }
-      .majoras-mask__carousel__slide:nth-of-type(5) {
-        -webkit-transform: translateX(400%);
-        transform: translateX(400%);
-        background-image: url("https://unsplash.it/1500?random");
-        background-size: cover;
-        background-position: center; }
-    .majoras-mask__carousel__slide-content {
-      background-color: #000;
-      bottom: 5%;
-      font-size: 18px;
-      margin: 0 auto;
-      padding: 0 150px;
-      position: absolute;
-      width: 100%; }
-      @media screen and (max-width: 1223px) {
-        .majoras-mask__carousel__slide-content {
-          bottom: 0;
-          font-size: 16px;
-          line-height: 18px;
-          max-height: 300px;
-          overflow: scroll;
-          padding: 0 25px 25px; } }
-      @media screen and (max-width: 480px) {
-        .majoras-mask__carousel__slide-content {
-          max-height: 250px; } }
-    .majoras-mask__carousel__track {
-      bottom: 0;
-      left: 0;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transition: -webkit-transform 0.5s ease 0s;
-      transition: transform 0.5s ease 0s;
-      transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s; }
-  .majoras-mask__h1 {
-    color: #fafafa;
-    font-size: 50px;
-    line-height: 50px;
-    text-align: center;
-    width: 100%; }
-    @media screen and (max-width: 480px) {
-      .majoras-mask__h1 {
-        font-size: 24px;
-        line-height: 24px; } }
-  .majoras-mask__nav {
-    font-size: 16px;
+  .c-header__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 1.2em;
     font-weight: 700;
-    position: absolute;
-    text-align: left;
-    top: 2%;
-    z-index: 1000; }
-    @media screen and (max-width: 1223px) {
-      .majoras-mask__nav {
-        text-align: center;
-        top: 3%;
-        width: 100%; } }
-  .majoras-mask__nav-link {
-    color: #999;
-    text-decoration: none;
-    padding: 0 25px; }
-    .majoras-mask__nav-link:focus, .majoras-mask__nav-link:hover {
-      color: #fff; }
-
-/* Variables */
-/* Colors */
-/* Font Awesome Content */
-.minecraft {
-  background-image: url("../src/images/under-construction.png");
-  background-position: center;
-  background-size: cover;
-  font-family: "Minecraft"; }
-  .minecraft__project {
-    border: 4px solid transparent;
-    display: inline-block;
-    height: 72px;
-    left: 24px;
-    position: relative;
-    top: 340px;
-    width: 72px; }
-    @media screen and (max-width: 480px) {
-      .minecraft__project {
-        border: none;
-        display: block;
-        height: auto;
-        left: unset;
-        margin-bottom: 25px;
-        text-decoration: none;
-        top: unset;
-        width: 100%; } }
-    .minecraft__project:hover, .minecraft__project:focus {
-      border: 4px solid #fff;
-      outline: none; }
-      @media screen and (max-width: 480px) {
-        .minecraft__project:hover, .minecraft__project:focus {
-          border: none; } }
-      .minecraft__project:hover .toggle-hidden, .minecraft__project:focus .toggle-hidden {
-        display: block; }
-    .minecraft__project__details {
-      background-color: #1e0f1efa;
-      border: 4px groove #2e0a65;
-      border-radius: 5px;
-      display: none;
-      margin: -25px 35px;
-      padding: 10px;
-      position: absolute;
-      width: 400px;
-      z-index: 100; }
-      @media screen and (max-width: 480px) {
-        .minecraft__project__details {
-          display: block;
-          margin: 0;
-          position: relative;
-          width: 100%; } }
-      .minecraft__project__details__detail {
-        color: #5555ff;
-        font-size: 2.4em;
-        font-style: italic;
-        margin: 0;
-        text-shadow: 2px 2px #1e0f1e; }
-        @media screen and (max-width: 480px) {
-          .minecraft__project__details__detail {
-            font-size: 1.8em; } }
-        .minecraft__project__details__detail--grey {
-          color: #999;
-          text-shadow: 2px 2px #222; }
-        .minecraft__project__details__detail--white {
-          color: #fff;
-          text-shadow: 2px 2px #222; }
-      .minecraft__project__details__name {
-        color: #fff;
-        font-size: 2.4em;
-        font-weight: 400;
-        margin: 0 0 10px;
-        text-shadow: 2px 2px #999; }
-    .minecraft__project__image {
+    padding: 0; }
+    .c-header__button--nav-toggler:hover {
+      text-decoration: underline; }
+    .c-header__button--nes {
+      color: #dd2020; }
+    .c-header__button--utility-nav {
+      font-size: 1.6em;
+      padding: 0.5em 0;
+      width: 50%; }
+      .c-header__button--utility-nav:hover {
+        text-decoration: underline; }
+  .c-header__container--logo-bar {
+    display: flex;
+    flex-direction: row; }
+  .c-header__container--main-nav {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column; }
+  .c-header__container--utility-nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between; }
+    @media screen and (min-width: 641px) {
+      .c-header__container--utility-nav {
+        margin-right: 0;
+        max-width: 400px; } }
+  .c-header__icon--main-nav {
+    text-align: center;
+    width: 1.5em; }
+  .c-header__icon--nav-toggler {
+    padding: 0 0.5em; }
+  .c-header__icon--utility-nav {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: 0.5em; }
+  .c-header__link {
+    color: #000000;
+    text-decoration: none; }
+    .c-header__link--home {
+      align-items: center;
+      display: flex;
       width: 100%; }
-      @media screen and (max-width: 480px) {
-        .minecraft__project__image {
-          border: 8px ridge #999;
-          display: block; } }
-  .minecraft__projects {
-    max-height: 750px; }
-    @media screen and (max-width: 480px) {
-      .minecraft__projects {
-        padding: 0 25px; } }
-    .minecraft__projects__container {
-      background-image: url("../src/images/minecraft-inventory.png");
-      height: 656px;
-      margin: 0 auto;
-      width: 696px; }
-      @media screen and (max-width: 480px) {
-        .minecraft__projects__container {
-          background-image: none;
-          height: auto;
-          width: 100%; } }
-  .minecraft .under-construction {
-    background-color: #333333cc;
-    color: #fff;
-    font-size: 24px;
-    margin: 30px;
-    max-width: 800px;
-    padding: 15px; }
-    .minecraft .under-construction a {
-      color: #fff; }
-      .minecraft .under-construction a:focus, .minecraft .under-construction a:hover {
-        color: #999; }
-    .minecraft .under-construction p {
-      margin: 0; }
+    .c-header__link--main-nav {
+      font-size: 1.4em; }
+      .c-header__link--main-nav:not(:last-child) {
+        margin-bottom: 1em; }
+      .c-header__link--main-nav:hover {
+        text-decoration: underline; }
+        .c-header__link--main-nav:hover .fa-box {
+          animation: spin 1s forwards; }
+          .c-header__link--main-nav:hover .fa-box:before {
+            animation: change-portfolio-icon 1s forwards; }
+        .c-header__link--main-nav:hover .fa-info-circle {
+          animation: spin 1s forwards; }
+          .c-header__link--main-nav:hover .fa-info-circle:before {
+            animation: change-about-icon 1s forwards; }
+        .c-header__link--main-nav:hover .fa-user-tie {
+          animation: spin 1s forwards; }
+          .c-header__link--main-nav:hover .fa-user-tie:before {
+            animation: change-resume-icon 1s forwards; }
+    .c-header__link--nes {
+      color: #dd2020; }
+  .c-header__logo {
+    height: 2.5em;
+    image-rendering: pixelated; }
+  .c-header__logo-bar {
+    background-color: #8f8f8f;
+    box-sizing: border-box;
+    padding: 1em 0;
+    width: 100%; }
+    .c-header__logo-bar--nes {
+      background: #e5e5e5; }
+  .c-header__main-nav {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 1.4em;
+    padding: 2em 0 4em 0; }
+  .c-header__nav-drawer {
+    background-color: #d6d6d6; }
+    .c-header__nav-drawer--nes {
+      background: #a5a2a2; }
+  .c-header__title {
+    font-family: "Emulogic";
+    font-size: 1.1em;
+    margin: 0 0 0 0.5em; }
+  .c-header__utility-nav {
+    border-bottom: 3px solid #8f8f8f;
+    font-size: 0.8em;
+    padding: 1em 0; }
+    .c-header__utility-nav--nes {
+      border-bottom: 3px solid #0d0c0c; }
+
+/*@import './super-mario-bros.scss';
+@import './majoras-mask.scss';
+@import './minecraft.scss';
 
 .concrete {
-  background-image: url(../src/images/portalWall.png); }
+	background-image: url(../src/images/portalWall.png);
+}
 
 .content {
-  background-color: #999;
-  clear: both;
-  margin: 0 auto;
-  min-width: 900px;
-  padding: 25px;
-  position: relative;
-  width: 1000px; }
+	background-color: #999;
+	clear: both;
+	margin: 0 auto;
+	min-width: 900px;
+	padding: 25px;
+	position: relative;
+	width: 1000px;
+}
 
 .dirt {
-  background-image: url(../src/images/dirt.png); }
+	background-image: url(../src/images/dirt.png);
+}
 
 .inventory {
-  background: url(../src/images/inventory.png) no-repeat left top/800px;
-  height: 500px;
-  margin: 0 auto;
-  width: 800px; }
+	background: url(../src/images/inventory.png) no-repeat left top/800px;
+	height: 500px;
+	margin: 0 auto;
+	width: 800px;
+}*/

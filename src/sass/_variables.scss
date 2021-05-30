@@ -1,8 +1,10 @@
 /* Variables */
 
-$small-screen: "screen and (max-width : 480px)";
-$medium-screen: "screen and (max-width : 1223px)";
-
+$x-small-screen: "screen and (min-width: 481px)";
+$small-screen: "screen and (min-width: 641px)";
+$medium-screen: "screen and (min-width: 961px)";
+$large-screen: "screen and (min-width: 1025px)";
+$x-large-screen: "screen and (min-width: 1281px)";
 
 
 
@@ -10,20 +12,37 @@ $medium-screen: "screen and (max-width : 1223px)";
 $font-emulogic: 'Emulogic';
 $font-font-awesome: 'Font Awesome 5 Free', $font-emulogic;
 $font-minecraft: 'Minecraft';
+$font-montserrat: 'Montserrat', sans-serif;
+$font-montserrat--bold: 'Montserrat-Bold', sans-serif;
 $font-pt-sans: 'PT Sans';
 
 
 
-/* Colors */
+/* Sitewide Colors */
 
-$black: #000;
-$off-black: #111;
-$white: #fff;
+$color-white: #ffffff;
+$color-grey--extra-light: #f5f5f5;
+$color-grey--light: #d6d6d6;
+$color-grey: #8f8f8f;
+$color-grey--dark: #5c5c5c;
+$color-grey--extra-dark: #1f1f1f;
+$color-black: #000000;
+
+/* NES Colors */
+
+$color-nes-black: #0d0c0c;
+$color-nes-dark-grey: #a5a2a2;
+$color-nes-grey: #e5e5e5;
+$color-nes-red: #dd2020;
+
+
+
+
+
+
+
 
 $super-mario-bros-blue: #6699ff;
-
-$dark-grey: #222;
-$grey: #999;
 
 
 

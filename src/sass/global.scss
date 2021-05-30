@@ -1,8 +1,145 @@
 @import './variables.scss';
 
+body,
+html {
+	height: 100%;
+	height: 100vh;
+	min-height: 100%;
+	min-height: 100vh;
+	min-width: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: $font-montserrat;
+	font-weight: 400;
+}
+
 .desktop-only {
 	@media #{$medium-screen} {
 		display: none;
+	}
+}
+
+
+
+
+
+
+
+.l-container {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.l-full-height {
+	height: 100%;
+}
+
+
+
+
+
+.a-rainbow-party:hover {
+    animation: rainbow 2s ease infinite;
+}
+
+@keyframes change-about-icon {
+	from {
+		content: '\f05a';
+	}
+	
+	40% {
+		content: '\f05a';
+	}
+	
+	50% {
+		content: '\f059';
+	}
+	
+	to {
+		content: '\f059';
+	}
+}
+
+@keyframes change-portfolio-icon {
+	from {
+		content: '\f466';
+	}
+	
+	40% {
+		content: '\f466';
+	}
+	
+	50% {
+		content: '\f49e';
+	}
+	
+	to {
+		content: '\f49e';
+	}
+}
+
+@keyframes change-resume-icon {
+	from {
+		content: '\f508';
+	}
+	
+	40% {
+		content: '\f508';
+	}
+	
+	50% {
+		content: '\f15b';
+	}
+	
+	to {
+		content: '\f15b';
+	}
+}
+
+@keyframes rainbow {
+	from {
+		color: red;
+	}
+	9% {
+		color: orange;
+	}
+	27% {
+		color: yellow;
+	}
+	43% {
+		color: green;
+	}
+	59% {
+		color: blue;
+	}
+	75% {
+		color: indigo;
+	}
+	91% {
+		color: violet;
+	}
+	to {
+		color: red;
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotateZ(0);
+	}
+	
+	20% {
+		transform: rotateZ(-25deg);
+	}
+
+	70% {
+		transform: rotateZ(385deg);
+	}
+	
+	to {
+		transform: rotateZ(360deg);
 	}
 }
 

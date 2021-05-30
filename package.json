@@ -24,5 +24,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-variables": "^1.2.0",
     "gulp-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "normalize.css": "^8.0.1"
   }
 }

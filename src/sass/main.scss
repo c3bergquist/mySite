@@ -1,12 +1,17 @@
 @charset "utf-8";
 /* Start imports */
 
-@import './reset.scss';
+@import '../node_modules/normalize.css/normalize.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 @import './fonts.scss';
 
 @import './global.scss';
-@import './super-mario-bros.scss';
+
+@import './header.scss';
+
+
+/*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';
 @import './minecraft.scss';
 
@@ -33,4 +38,4 @@
 	height: 500px;
 	margin: 0 auto;
 	width: 800px;
-}
+}*/
