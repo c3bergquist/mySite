@@ -1,12 +1,14 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "mysite",
+  "description": "",
   "scripts": {
+    "lint": "eslint .",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
     "node": "14"
@@ -14,10 +16,32 @@
   "main": "index.js",
   "dependencies": {
     "firebase-admin": "^9.8.0",
-    "firebase-functions": "^3.14.1"
+    "firebase-functions": "^3.14.1",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.2.0"
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0",
+    "gulp": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-js-import": "^1.0.6",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-variables": "^1.2.0",
+    "gulp-uglify": "^3.0.1"
   },
-  "private": true
+  "private": true,
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoryBerg/mySite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoryBerg/mySite/issues"
+  },
+  "homepage": "https://github.com/CoryBerg/mySite#readme"
 }
