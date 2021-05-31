@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 gulp.task('html', () => {
   return gulp.src('../src/html/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('../public/'));
 });
 
 // Compile Sass
@@ -17,7 +17,7 @@ gulp.task('sass', function(){
   return gulp.src('../src/sass/main.scss')
     .pipe(sass())
 	.pipe(rename('style.css'))
-    .pipe(gulp.dest('./public/dist'))
+    .pipe(gulp.dest('../public/dist'))
 });
 
 // Compile Js
@@ -26,8 +26,14 @@ gulp.task('js', function(){
     .pipe(jsImport({hideConsole: true}))
 	.pipe(rename('script.js'))
 	.pipe(uglify())
-    .pipe(gulp.dest('./public/dist'))
+    .pipe(gulp.dest('../public/dist'))
 });
+
+// Import FontAwesome
+gulp.task('fontawesome', function() {
+  return gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
+    .pipe(gulp.dest('../public/fonts/fontawesome'))
+})
 
 // Watch task
 gulp.task('watch', function() {
