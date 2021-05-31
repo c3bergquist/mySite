@@ -1,0 +1,243 @@
+[debug] [2021-05-31T00:07:42.522Z] ----------------------------------------------------------------------
+[debug] [2021-05-31T00:07:42.524Z] Command:       D:\Program Files\Node\node.exe C:\Users\cory3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-05-31T00:07:42.525Z] CLI Version:   9.12.0
+[debug] [2021-05-31T00:07:42.525Z] Platform:      win32
+[debug] [2021-05-31T00:07:42.525Z] Node Version:  v11.9.0
+[debug] [2021-05-31T00:07:42.526Z] Time:          Sun May 30 2021 20:07:42 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-05-31T00:07:42.526Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-31T00:07:42.536Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-31T00:07:42.537Z] > authorizing via signed-in user (cory3bergquist@gmail.com)
+[debug] [2021-05-31T00:07:42.537Z] [iam] checking project corybergquist-f2d2b for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2021-05-31T00:07:42.539Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/corybergquist-f2d2b:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2021-05-31T00:07:42.759Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=127","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:42.761Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/corybergquist-f2d2b/serviceAccounts/corybergquist-f2d2b@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-05-31T00:07:42.905Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:42.907Z] > refreshing access token with scopes: []
+[debug] [2021-05-31T00:07:42.907Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:07:43.007Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 31 May 2021 00:07:42 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:43.017Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b [none]
+[debug] [2021-05-31T00:07:43.254Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b 200
+[debug] [2021-05-31T00:07:43.255Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b {"projectId":"corybergquist-f2d2b","projectNumber":"421751727302","displayName":"CoryBergquist","name":"projects/corybergquist-f2d2b","resources":{"hostingSite":"corybergquist-f2d2b","storageBucket":"corybergquist-f2d2b.appspot.com","locationId":"us-east1"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'corybergquist-f2d2b'...
+[info] 
+[info] i  deploying storage, functions, hosting 
+[debug] [2021-05-31T00:07:46.450Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-31T00:07:46.450Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:07:46.674Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 31 May 2021 00:07:46 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:46.680Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/corybergquist-f2d2b  
+ 
+[debug] [2021-05-31T00:07:46.861Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2021-05-31T00:07:46.867Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/corybergquist-f2d2b:test  
+ {"source":{"files":[{"name":"storage.rules","content":"rules_version = '2';\nservice firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2021-05-31T00:07:47.051Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2021-05-31T00:07:49.262Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/corybergquist-f2d2b/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2021-05-31T00:07:49.262Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/corybergquist-f2d2b/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2021-05-31T00:07:49.262Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/corybergquist-f2d2b/services/cloudbuild.googleapis.com  
+ 
+[debug] [2021-05-31T00:07:49.672Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:49.682Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2021-05-31T00:07:49.693Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2021-05-31T00:07:49.694Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b/adminSdkConfig  
+ 
+[debug] [2021-05-31T00:07:49.916Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: preparing functions directory for uploading... 
+[debug] [2021-05-31T00:07:49.923Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/corybergquist-f2d2b/configs  
+ 
+[debug] [2021-05-31T00:07:50.108Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:50.109Z] Analyizing backend with strategy parseJSExports
+[debug] [2021-05-31T00:07:50.265Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2021-05-31T00:07:50.266Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/corybergquist-f2d2b/locations/-/functions  
+ 
+[debug] [2021-05-31T00:07:50.726Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:50.731Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions  
+ {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-05-31T00:07:51.484Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:51.487Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/corybergquist-f2d2b/releases?pageSize=10&pageToken=  
+ 
+[debug] [2021-05-31T00:07:51.654Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:51.655Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/corybergquist-f2d2b/rulesets/2edacea7-4c63-4242-8fcd-6ea5ac4676c6  
+ 
+[debug] [2021-05-31T00:07:51.814Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  storage: latest version of storage.rules already up to date, skipping upload... 
+[info] i  hosting[corybergquist-f2d2b]: beginning deploy... 
+[info] i  hosting[corybergquist-f2d2b]: found 11 files in public 
+[debug] [2021-05-31T00:07:51.841Z] > refreshing access token with scopes: []
+[debug] [2021-05-31T00:07:51.841Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:07:51.841Z] [hosting] hash cache [cHVibGlj] stored for 11 files
+[debug] [2021-05-31T00:07:51.842Z] [hosting][hash queue][FINAL] {"max":3,"min":0,"avg":0.2727272727272727,"active":0,"complete":11,"success":11,"errored":0,"retried":0,"total":11,"elapsed":5}
+[debug] [2021-05-31T00:07:51.945Z] <<< HTTP RESPONSE 200 {"date":"Mon, 31 May 2021 00:07:51 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:51.952Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/c94eef19b8f0e8a0:populateFiles [none]
+[debug] [2021-05-31T00:07:51.953Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/c94eef19b8f0e8a0:populateFiles {"files":{"/about.html":"161c2378a34664829edf49a53bd34b9d17ab09625ddf8c158a10787bf0265e38","/favicon.ico":"2da9cc68283c26b7959293b74cb0e131d02217ef34fb88ea4ed109d83d400323","/index - Copy.html":"5c273842b4a971a98ced318c40425cfdc6ba5fb95a8e29c5bbaa5501ef19d70a","/index.html":"cbb06bfdd746a543fa504906e34b9fcbeab41445beb2c9775db5444d06738b8b","/portfolio.html":"973a4873d978bc43b41364cf738a08facd5baa417499ecae8bf4d129ebd9c70b","/resume.html":"2925ce557bae7134b70548819a0c3370d77aa62b3cb726d75feec38deb1c1d27","/styles.css":"dc45ae5fd2a61c7cdee913b628e9a2bcfce4cf4802ed08c26fe03b7a5511a2b3","/dist/jquery-3.3.1.min.js":"ff62d092de1422a681b67c2bca781f273f9dc07a90ac3cf1f83fde18c94802ac","/dist/script.js":"596d648b268724c0a5e178654a312291467bfe53f0b869918f57b1db5d4d72c5","/dist/style.css":"14a1a58b1e03833c67d42c99d55f773e3384859b99948e7ff3ac8494c97a74f0","/404.html":"daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa"}}
+[debug] [2021-05-31T00:07:52.455Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/c94eef19b8f0e8a0:populateFiles 200
+[debug] [2021-05-31T00:07:52.455Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/c94eef19b8f0e8a0:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/corybergquist-f2d2b/versions/c94eef19b8f0e8a0/files"}
+[debug] [2021-05-31T00:07:52.456Z] [hosting][populate queue][FINAL] {"max":616,"min":616,"avg":616,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":616}
+[debug] [2021-05-31T00:07:52.457Z] [hosting] uploads queued: 0
+[debug] [2021-05-31T00:07:52.457Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1622419672457}
+[info] +  hosting[corybergquist-f2d2b]: file upload complete 
+[debug] [2021-05-31T00:07:52.461Z] [hosting] deploy completed after 639ms
+[debug] [2021-05-31T00:07:52.463Z] [rules] releasing firebase.storage/corybergquist-f2d2b.appspot.com with ruleset projects/corybergquist-f2d2b/rulesets/2edacea7-4c63-4242-8fcd-6ea5ac4676c6
+[debug] [2021-05-31T00:07:52.463Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-31T00:07:52.463Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:07:52.555Z] <<< HTTP RESPONSE 200 {"date":"Mon, 31 May 2021 00:07:52 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:52.562Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/corybergquist-f2d2b/releases/firebase.storage/corybergquist-f2d2b.appspot.com  
+ {"release":{"name":"projects/corybergquist-f2d2b/releases/firebase.storage/corybergquist-f2d2b.appspot.com","rulesetName":"projects/corybergquist-f2d2b/rulesets/2edacea7-4c63-4242-8fcd-6ea5ac4676c6"}}
+[debug] [2021-05-31T00:07:52.909Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:07:52 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:07:52.910Z] [rules] updated release projects/corybergquist-f2d2b/releases/firebase.storage/corybergquist-f2d2b.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage 
+[debug] [2021-05-31T00:07:52.981Z] TypeError: Reduce of empty array with no initial value
+    at Array.reduce (<anonymous>)
+    at release (C:\Users\cory3\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release.js:47:10)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-05-31T00:08:14.202Z] ----------------------------------------------------------------------
+[debug] [2021-05-31T00:08:14.204Z] Command:       D:\Program Files\Node\node.exe C:\Users\cory3\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-05-31T00:08:14.204Z] CLI Version:   9.12.0
+[debug] [2021-05-31T00:08:14.204Z] Platform:      win32
+[debug] [2021-05-31T00:08:14.204Z] Node Version:  v11.9.0
+[debug] [2021-05-31T00:08:14.206Z] Time:          Sun May 30 2021 20:08:14 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-05-31T00:08:14.206Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-31T00:08:14.214Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-31T00:08:14.215Z] > authorizing via signed-in user (cory3bergquist@gmail.com)
+[debug] [2021-05-31T00:08:14.215Z] [iam] checking project corybergquist-f2d2b for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-31T00:08:14.217Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/corybergquist-f2d2b:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-05-31T00:08:14.439Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=126","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:14.441Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/corybergquist-f2d2b/serviceAccounts/corybergquist-f2d2b@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-05-31T00:08:14.576Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:14.578Z] > refreshing access token with scopes: []
+[debug] [2021-05-31T00:08:14.578Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:08:14.675Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 31 May 2021 00:08:14 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:14.685Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b [none]
+[debug] [2021-05-31T00:08:14.903Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b 200
+[debug] [2021-05-31T00:08:14.903Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b {"projectId":"corybergquist-f2d2b","projectNumber":"421751727302","displayName":"CoryBergquist","name":"projects/corybergquist-f2d2b","resources":{"hostingSite":"corybergquist-f2d2b","storageBucket":"corybergquist-f2d2b.appspot.com","locationId":"us-east1"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'corybergquist-f2d2b'...
+[info] 
+[info] i  deploying functions, hosting 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2021-05-31T00:08:19.956Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-31T00:08:19.956Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:08:19.956Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-31T00:08:19.956Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2021-05-31T00:08:19.957Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-31T00:08:19.957Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:08:20.046Z] <<< HTTP RESPONSE 200 {"date":"Mon, 31 May 2021 00:08:20 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:20.053Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/corybergquist-f2d2b/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2021-05-31T00:08:20.062Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Mon, 31 May 2021 00:08:20 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:20.068Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/corybergquist-f2d2b/services/cloudbuild.googleapis.com  
+ 
+[debug] [2021-05-31T00:08:20.069Z] <<< HTTP RESPONSE 200 {"date":"Mon, 31 May 2021 00:08:20 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:20.075Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/corybergquist-f2d2b/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2021-05-31T00:08:20.475Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2021-05-31T00:08:20.485Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2021-05-31T00:08:20.488Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:20.489Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/corybergquist-f2d2b/adminSdkConfig  
+ 
+[debug] [2021-05-31T00:08:20.710Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: preparing functions directory for uploading... 
+[debug] [2021-05-31T00:08:20.713Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/corybergquist-f2d2b/configs  
+ 
+[debug] [2021-05-31T00:08:20.969Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:20.971Z] Analyizing backend with strategy parseJSExports
+[debug] [2021-05-31T00:08:21.122Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2021-05-31T00:08:21.123Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/corybergquist-f2d2b/locations/-/functions  
+ 
+[debug] [2021-05-31T00:08:21.587Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:21.589Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions  
+ {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-05-31T00:08:22.344Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 31 May 2021 00:08:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[corybergquist-f2d2b]: beginning deploy... 
+[info] i  hosting[corybergquist-f2d2b]: found 11 files in public 
+[debug] [2021-05-31T00:08:22.355Z] > refreshing access token with scopes: []
+[debug] [2021-05-31T00:08:22.355Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-31T00:08:22.356Z] [hosting] hash cache [cHVibGlj] stored for 11 files
+[debug] [2021-05-31T00:08:22.356Z] [hosting][hash queue][FINAL] {"max":1,"min":0,"avg":0,"active":0,"complete":11,"success":11,"errored":0,"retried":0,"total":11,"elapsed":3}
+[debug] [2021-05-31T00:08:22.440Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Mon, 31 May 2021 00:08:22 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-31T00:08:22.447Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/0c3926de4e7be3e4:populateFiles [none]
+[debug] [2021-05-31T00:08:22.448Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/0c3926de4e7be3e4:populateFiles {"files":{"/404.html":"daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa","/about.html":"161c2378a34664829edf49a53bd34b9d17ab09625ddf8c158a10787bf0265e38","/favicon.ico":"2da9cc68283c26b7959293b74cb0e131d02217ef34fb88ea4ed109d83d400323","/index - Copy.html":"5c273842b4a971a98ced318c40425cfdc6ba5fb95a8e29c5bbaa5501ef19d70a","/index.html":"cbb06bfdd746a543fa504906e34b9fcbeab41445beb2c9775db5444d06738b8b","/portfolio.html":"973a4873d978bc43b41364cf738a08facd5baa417499ecae8bf4d129ebd9c70b","/resume.html":"2925ce557bae7134b70548819a0c3370d77aa62b3cb726d75feec38deb1c1d27","/styles.css":"dc45ae5fd2a61c7cdee913b628e9a2bcfce4cf4802ed08c26fe03b7a5511a2b3","/dist/jquery-3.3.1.min.js":"ff62d092de1422a681b67c2bca781f273f9dc07a90ac3cf1f83fde18c94802ac","/dist/script.js":"596d648b268724c0a5e178654a312291467bfe53f0b869918f57b1db5d4d72c5","/dist/style.css":"14a1a58b1e03833c67d42c99d55f773e3384859b99948e7ff3ac8494c97a74f0"}}
+[debug] [2021-05-31T00:08:22.972Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/0c3926de4e7be3e4:populateFiles 200
+[debug] [2021-05-31T00:08:22.973Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/corybergquist-f2d2b/versions/0c3926de4e7be3e4:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/corybergquist-f2d2b/versions/0c3926de4e7be3e4/files"}
+[debug] [2021-05-31T00:08:22.973Z] [hosting][populate queue][FINAL] {"max":618,"min":618,"avg":618,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":618}
+[debug] [2021-05-31T00:08:22.974Z] [hosting] uploads queued: 0
+[debug] [2021-05-31T00:08:22.974Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1622419702974}
+[info] +  hosting[corybergquist-f2d2b]: file upload complete 
+[debug] [2021-05-31T00:08:22.978Z] [hosting] deploy completed after 632ms
+[debug] [2021-05-31T00:08:23.074Z] TypeError: Reduce of empty array with no initial value
+    at Array.reduce (<anonymous>)
+    at release (C:\Users\cory3\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release.js:47:10)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+[error] 
+[error] Error: An unexpected error has occurred.
