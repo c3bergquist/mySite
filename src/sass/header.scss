@@ -14,21 +14,27 @@
 		
 		&--nav-toggler {
 			&:hover {
-				text-decoration: underline;
+				.fa-bars {
+					animation: shimmy 0.5s linear;
+				}
 			}
-		}
-		
-		&--nes {
-			color: $color-nes-red;
 		}
 		
 		&--utility-nav {
 			font-size: 1.6em;
-			padding: 0.5em 0;
+			padding: 0 0 0.5em 0;
 			width: 50%;
 			
+			&:active {
+				.fa-lightbulb {
+					animation: lightbulb-click 0.5s linear;
+				}
+			}
+			
 			&:hover {
-				text-decoration: underline;
+				.fas {
+					animation: shimmy 0.5s linear;
+				}
 			}
 		}
 	}
@@ -37,12 +43,18 @@
 		&--logo-bar {
 			display: flex;
 			flex-direction: row;
+			justify-content: space-between;
 		}
 		
 		&--main-nav {
 			align-items: flex-start;
 			display: flex;
 			flex-direction: column;
+			
+			@media #{$medium-screen} {
+				flex-direction: row;
+				justify-content: space-evenly;
+			}
 		}
 		
 		&--utility-nav {
@@ -50,7 +62,7 @@
 			display: flex;
 			justify-content: space-between;
 			
-			@media #{$small-screen} {
+			@media #{$x-small-screen} {
 				margin-right: 0;
 				max-width: 400px;
 			}
@@ -65,12 +77,17 @@
 		
 		&--nav-toggler {
 			padding: 0 0.5em;
+			width: 1.5em;
 		}
 		
 		&--utility-nav {
 			display: block;
 			font-size: 1.4em;
-			margin-bottom: 0.5em;
+			padding: 0.5em 0;
+			
+			&:hover:before {
+				text-decoration: none;
+			}
 		}
 	}
 	
@@ -81,7 +98,6 @@
 		&--home {
 			align-items: center;
 			display: flex;
-			width: 100%;
 		}
 		
 		&--main-nav {
@@ -89,6 +105,10 @@
 			
 			&:not(:last-child) {
 				margin-bottom: 1em;
+				
+				@media #{$medium-screen} {
+					margin-bottom: 0;
+				}
 			}
 			
 			&:hover {
@@ -119,10 +139,6 @@
 				}
 			}
 		}
-		
-		&--nes {
-			color: $color-nes-red;
-		}
 	}
 	
 	&__logo {
@@ -131,43 +147,37 @@
 	}
 	
 	&__logo-bar {
-		background-color: $color-grey;
+		background-color: $color-light-blue;
 		box-sizing: border-box;
 		padding: 1em 0;
 		width: 100%;
-		
-		&--nes {
-			background: $color-nes-grey;
-		}
 	}
 	
 	&__main-nav {
 		font-family: $font-montserrat--bold;
 		font-size: 1.4em;
-		padding: 2em 0 4em 0;
+		padding: 2em 0;
 	}
 	
 	&__nav-drawer {
 		background-color: $color-grey--light;
-		
-		&--nes {
-			background: $color-nes-dark-grey;
-		}
+		display: none;
 	}
 	
 	&__title {
-		font-family: $font-emulogic;
-		font-size: 1.1em;
-		margin: 0 0 0 0.5em;
+		display: none;
+		
+		@media #{$x-small-screen} {
+			display: block;
+			font-family: $font-emulogic;
+			font-size: 1.1em;
+			margin: 0 0 0 0.5em;
+		}
 	}
 	
 	&__utility-nav {
 		border-bottom: 3px solid $color-grey;
 		font-size: 0.8em;
 		padding: 1em 0;
-		
-		&--nes {
-			border-bottom: 3px solid $color-nes-black;
-		}
 	}
 }

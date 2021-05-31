@@ -5116,8 +5116,12 @@ body {
 .l-full-height {
   height: 100%; }
 
-.a-rainbow-party:hover {
-  animation: rainbow 2s ease infinite; }
+/* Variables */
+/* Sitewide Colors */
+/* NES Colors */
+/* Font Awesome Content */
+.a-open-menu {
+  display: block !important; }
 
 @keyframes change-about-icon {
   from {
@@ -5128,6 +5132,28 @@ body {
     content: '\f059'; }
   to {
     content: '\f059'; } }
+
+@keyframes lightbulb-click {
+  from {
+    transform: translate(0, 0); }
+  50% {
+    transform: translate(0, -5px); }
+  75% {
+    transform: translate(0, 10px); }
+  to {
+    transform: translate(0, 0); } }
+
+@keyframes shimmy {
+  from {
+    transform: rotateZ(0); }
+  20% {
+    transform: rotateZ(-25deg); }
+  50% {
+    transform: rotateZ(25deg); }
+  80% {
+    transform: rotateZ(-25deg); }
+  to {
+    transform: rotateZ(0); } }
 
 @keyframes change-portfolio-icon {
   from {
@@ -5148,6 +5174,9 @@ body {
     content: '\f15b'; }
   to {
     content: '\f15b'; } }
+
+.a-rainbow-party:hover {
+  animation: rainbow 2s ease infinite; }
 
 @keyframes rainbow {
   from {
@@ -5199,28 +5228,33 @@ body {
     font-size: 1.2em;
     font-weight: 700;
     padding: 0; }
-    .c-header__button--nav-toggler:hover {
-      text-decoration: underline; }
-    .c-header__button--nes {
-      color: #dd2020; }
+    .c-header__button--nav-toggler:hover .fa-bars {
+      animation: shimmy 0.5s linear; }
     .c-header__button--utility-nav {
       font-size: 1.6em;
-      padding: 0.5em 0;
+      padding: 0 0 0.5em 0;
       width: 50%; }
-      .c-header__button--utility-nav:hover {
-        text-decoration: underline; }
+      .c-header__button--utility-nav:active .fa-lightbulb {
+        animation: lightbulb-click 0.5s linear; }
+      .c-header__button--utility-nav:hover .fas {
+        animation: shimmy 0.5s linear; }
   .c-header__container--logo-bar {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
   .c-header__container--main-nav {
     align-items: flex-start;
     display: flex;
     flex-direction: column; }
+    @media screen and (min-width: 961px) {
+      .c-header__container--main-nav {
+        flex-direction: row;
+        justify-content: space-evenly; } }
   .c-header__container--utility-nav {
     align-items: center;
     display: flex;
     justify-content: space-between; }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 481px) {
       .c-header__container--utility-nav {
         margin-right: 0;
         max-width: 400px; } }
@@ -5228,22 +5262,27 @@ body {
     text-align: center;
     width: 1.5em; }
   .c-header__icon--nav-toggler {
-    padding: 0 0.5em; }
+    padding: 0 0.5em;
+    width: 1.5em; }
   .c-header__icon--utility-nav {
     display: block;
     font-size: 1.4em;
-    margin-bottom: 0.5em; }
+    padding: 0.5em 0; }
+    .c-header__icon--utility-nav:hover:before {
+      text-decoration: none; }
   .c-header__link {
     color: #000000;
     text-decoration: none; }
     .c-header__link--home {
       align-items: center;
-      display: flex;
-      width: 100%; }
+      display: flex; }
     .c-header__link--main-nav {
       font-size: 1.4em; }
       .c-header__link--main-nav:not(:last-child) {
         margin-bottom: 1em; }
+        @media screen and (min-width: 961px) {
+          .c-header__link--main-nav:not(:last-child) {
+            margin-bottom: 0; } }
       .c-header__link--main-nav:hover {
         text-decoration: underline; }
         .c-header__link--main-nav:hover .fa-box {
@@ -5258,36 +5297,33 @@ body {
           animation: spin 1s forwards; }
           .c-header__link--main-nav:hover .fa-user-tie:before {
             animation: change-resume-icon 1s forwards; }
-    .c-header__link--nes {
-      color: #dd2020; }
   .c-header__logo {
     height: 2.5em;
     image-rendering: pixelated; }
   .c-header__logo-bar {
-    background-color: #8f8f8f;
+    background-color: #6686CC;
     box-sizing: border-box;
     padding: 1em 0;
     width: 100%; }
-    .c-header__logo-bar--nes {
-      background: #e5e5e5; }
   .c-header__main-nav {
     font-family: "Montserrat-Bold", sans-serif;
     font-size: 1.4em;
-    padding: 2em 0 4em 0; }
+    padding: 2em 0; }
   .c-header__nav-drawer {
-    background-color: #d6d6d6; }
-    .c-header__nav-drawer--nes {
-      background: #a5a2a2; }
+    background-color: #d6d6d6;
+    display: none; }
   .c-header__title {
-    font-family: "Emulogic";
-    font-size: 1.1em;
-    margin: 0 0 0 0.5em; }
+    display: none; }
+    @media screen and (min-width: 481px) {
+      .c-header__title {
+        display: block;
+        font-family: "Emulogic";
+        font-size: 1.1em;
+        margin: 0 0 0 0.5em; } }
   .c-header__utility-nav {
     border-bottom: 3px solid #8f8f8f;
     font-size: 0.8em;
     padding: 1em 0; }
-    .c-header__utility-nav--nes {
-      border-bottom: 3px solid #0d0c0c; }
 
 /*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';
