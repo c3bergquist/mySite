@@ -5219,10 +5219,12 @@ body {
 /* NES Colors */
 /* Font Awesome Content */
 .c-header {
+  position: fixed;
   width: 100%; }
   .c-header__button {
     background-color: transparent;
     border: none;
+    color: #000000;
     cursor: pointer;
     font-family: "Montserrat-Bold", sans-serif;
     font-size: 1.2em;
@@ -5276,6 +5278,8 @@ body {
     .c-header__link--home {
       align-items: center;
       display: flex; }
+      .c-header__link--home:hover {
+        text-decoration: underline; }
     .c-header__link--main-nav {
       font-size: 1.4em; }
       .c-header__link--main-nav:not(:last-child) {
@@ -5324,6 +5328,18 @@ body {
     border-bottom: 3px solid #8f8f8f;
     font-size: 0.8em;
     padding: 1em 0; }
+
+.is-dark-mode .c-header__button {
+  color: #d6d6d6; }
+
+.is-dark-mode .c-header__link {
+  color: #d6d6d6; }
+
+.is-dark-mode .c-header__logo-bar {
+  background-color: #2a457f; }
+
+.is-dark-mode .c-header__nav-drawer {
+  background-color: #5c5c5c; }
 
 /*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';
