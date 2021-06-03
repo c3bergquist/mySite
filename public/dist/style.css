@@ -5220,7 +5220,9 @@ body {
 /* Font Awesome Content */
 .c-header {
   position: fixed;
-  width: 100%; }
+  top: 0;
+  width: 100%;
+  z-index: 100; }
   .c-header__button {
     background-color: transparent;
     border: none;
@@ -5230,6 +5232,8 @@ body {
     font-size: 1.2em;
     font-weight: 700;
     padding: 0; }
+    .c-header__button:hover span {
+      text-decoration: underline; }
     .c-header__button--nav-toggler:hover .fa-bars {
       animation: shimmy 0.5s linear; }
     .c-header__button--utility-nav {
@@ -5340,6 +5344,60 @@ body {
 
 .is-dark-mode .c-header__nav-drawer {
   background-color: #5c5c5c; }
+
+/* Variables */
+/* Sitewide Colors */
+/* NES Colors */
+/* Font Awesome Content */
+.c-main-content {
+  margin-top: 4.5em;
+  padding: 2em 0; }
+  .c-main-content__background {
+    background-image: url("../images/pixel-cory.png");
+    background-position: 25vw 5vh;
+    background-repeat: no-repeat;
+    background-size: 75vh;
+    height: 100vh;
+    opacity: 25%;
+    position: fixed;
+    width: 100vw;
+    z-index: -1; }
+  .c-main-content__title {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-top: 0; }
+
+/* Variables */
+/* Sitewide Colors */
+/* NES Colors */
+/* Font Awesome Content */
+@media screen and (min-width: 961px) {
+  .c-menu-card:hover h2 {
+    letter-spacing: 0.5em;
+    text-decoration: underline;
+    transition: letter-spacing 0.5s ease; }
+  .c-menu-card:hover p {
+    opacity: 1;
+    transition: opacity 1s ease; } }
+
+.c-menu-card__details {
+  color: #000000; }
+  @media screen and (min-width: 961px) {
+    .c-menu-card__details {
+      opacity: 0; } }
+
+.c-menu-card__link {
+  text-decoration: none; }
+
+.c-menu-card__title {
+  color: #A35C00;
+  font-family: "Montserrat-Bold", sans-serif;
+  text-decoration: underline; }
+  @media screen and (min-width: 961px) {
+    .c-menu-card__title {
+      letter-spacing: normal;
+      transition: letter-spacing 0.5s ease; } }
 
 /*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';

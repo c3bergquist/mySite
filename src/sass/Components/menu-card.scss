@@ -1,0 +1,41 @@
+@import '../variables.scss';
+
+.c-menu-card {
+	@media #{$medium-screen} {
+		&:hover {
+			h2 {
+				letter-spacing: 0.5em;
+				text-decoration: underline;
+				transition: letter-spacing 0.5s ease;
+			}
+			
+			p {
+				opacity: 1;
+				transition: opacity 1s ease;
+			}
+		}
+	}
+	
+	&__details {
+		color: $color-black;
+		
+		@media #{$medium-screen} {
+			opacity: 0;
+		}
+	}
+	
+	&__link {
+		text-decoration: none;
+	}
+	
+	&__title {
+		color: $color-dark-orange;
+		font-family: $font-montserrat--bold;
+		text-decoration: underline;
+		
+		@media #{$medium-screen} {
+			letter-spacing: normal;
+			transition: letter-spacing 0.5s ease;
+		}
+	}
+}

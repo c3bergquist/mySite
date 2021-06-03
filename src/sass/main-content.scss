@@ -1,0 +1,29 @@
+@import './variables.scss';
+
+.c-main-content {
+	margin-top: 4.5em;
+	padding: 2em 0;
+	
+	&__background {
+		background-image: url('../images/pixel-cory.png');
+		background-position: 25vw 5vh;
+		background-repeat: no-repeat;
+		background-size: 75vh;
+		height: 100vh;
+		opacity: 25%;
+		position: fixed;
+		width: 100vw;
+		z-index: -1;
+	}
+	
+	&__menu {
+		
+	}
+		
+	&__title {
+		font-family: $font-montserrat--bold;
+		font-size: 1.8em;
+		font-weight: 500;
+		margin-top: 0;
+	}
+}

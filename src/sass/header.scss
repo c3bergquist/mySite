@@ -2,7 +2,9 @@
 
 .c-header {
 	position: fixed;
+	top: 0;
 	width: 100%;
+	z-index: 100;
 	
 	&__button {
 		background-color: transparent;
@@ -13,6 +15,12 @@
 		font-size: 1.2em;
 		font-weight: 700;
 		padding: 0;
+		
+		&:hover {
+			span {
+				text-decoration: underline;
+			}
+		}
 		
 		&--nav-toggler {
 			&:hover {
