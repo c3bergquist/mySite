@@ -1,29 +1,40 @@
 @import './variables.scss';
 
 .c-main-content {
-	margin-top: 4.5em;
-	padding: 2em 0;
+	height: 100%;
 	
 	&__background {
 		background-image: url('../images/pixel-cory.png');
-		background-position: 25vw 5vh;
+		background-position: 75% 40vh;
 		background-repeat: no-repeat;
-		background-size: 75vh;
+		background-size: 50vh;
 		height: 100vh;
-		opacity: 25%;
+		opacity: 10%;
 		position: fixed;
 		width: 100vw;
 		z-index: -1;
 	}
 	
+	&__intro {
+		background: $color-light-blue;
+		padding: 12em 0 15em 0;
+	}
+	
 	&__menu {
 		
 	}
-		
+
+	&__subtitle {
+		font-size: 1.2em;
+		margin: 0;
+		text-align: center;
+	}
+	
 	&__title {
 		font-family: $font-montserrat--bold;
-		font-size: 1.8em;
+		font-size: 2em;
 		font-weight: 500;
 		margin-top: 0;
+		text-align: center;
 	}
 }

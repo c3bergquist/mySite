@@ -161,7 +161,7 @@
 	}
 	
 	&__logo-bar {
-		background-color: $color-light-blue;
+		background: $color-light-blue;
 		box-sizing: border-box;
 		padding: 1em 0;
 		width: 100%;
@@ -174,7 +174,7 @@
 	}
 	
 	&__nav-drawer {
-		background-color: $color-grey--light;
+		background-color: $color-light-grey;
 		display: none;
 	}
 	
@@ -199,19 +199,19 @@
 .is-dark-mode {
 	.c-header {
 		&__button {
-			color: $color-grey--light;
+			color: $color-light-grey;
 		}
 		
 		&__link {
-			color: $color-grey--light;
+			color: $color-light-grey;
 		}
 
 		&__logo-bar {
-			background-color: $color-dark-blue;
+			background: $color-dark-blue;
 		}
 		
 		&__nav-drawer {
-			background-color: $color-grey--dark;
+			background-color: $color-darker-grey;
 		}
 	}
 }
