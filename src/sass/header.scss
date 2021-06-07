@@ -16,6 +16,7 @@
 		font-weight: 700;
 		padding: 0;
 		
+		&:focus,
 		&:hover {
 			span {
 				text-decoration: underline;
@@ -23,6 +24,7 @@
 		}
 		
 		&--nav-toggler {
+			&:focus,
 			&:hover {
 				.fa-bars {
 					animation: shimmy 0.5s linear;
@@ -41,6 +43,7 @@
 				}
 			}
 			
+			&:focus,
 			&:hover {
 				.fas {
 					animation: shimmy 0.5s linear;
@@ -72,7 +75,7 @@
 			display: flex;
 			justify-content: space-between;
 			
-			@media #{$x-small-screen} {
+			@media #{$small-screen} {
 				margin-right: 0;
 				max-width: 400px;
 			}
@@ -95,6 +98,7 @@
 			font-size: 1.4em;
 			padding: 0.5em 0;
 			
+			&:focus:before,
 			&:hover:before {
 				text-decoration: none;
 			}
@@ -109,6 +113,7 @@
 			align-items: center;
 			display: flex;
 			
+			&:focus,
 			&:hover {
 				text-decoration: underline;
 			}
@@ -116,6 +121,11 @@
 		
 		&--main-nav {
 			font-size: 1.4em;
+			position: relative;
+			
+			&:before {
+				opacity: 0;
+			}
 			
 			&:not(:last-child) {
 				margin-bottom: 1em;
@@ -125,6 +135,7 @@
 				}
 			}
 			
+			&:focus,
 			&:hover {
 				text-decoration: underline;
 				

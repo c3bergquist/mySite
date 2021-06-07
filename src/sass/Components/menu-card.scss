@@ -1,7 +1,14 @@
 @import '../variables.scss';
 
 .c-menu-card {
+	padding: 1em 0;
+	
+	&:not(:last-child) {
+		margin-bottom: 2em;
+	}
+	
 	@media #{$medium-screen} {
+		&:focus,
 		&:hover {
 			h2 {
 				letter-spacing: 0.5em;
@@ -18,6 +25,7 @@
 	
 	&__details {
 		color: $color-black;
+		margin: 0;
 		
 		@media #{$medium-screen} {
 			opacity: 0;
@@ -29,13 +37,18 @@
 	}
 	
 	&__title {
-		color: $color-dark-orange;
+		color: $color-black;
 		font-family: $font-montserrat--bold;
-		text-decoration: underline;
+		margin-bottom: 0.5em;
+		
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
 		
 		@media #{$medium-screen} {
 			letter-spacing: normal;
 			transition: letter-spacing 0.5s ease;
 		}
-	}
+	}	
 }

@@ -5104,6 +5104,9 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400; }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
 @media screen and (min-width: 961px) {
   .desktop-only {
     display: none; } }
@@ -5232,9 +5235,9 @@ body {
     font-size: 1.2em;
     font-weight: 700;
     padding: 0; }
-    .c-header__button:hover span {
+    .c-header__button:focus span, .c-header__button:hover span {
       text-decoration: underline; }
-    .c-header__button--nav-toggler:hover .fa-bars {
+    .c-header__button--nav-toggler:focus .fa-bars, .c-header__button--nav-toggler:hover .fa-bars {
       animation: shimmy 0.5s linear; }
     .c-header__button--utility-nav {
       font-size: 1.6em;
@@ -5242,7 +5245,7 @@ body {
       width: 50%; }
       .c-header__button--utility-nav:active .fa-lightbulb {
         animation: lightbulb-click 0.5s linear; }
-      .c-header__button--utility-nav:hover .fas {
+      .c-header__button--utility-nav:focus .fas, .c-header__button--utility-nav:hover .fas {
         animation: shimmy 0.5s linear; }
   .c-header__container--logo-bar {
     display: flex;
@@ -5260,7 +5263,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: space-between; }
-    @media screen and (min-width: 481px) {
+    @media screen and (min-width: 641px) {
       .c-header__container--utility-nav {
         margin-right: 0;
         max-width: 400px; } }
@@ -5274,7 +5277,7 @@ body {
     display: block;
     font-size: 1.4em;
     padding: 0.5em 0; }
-    .c-header__icon--utility-nav:hover:before {
+    .c-header__icon--utility-nav:focus:before, .c-header__icon--utility-nav:hover:before {
       text-decoration: none; }
   .c-header__link {
     color: #000000;
@@ -5282,28 +5285,31 @@ body {
     .c-header__link--home {
       align-items: center;
       display: flex; }
-      .c-header__link--home:hover {
+      .c-header__link--home:focus, .c-header__link--home:hover {
         text-decoration: underline; }
     .c-header__link--main-nav {
-      font-size: 1.4em; }
+      font-size: 1.4em;
+      position: relative; }
+      .c-header__link--main-nav:before {
+        opacity: 0; }
       .c-header__link--main-nav:not(:last-child) {
         margin-bottom: 1em; }
         @media screen and (min-width: 961px) {
           .c-header__link--main-nav:not(:last-child) {
             margin-bottom: 0; } }
-      .c-header__link--main-nav:hover {
+      .c-header__link--main-nav:focus, .c-header__link--main-nav:hover {
         text-decoration: underline; }
-        .c-header__link--main-nav:hover .fa-box {
+        .c-header__link--main-nav:focus .fa-box, .c-header__link--main-nav:hover .fa-box {
           animation: spin 1s forwards; }
-          .c-header__link--main-nav:hover .fa-box:before {
+          .c-header__link--main-nav:focus .fa-box:before, .c-header__link--main-nav:hover .fa-box:before {
             animation: change-portfolio-icon 1s forwards; }
-        .c-header__link--main-nav:hover .fa-info-circle {
+        .c-header__link--main-nav:focus .fa-info-circle, .c-header__link--main-nav:hover .fa-info-circle {
           animation: spin 1s forwards; }
-          .c-header__link--main-nav:hover .fa-info-circle:before {
+          .c-header__link--main-nav:focus .fa-info-circle:before, .c-header__link--main-nav:hover .fa-info-circle:before {
             animation: change-about-icon 1s forwards; }
-        .c-header__link--main-nav:hover .fa-user-tie {
+        .c-header__link--main-nav:focus .fa-user-tie, .c-header__link--main-nav:hover .fa-user-tie {
           animation: spin 1s forwards; }
-          .c-header__link--main-nav:hover .fa-user-tie:before {
+          .c-header__link--main-nav:focus .fa-user-tie:before, .c-header__link--main-nav:hover .fa-user-tie:before {
             animation: change-resume-icon 1s forwards; }
   .c-header__logo {
     height: 2.5em;
@@ -5349,62 +5355,69 @@ body {
 /* Sitewide Colors */
 /* NES Colors */
 /* Font Awesome Content */
-.c-main-content {
-  height: 100%; }
-  .c-main-content__background {
-    background-image: url("../images/pixel-cory.png");
-    background-position: 75% 40vh;
-    background-repeat: no-repeat;
-    background-size: 50vh;
-    height: 100vh;
-    opacity: 10%;
-    position: fixed;
-    width: 100vw;
-    z-index: -1; }
-  .c-main-content__intro {
-    background: #6686CC;
-    padding: 12em 0 15em 0; }
-  .c-main-content__subtitle {
-    font-size: 1.2em;
-    margin: 0;
-    text-align: center; }
-  .c-main-content__title {
-    font-family: "Montserrat-Bold", sans-serif;
-    font-size: 2em;
-    font-weight: 500;
-    margin-top: 0;
-    text-align: center; }
+.c-main-content__background {
+  background-image: url("../images/pixel-cory.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  height: 100vh;
+  opacity: 10%;
+  position: fixed;
+  width: 100vw;
+  z-index: -1; }
+
+.c-main-content__content-block {
+  padding: 5em 0; }
+
+.c-main-content__intro {
+  background: #6686CC;
+  padding: 12em 0; }
+
+.c-main-content__subtitle {
+  font-size: 1.2em;
+  margin: 0;
+  text-align: center; }
+
+.c-main-content__title {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  text-align: center; }
 
 /* Variables */
 /* Sitewide Colors */
 /* NES Colors */
 /* Font Awesome Content */
-@media screen and (min-width: 961px) {
-  .c-menu-card:hover h2 {
-    letter-spacing: 0.5em;
-    text-decoration: underline;
-    transition: letter-spacing 0.5s ease; }
-  .c-menu-card:hover p {
-    opacity: 1;
-    transition: opacity 1s ease; } }
-
-.c-menu-card__details {
-  color: #000000; }
+.c-menu-card {
+  padding: 1em 0; }
+  .c-menu-card:not(:last-child) {
+    margin-bottom: 2em; }
   @media screen and (min-width: 961px) {
-    .c-menu-card__details {
-      opacity: 0; } }
-
-.c-menu-card__link {
-  text-decoration: none; }
-
-.c-menu-card__title {
-  color: #A35C00;
-  font-family: "Montserrat-Bold", sans-serif;
-  text-decoration: underline; }
-  @media screen and (min-width: 961px) {
-    .c-menu-card__title {
-      letter-spacing: normal;
-      transition: letter-spacing 0.5s ease; } }
+    .c-menu-card:focus h2, .c-menu-card:hover h2 {
+      letter-spacing: 0.5em;
+      text-decoration: underline;
+      transition: letter-spacing 0.5s ease; }
+    .c-menu-card:focus p, .c-menu-card:hover p {
+      opacity: 1;
+      transition: opacity 1s ease; } }
+  .c-menu-card__details {
+    color: #000000;
+    margin: 0; }
+    @media screen and (min-width: 961px) {
+      .c-menu-card__details {
+        opacity: 0; } }
+  .c-menu-card__link {
+    text-decoration: none; }
+  .c-menu-card__title {
+    color: #000000;
+    font-family: "Montserrat-Bold", sans-serif;
+    margin-bottom: 0.5em; }
+    .c-menu-card__title:focus, .c-menu-card__title:hover {
+      text-decoration: underline; }
+    @media screen and (min-width: 961px) {
+      .c-menu-card__title {
+        letter-spacing: normal;
+        transition: letter-spacing 0.5s ease; } }
 
 /*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';
