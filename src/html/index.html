@@ -16,8 +16,9 @@
 	<script src="./dist/jquery.min.js"></script>
 </head>
 
-<body id="js-body">
-	<div class="c-header">
+<body id="js-body" class="default">
+	<a class="c-skip-link" href="#main">Skip to main content</a>
+	<header class="c-header">
 		<div class="c-header__logo-bar">
 			<div class="c-header__container c-header__container--logo-bar l-container">
 				<a class="c-header__link c-header__link--home" href="./index.html">
@@ -31,7 +32,6 @@
 			<div class="c-header__utility-nav">
 				<div class="c-header__container c-header__container--utility-nav l-container">
 					<button id="js-dark-mode-toggler" class="c-header__button c-header__button--utility-nav"><i class="c-header__icon c-header__icon--utility-nav fas fa-lightbulb"></i><span>Dark mode</span></button>
-					
 					<button id="js-gamify-toggler" class="c-header__button c-header__button--utility-nav a-rainbow-party"><i class="c-header__icon c-header__icon--utility-nav fas fa-gamepad"></i><span>Gamify it</span></button>
 				</div>
 			</div>
@@ -44,43 +44,51 @@
 				</div>
 			</nav>
 		</div>
-	</div>
+	</header>
 	
-	<div class="c-main-content">
-		<div class="c-main-content__background"></div>
-		<section class="c-main-content__intro">
-			<div class="l-container">
-				<h1 class="c-main-content__title">Hi, I'm Cory!</h1>
-				<p class="c-main-content__subtitle">Developer, Project Manager,<br> and Video Game Enthusiast</p>
+	<main id="main" class="c-main-content">
+		<div class="c-main-content__intro">
+			<section class="l-container">
+				<h1 class="c-main-content__intro-title">Hi, I'm Cory!</h1>
+				<p class="c-main-content__intro-subtitle">Developer, Project Manager,<br> and Video Game Enthusiast</p>
+			</section>
+		</div>
+		<div class="c-main-content__content-block">
+			<div class="c-context">
+				<section class="l-container">
+					<h2 class="c-context__heading">Behold! My Stuff</h2>
+					<p class="c-context__description">Click the links below to see more about me, this site, and the projects I've been working on.</p>
+				</section>
 			</div>
-		</section>
-		<section class="c-main-content__content-block">
-			<div class="c-menu-card">
-				<div class="l-container">
-					<a class="c-menu-card__link" href="./about.html">
-						<h2 class="c-menu-card__title">About &gt;</h2>
-						<p class="c-menu-card__details">Learn more about me and the inspirations behind this site.</p>
-					</a>
+
+			<div class="c-menu">
+				<div class="c-menu__card">
+					<div class="l-container">
+						<a class="c-menu__card-link" href="./about.html">
+							<h3 class="c-menu__card-title">About &gt;</h3>
+							<p class="c-menu__card-details">Learn more about me and the inspirations behind this site.</p>
+						</a>
+					</div>
+				</div>
+				<div class="c-menu__card">
+					<div class="l-container">
+						<a class="c-menu__card-link" href="./portfolio.html">
+							<h3 class="c-menu__card-title">Portfolio &gt;</h3>
+							<p class="c-menu__card-details">See some of the projects I've been working on.</p>
+						</a>
+					</div>
+				</div>
+				<div class="c-menu__card">
+					<div class="l-container">
+						<a class="c-menu__card-link" href="./resume.html">
+							<h3 class="c-menu__card-title">Resume &gt;</h3>
+							<p class="c-menu__card-details">My actual resume. Like, the one I send to potential employers.</p>
+						</a>
+					</div>
 				</div>
 			</div>
-			<div class="c-menu-card">
-				<div class="l-container">
-					<a class="c-menu-card__link" href="./portfolio.html">
-						<h2 class="c-menu-card__title">Portfolio &gt;</h2>
-						<p class="c-menu-card__details">See some of the projects I've been working on.</p>
-					</a>
-				</div>
-			</div>
-			<div class="c-menu-card">
-				<div class="l-container">
-					<a class="c-menu-card__link" href="./resume.html">
-						<h2 class="c-menu-card__title">Resume &gt;</h2>
-						<p class="c-menu-card__details">My actual resume. Like, the one I send to potential employers.</p>
-					</a>
-				</div>
-			</div>
-		</section>
-	</div>
+		</div>
+	</main>
 	
 	
 	<script src="./dist/script.js"></script>

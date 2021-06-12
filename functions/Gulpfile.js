@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-	htmlmin = require('gulp-htmlmin');
+	htmlmin = require('gulp-htmlmin'),
 	jsImport = require('gulp-js-import'),
 	rename = require('gulp-rename'),
 	sass = require('gulp-sass'),

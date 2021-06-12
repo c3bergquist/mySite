@@ -1,0 +1,58 @@
+@import '../variables.scss';
+
+.c-menu {
+	&__card {
+		background-color: $color-light-grey;
+		padding: 1em 0;
+		
+		&:not(:last-child) {
+			margin-bottom: 2em;
+		}
+		
+		@media #{$medium-screen} {
+			&:focus,
+			&:hover {
+				h3 {
+					letter-spacing: 0.5em;
+					text-decoration: underline;
+					transition: letter-spacing 0.5s ease;
+				}
+				
+				p {
+					opacity: 1;
+					transition: opacity 1s ease;
+				}
+			}
+		}
+		
+		&-details {
+			color: $color-black;
+			margin: 0;
+			
+			@media #{$medium-screen} {
+				opacity: 0;
+			}
+		}
+		
+		&-link {
+			display: block;
+			text-decoration: none;
+		}
+		
+		&-title {
+			color: $color-black;
+			font-family: $font-montserrat--bold;
+			margin-bottom: 0.5em;
+			
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+			
+			@media #{$medium-screen} {
+				letter-spacing: normal;
+				transition: letter-spacing 0.5s ease;
+			}
+		}	
+	}
+}

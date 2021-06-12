@@ -5099,17 +5099,32 @@ html {
   min-width: 100%;
   width: 100%; }
 
-body {
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; }
+
+.default {
   background: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   font-weight: 400; }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
-
 @media screen and (min-width: 961px) {
   .desktop-only {
     display: none; } }
+
+.c-skip-link {
+  background-color: #f5f5f5;
+  border: 3px solid #000000;
+  border-radius: 0 0 0.5em 0.5em;
+  border-top: none;
+  color: #000000;
+  left: 1em;
+  padding: 1em;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  z-index: 10000; }
+  .c-skip-link:focus {
+    transform: translateY(0%); }
 
 .l-container {
   margin: 0 auto;
@@ -5271,7 +5286,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 1.5em; }
   .c-header__icon--nav-toggler {
-    padding: 0 0.5em;
+    padding-left: 0.5em;
     width: 1.5em; }
   .c-header__icon--utility-nav {
     display: block;
@@ -5355,67 +5370,65 @@ h1, h2, h3, h4, h5, h6 {
 /* Sitewide Colors */
 /* NES Colors */
 /* Font Awesome Content */
-.c-main-content__background {
-  background-image: url("../images/pixel-cory.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  height: 100vh;
-  opacity: 10%;
-  position: fixed;
-  width: 100vw;
-  z-index: -1; }
-
 .c-main-content__content-block {
   padding: 5em 0; }
 
 .c-main-content__intro {
   background: #6686CC;
   padding: 12em 0; }
-
-.c-main-content__subtitle {
-  font-size: 1.2em;
-  margin: 0;
-  text-align: center; }
-
-.c-main-content__title {
-  font-family: "Montserrat-Bold", sans-serif;
-  font-weight: 500;
-  margin-bottom: 0.5em;
-  text-align: center; }
+  .c-main-content__intro-subtitle {
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center; }
+  .c-main-content__intro-title {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    text-align: center; }
 
 /* Variables */
 /* Sitewide Colors */
 /* NES Colors */
 /* Font Awesome Content */
-.c-menu-card {
+.c-context {
+  margin-bottom: 3em; }
+  .c-context__heading {
+    margin-bottom: 0.5em; }
+
+/* Variables */
+/* Sitewide Colors */
+/* NES Colors */
+/* Font Awesome Content */
+.c-menu__card {
+  background-color: #d6d6d6;
   padding: 1em 0; }
-  .c-menu-card:not(:last-child) {
+  .c-menu__card:not(:last-child) {
     margin-bottom: 2em; }
   @media screen and (min-width: 961px) {
-    .c-menu-card:focus h2, .c-menu-card:hover h2 {
+    .c-menu__card:focus h3, .c-menu__card:hover h3 {
       letter-spacing: 0.5em;
       text-decoration: underline;
       transition: letter-spacing 0.5s ease; }
-    .c-menu-card:focus p, .c-menu-card:hover p {
+    .c-menu__card:focus p, .c-menu__card:hover p {
       opacity: 1;
       transition: opacity 1s ease; } }
-  .c-menu-card__details {
+  .c-menu__card-details {
     color: #000000;
     margin: 0; }
     @media screen and (min-width: 961px) {
-      .c-menu-card__details {
+      .c-menu__card-details {
         opacity: 0; } }
-  .c-menu-card__link {
+  .c-menu__card-link {
+    display: block;
     text-decoration: none; }
-  .c-menu-card__title {
+  .c-menu__card-title {
     color: #000000;
     font-family: "Montserrat-Bold", sans-serif;
     margin-bottom: 0.5em; }
-    .c-menu-card__title:focus, .c-menu-card__title:hover {
+    .c-menu__card-title:focus, .c-menu__card-title:hover {
       text-decoration: underline; }
     @media screen and (min-width: 961px) {
-      .c-menu-card__title {
+      .c-menu__card-title {
         letter-spacing: normal;
         transition: letter-spacing 0.5s ease; } }
 
