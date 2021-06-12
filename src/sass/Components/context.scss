@@ -11,3 +11,15 @@
 		margin-bottom: 0.5em;
 	}
 }
+
+.is-dark-mode {
+	.c-context {
+		&__description {
+			color: $color-light-grey;
+		}
+
+		&__heading {
+			color: $color-light-grey;
+		}
+	}
+}

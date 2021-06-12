@@ -23,3 +23,12 @@
 		}
 	}
 }
+
+.is-dark-mode {
+	.c-main-content {
+		&__intro {
+			background-color: $color-dark-blue;
+			color: $color-light-grey;
+		}
+	}
+}

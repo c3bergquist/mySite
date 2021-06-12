@@ -5106,6 +5106,8 @@ h1, h2, h3, h4, h5, h6, p {
   background: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   font-weight: 400; }
+  .default.is-dark-mode {
+    background: #1f1f1f; }
 
 @media screen and (min-width: 961px) {
   .desktop-only {
@@ -5386,6 +5388,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0.5em;
     text-align: center; }
 
+.is-dark-mode .c-main-content__intro {
+  background-color: #2a457f;
+  color: #d6d6d6; }
+
 /* Variables */
 /* Sitewide Colors */
 /* NES Colors */
@@ -5394,6 +5400,12 @@ h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 3em; }
   .c-context__heading {
     margin-bottom: 0.5em; }
+
+.is-dark-mode .c-context__description {
+  color: #d6d6d6; }
+
+.is-dark-mode .c-context__heading {
+  color: #d6d6d6; }
 
 /* Variables */
 /* Sitewide Colors */
@@ -5431,6 +5443,13 @@ h1, h2, h3, h4, h5, h6, p {
       .c-menu__card-title {
         letter-spacing: normal;
         transition: letter-spacing 0.5s ease; } }
+
+.is-dark-mode .c-menu__card {
+  background-color: #5c5c5c; }
+  .is-dark-mode .c-menu__card-details {
+    color: #d6d6d6; }
+  .is-dark-mode .c-menu__card-title {
+    color: #d6d6d6; }
 
 /*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';

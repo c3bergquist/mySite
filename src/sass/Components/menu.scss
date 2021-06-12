@@ -56,3 +56,19 @@
 		}	
 	}
 }
+
+.is-dark-mode {
+	.c-menu {
+		&__card {
+			background-color: $color-dark-grey;
+
+			&-details {
+				color: $color-light-grey;
+			}
+
+			&-title {
+				color: $color-light-grey;
+			}
+		}
+	}
+}
