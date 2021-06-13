@@ -5378,12 +5378,16 @@ h1, h2, h3, h4, h5, h6, p {
 .c-main-content__intro {
   background: #6686CC;
   padding: 12em 0; }
+  .c-main-content__intro-image {
+    display: block;
+    margin: 0 auto 1em auto; }
   .c-main-content__intro-subtitle {
     font-size: 1.2em;
     margin: 0;
     text-align: center; }
   .c-main-content__intro-title {
     font-family: "Montserrat-Bold", sans-serif;
+    font-size: 2.5em;
     font-weight: 500;
     margin-bottom: 0.5em;
     text-align: center; }
@@ -5399,6 +5403,7 @@ h1, h2, h3, h4, h5, h6, p {
 .c-context {
   margin-bottom: 3em; }
   .c-context__heading {
+    font-size: 2em;
     margin-bottom: 0.5em; }
 
 .is-dark-mode .c-context__description {
@@ -5413,7 +5418,12 @@ h1, h2, h3, h4, h5, h6, p {
 /* Font Awesome Content */
 .c-menu__card {
   background-color: #d6d6d6;
-  padding: 1em 0; }
+  display: block;
+  height: 7.5em;
+  overflow: hidden;
+  padding: 1em;
+  position: relative;
+  text-decoration: none; }
   .c-menu__card:not(:last-child) {
     margin-bottom: 2em; }
   @media screen and (min-width: 961px) {
@@ -5426,16 +5436,22 @@ h1, h2, h3, h4, h5, h6, p {
       transition: opacity 1s ease; } }
   .c-menu__card-details {
     color: #000000;
-    margin: 0; }
+    margin: 0;
+    width: 75%; }
     @media screen and (min-width: 961px) {
       .c-menu__card-details {
         opacity: 0; } }
-  .c-menu__card-link {
-    display: block;
-    text-decoration: none; }
+  .c-menu__card-image {
+    height: 15em;
+    margin-top: -2.5em;
+    opacity: 25%;
+    position: absolute;
+    right: -6.5em;
+    top: 0; }
   .c-menu__card-title {
     color: #000000;
     font-family: "Montserrat-Bold", sans-serif;
+    font-size: 1.5em;
     margin-bottom: 0.5em; }
     .c-menu__card-title:focus, .c-menu__card-title:hover {
       text-decoration: underline; }
@@ -5443,6 +5459,10 @@ h1, h2, h3, h4, h5, h6, p {
       .c-menu__card-title {
         letter-spacing: normal;
         transition: letter-spacing 0.5s ease; } }
+
+.c-menu__container {
+  display: flex;
+  flex-direction: column; }
 
 .is-dark-mode .c-menu__card {
   background-color: #5c5c5c; }

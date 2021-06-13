@@ -9,6 +9,11 @@
 		background: $color-light-blue;
 		padding: 12em 0;
 
+		&-image {
+			display: block;
+			margin: 0 auto 1em auto;
+		}
+
 		&-subtitle {
 			font-size: 1.2em;
 			margin: 0;
@@ -17,6 +22,7 @@
 		
 		&-title {
 			font-family: $font-montserrat--bold;
+			font-size: 2.5em;
 			font-weight: 500;
 			margin-bottom: 0.5em;
 			text-align: center;

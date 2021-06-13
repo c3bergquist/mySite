@@ -3,7 +3,12 @@
 .c-menu {
 	&__card {
 		background-color: $color-light-grey;
-		padding: 1em 0;
+		display: block;
+		height: 7.5em;
+		overflow: hidden;
+		padding: 1em;
+		position: relative;
+		text-decoration: none;
 		
 		&:not(:last-child) {
 			margin-bottom: 2em;
@@ -28,20 +33,26 @@
 		&-details {
 			color: $color-black;
 			margin: 0;
+			width: 75%;
 			
 			@media #{$medium-screen} {
 				opacity: 0;
 			}
 		}
-		
-		&-link {
-			display: block;
-			text-decoration: none;
+
+		&-image {
+			height: 15em;
+			margin-top: -2.5em;
+			opacity: 25%;
+			position: absolute;
+			right: -6.5em;
+			top: 0;
 		}
 		
 		&-title {
 			color: $color-black;
 			font-family: $font-montserrat--bold;
+			font-size: 1.5em;
 			margin-bottom: 0.5em;
 			
 			&:focus,
@@ -54,6 +65,11 @@
 				transition: letter-spacing 0.5s ease;
 			}
 		}	
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
