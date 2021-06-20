@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+* {
+	box-sizing: border-box;
+}
+
 body,
 html {
 	height: 100%;
@@ -10,6 +14,10 @@ html {
 
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
+}
+
+#main {
+	overflow: auto;
 }
 
 
@@ -61,14 +69,3 @@ h1, h2, h3, h4, h5, h6, p {
 	height: 100%;
 }
 
-.c-main-content {
-	display: block;
-	height: 100%;
-	width: 100%;
-}
-
-.is-gamified {
-	.c-main-content {
-		display: none;
-	}
-}

@@ -1,7 +1,6 @@
 @import './variables.scss';
 
 .c-header {
-	display:none;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -224,6 +223,14 @@
 		
 		&__nav-drawer {
 			background-color: $color-darker-grey;
+		}
+	}
+}
+
+.is-gamified {
+	.c-header {
+		&__logo-bar {
+			background: $color-grey;
 		}
 	}
 }
