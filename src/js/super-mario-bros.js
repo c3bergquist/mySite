@@ -3,17 +3,26 @@
 	window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-var canvas = document.getElementById('world'),
-	ctx = canvas.getContext('2d'),
-	width = canvas.offsetWidth,
-	height = canvas.offsetHeight,
-	keys = [],
-	friction = 0.9,
+// Get canvas and context, set canvas size
+var canvas = document.getElementById('world');
+var ctx = canvas.getContext('2d');
+
+var canvasHeight = canvas.offsetHeight,
+	canvasWidth = canvas.offsetWidth;
+
+var controls = {
+	goDownPipe: false,
+	jump: false,
+	left: false,
+	right: false
+};
+
+var friction = 0.9,
 	gravity = 0.5,
 	boxes = [],
 	player = {
-		x: 130,
-		y: height - 125,
+		x: 0,
+		y: 0,
 		width: 100,
 		height: 100,
 		speed: 7,
@@ -26,262 +35,201 @@ var canvas = document.getElementById('world'),
 		grounded: false,
 		image: new Image()
 	},
-	pw = player.width,
-	ph = player.height,
 	sprite = {
+		height: 100,
+		width: 100,
 		x: 538,
-		y: 0,
-		w: 100,
-		h: 100
-	},
-	runTimer = 0;
+		y: 0
+	};
 
-player.image.src = './src/images/marioMe_sprites.png';
+player.image.src = './images/marioMe_sprites.png';
 
 // Floor
 boxes.push({
 	x: -5,
-	y: height,
-	width: width + 10,
+	y: canvasHeight - 125,
+	width: canvasWidth + 10,
 	height: 10
 });
 
-var firstPipe = (width / 2) - 200;
+var firstPipe = (canvasWidth / 2) - 200;
 
 // Pipes
 boxes.push({
 	x: firstPipe,
-	y: height - 116,
+	y: canvasHeight - 116,
 	width: 96,
 	height: 116
 });
 boxes.push({
 	x: firstPipe + 250,
-	y: height - 116,
+	y: canvasHeight - 116,
 	width: 96,
 	height: 116
 });
 boxes.push({
 	x: firstPipe + 500,
-	y: height - 116,
+	y: canvasHeight - 116,
 	width: 96,
 	height: 116
 });
- 
-ctx.canvas.width = width;
-ctx.canvas.height = height;
-
-ctx.save();
 
 function update() {
-	if (!player.goingDownPipe) {
-		checkKeys();
-	}
-	
-	getCanvasSize();
-
-	ctx.clearRect(0, 0, width, height);
-	ctx.beginPath();
-		
-	player.grounded = false;
-	
-	setSprite();
+	ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 	drawPlayer();
-	
-	drawBoxes();
-	
+
 	if (!player.goingDownPipe) {
-		checkBoxes();
-	}
-	
-	if (player.velX > 0.9 || player.velX < -0.9) {
-		player.velX *= friction;
-	} else {
-		player.velX = 0;
-	}
-	
-	if (player.grounded){
-		player.velY = 0;
-	} else {
-		player.velY += gravity;
+		if (controls.jump) {
+			if (!player.jumping) {
+				player.velY = -player.jumpForce * 2;
+				player.jumping = true;
+			}
+		}
+
+		if (controls.right) {
+			player.direction = 1;
+
+			if (player.velX < player.speed) {
+				player.velX++;
+			}
+		}
+
+		if (controls.left) {
+			player.direction = 0;
+
+			if (player.velX > -player.speed) {
+				player.velX--;
+			}
+		}
+
+		player.x += player.velX;
 		player.y += player.velY;
-	}
+
+		player.velX *= friction;
+		player.velY += gravity;
 	
-	player.x += player.velX;
-	
-	if (player.x >= width-player.width) {
-		player.x = width-player.width;
+		player.grounded = false;
+		for (var i = 0; i < boxes.length; i++) {
+			var direction = colliderCheck(boxes[i]);
+
+			if (direction == "left" || direction == "right") {
+				player.velX = 0;
+			} else if (direction == "bottom") {
+				player.jumping = false;
+				player.grounded = true;
+
+				if(i > 0 && controls.goDownPipe) {
+					goDownPipe(i, boxes[i]);
+				}
+			} else if (direction == "top") {
+				player.velY *= -1;
+			}
+		}
+
+		if (player.grounded) {
+			player.velY = 0;
+		}
+
+		if (player.x >= canvasWidth - player.width) {
+			player.x = canvasWidth - player.width;
+		}
+		else if (player.x <= 0) {
+			player.x = 0;
+		}
 	}
-	else if (player.x <= 0) {
-		player.x = 0;
-	}
-	
+
 	requestAnimationFrame(update);
 }
 
-function getCanvasSize() {
-	width = canvas.offsetWidth;
-	height = canvas.offsetHeight;
-}
-
 function rebuildWorld() {
-	getCanvasSize();
+	canvasHeight = canvas.offsetHeight;
+	canvasWidth = canvas.offsetWidth;
 	
 	// Floor
 	boxes[0].x = -5;
-	boxes[0].y = height;
-	boxes[0].width = width + 10;
+	boxes[0].y = canvasHeight;
+	boxes[0].width = canvasWidth + 10;
 	boxes[0].height = 10;
 
-	var firstPipe = (width / 2) - 200;
+	var firstPipe = (canvasWidth / 2) - 200;
 	
 	// Pipes
 	boxes[1].x = firstPipe;
-	boxes[1].y = height - 116;
+	boxes[1].y = canvasHeight - 116;
 	boxes[1].width = 96;
 	boxes[1].height = 116;
 	
 	boxes[2].x = firstPipe + 250;
-	boxes[2].y = height - 116;
+	boxes[2].y = canvasHeight - 116;
 	boxes[2].width = 96;
 	boxes[2].height = 116;
 
 	boxes[3].x = firstPipe + 500;
-	boxes[3].y = height - 116;
+	boxes[3].y = canvasHeight - 116;
 	boxes[3].width = 96;
 	boxes[3].height = 116;
 	
-	ctx.canvas.width = width;
-	ctx.canvas.height = height;
+	ctx.canvas.height = canvasHeight;
+	ctx.canvas.width = canvasWidth;
 }
 
 function respawn() {
 	player.x = 130;
-	player.y = height - 125;
+	player.y = canvasHeight - 125;
 	player.direction = 1;
 	player.grounded = false;
 }
 
-function checkKeys() {
-	// Left or A
-	if (keys[37] || keys[65]) {
-		player.direction = 0;
-		
-		if (player.velX <= 0 && player.velX > -player.speed) {
-			player.velX -= 1;
-		}
-	}
-	
-	// Right or D
-	if (keys[39] || keys[68]) {
-		player.direction = 1;
-		
-		if (player.velX >= 0 && player.velX < player.speed) {
-			player.velX += 1;
-		}
-	}
-	
-	// Up or W 
-	if (keys[38] || keys[87]) {
-		if (!player.jumping && player.grounded) {
-			player.jumping = true;
-			player.grounded = false;
-			player.velY = -player.jumpForce * 2;
-		}
-	}
-}
-
 function drawPlayer() {
-	ctx.drawImage(player.image, sprite.x, 0, sprite.w, ph, player.x, player.y, pw, ph);
+	setSprite();
+	ctx.drawImage(player.image, sprite.x, 0, sprite.width, sprite.height, player.x, player.y, player.width, player.height);
 }
+ 
+function colliderCheck(platform) {
+	var vectorX = (player.x + (player.width/2)) - (platform.x + (platform.width/2));
+	var vectorY = (player.y + (player.height/2)) - (platform.y + (platform.height/2));
 
-function drawBoxes() {
-	for (var i = 0; i < boxes.length; i++) {
-		if (i == 0) {
-			boxes[i].y = height;
+	var halfWidths = (player.width/2) + (platform.width/2);
+	var halfHeights = (player.height/2) + (platform.height/2);
+
+	var collisionDirection = null;
+
+	if(Math.abs(vectorX) < halfWidths && Math.abs(vectorY) < halfHeights){
+		var offsetX = halfWidths - Math.abs(vectorX);
+		var offsetY = halfHeights - Math.abs(vectorY);
+		if(offsetX < offsetY){
+			if (vectorX > 0){
+				collisionDirection = "left";
+				player.x += offsetX;
+			} else {
+				collisionDirection = "right";
+				player.x -= offsetX;
+			}
 		} else {
-			boxes[i].y = height - 116;
-		}
-	}
-}
-
-function checkBoxes() {
-	for (var i = 0; i < boxes.length; i++) {
-		var dir = colCheck(player, boxes[i]);
-
-		if (dir === 'l' || dir === 'r') {
-			player.velX = 0;
-		}
-		
-		if (dir === 'b') {
-			player.grounded = true;
-			player.jumping = false;
-			
-			if(i > 0 && (keys[40] || keys[83])) {
-				goDownPipe(i, boxes[i]);
-			}
-		}
-		
-		if (dir === 't') {
-			player.velY *= -1;
-		}
-	}
-}
- 
-function colCheck(shapeA, shapeB) {
-	// get the vectors to check against
-	var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
-		vY = (shapeA.y + (shapeA.height / 2)) - (shapeB.y + (shapeB.height / 2)),
-		// add the half widths and half heights of the objects
-		hWidths = (shapeA.width / 2) + (shapeB.width / 2),
-		hHeights = (shapeA.height / 2) + (shapeB.height / 2),
-		colDir = null;
- 
-	// if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
-	if (Math.abs(vX) < hWidths && Math.abs(vY) < hHeights) {
-		// figures out on which side we are colliding (top, bottom, left, or right)
-		var oX = hWidths - Math.abs(vX),
-			oY = hHeights - Math.abs(vY);
-		
-		if (oX >= oY) {
-			if (vY > 0) {
-				colDir = 't';
-				shapeA.y += oY;
-			}
-			else {
-				colDir = 'b';
-				shapeA.y -= oY;
-			}
-		}
-		else {
-			if (vX > 0) {
-				colDir = 'l';
-				shapeA.x += oX;
-			}
-			else {
-				colDir = 'r';
-				shapeA.x -= oX;
+			if (vectorY > 0){
+				collisionDirection = "top";
+				player.y += offsetY;
+			} else {
+				collisionDirection = "bottom";
+				player.y -= offsetY;
 			}
 		}
 	}
-	return colDir;
-}
 
-function setSprites() {
-	sprites.push();
+	return collisionDirection;
 }
 
 var counter = 0;
 
 function setSprite() {
-	if(!player.jumping) {
-		if(player.velX > 0 && (keys[37] || keys[65])) { // Pressing left while moving right
+	if (!player.jumping) {
+		if (player.velX > 0 && controls.left) { // Pressing left while moving right
 			stopRight();
-		} else if(player.velX > 1) { // Running right or slowing down facing right
+		} else if (player.velX > 1) { // Running right or slowing down facing right
 			runRight();
-		} else if(player.velX < -1 && (keys[39] || keys[68])) { // Pressing right while moving left
+		} else if (player.velX < -1 && controls.right) { // Pressing right while moving left
 			stopLeft();
-		} else if(player.velX < -1) { // Running left or slowing down facing left
+		} else if (player.velX < -1) { // Running left or slowing down facing left
 			runLeft();
 		} else { // No movement, check direction and set idle pose
 			if(player.direction == 1) {
@@ -293,9 +241,9 @@ function setSprite() {
 			counter = 0;
 		}
 	} else {
-		if(player.direction == 1) {
+		if (player.direction == 1) {
 			sprite.x = 1375;
-		}else {
+		} else {
 			sprite.x = 0;
 		}
 	}
@@ -375,45 +323,65 @@ function goDownPipe(number, pipe) {
 		setTimeout(function() {
 				clearInterval(st);
 				window.open('./resume.html', '_blank');
-				window.location.reload(false); 
+				window.location.reload(); 
 			}, 1150);
 	}
 }
 
 window.addEventListener('keydown', function (e) {
-	if(e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 ||
-	   e.keyCode == 65 || e.keyCode == 83 || e.keyCode == 68 || e.keyCode == 87) {
+	if (e.code == 'KeyS' || e.code == 'ArrowDown') {
 		e.preventDefault();
-		keys[e.keyCode] = true;
-		
-		// Left or A
-		if(e.keyCode == 37 || e.keyCode == 65) {
-			keys[39] = false;
-			keys[68] = false;
-		}
-		
-		// Right or D
-		if(e.keyCode == 39 || e.keyCode == 68) {
-			keys[37] = false;
-			keys[65] = false;
-		}
-		
-		// Down or S
-		if(e.keyCode == 40 || e.keyCode == 83) {
-			keys[37] = false;
-			keys[65] = false;
-			
-			keys[39] = false;
-			keys[68] = false;
-		}
+
+		controls.goDownPipe = true;
+	}
+
+	if (e.code == 'KeyW' || e.code == 'ArrowUp') {
+		e.preventDefault();
+
+		controls.jump = true;
+	}
+
+	if (e.code == 'KeyA' || e.code == 'ArrowLeft') {
+		e.preventDefault();
+
+		controls.left = true;
+	}
+
+	if (e.code == 'KeyD' || e.code == 'ArrowRight') {
+		e.preventDefault();
+
+		controls.right = true;
 	}
 });
  
 window.addEventListener('keyup', function (e) {
-	keys[e.keyCode] = false;
+	if (e.code == 'KeyS' || e.code == 'ArrowDown') {
+		controls.goDownPipe = false;
+	}
+
+	if (e.code == 'KeyW' || e.code == 'ArrowUp') {
+		e.preventDefault();
+
+		controls.jump = false;
+	}
+
+	if (e.code == 'KeyA' || e.code == 'ArrowLeft') {
+		e.preventDefault();
+
+		controls.left = false;
+	}
+
+	if (e.code == 'KeyD' || e.code == 'ArrowRight') {
+		e.preventDefault();
+
+		controls.right = false;
+	}
 });
  
 window.addEventListener('load', function () {
+	rebuildWorld();
+	
+	respawn();
 	update();
 });
 

@@ -20,7 +20,7 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
   return gulp.src('../src/sass/main.scss')
     .pipe(sass())
-	.pipe(rename('style.css'))
+	  .pipe(rename('style.css'))
     .pipe(gulp.dest('../public/dist'))
 });
 
@@ -28,8 +28,8 @@ gulp.task('sass', function() {
 gulp.task('js', function() {
   return gulp.src('../src/js/main.js')
     .pipe(jsImport({hideConsole: true}))
-	.pipe(rename('script.js'))
-	.pipe(uglify())
+    .pipe(rename('script.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('../public/dist'))
 });
 

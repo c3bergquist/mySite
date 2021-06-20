@@ -1,28 +1,29 @@
 @import './variables.scss';
 
 .super-mario-bros {
-	background-color: $super-mario-bros-blue;
-	background-image: url('../src/images/headerBG.png');
-	background-position: left 50%;
+	background-color: $color-super-mario-bros-blue;
+	background-image: url('../images/headerBG.png');
+	background-position: 100% 40%;
 	background-repeat: repeat-x;
-	color: $black;
+	color: $color-black;
+	display: none;
 	font-family: $font-emulogic;
-	height: 100%;
+	height: 100vh;
+	position: relative;
 	width: 100%;
 	
-	@media #{$medium-screen} {
+	/*@media #{$medium-screen} {
 		height: auto;
 		min-height: 100%;
 		position: absolute;
-	}
+	}*/
 	
-	@media #{$small-screen} {
-		background-position: 100% 40%;
-		overflow: hidden;
+	@media #{$medium-screen} {
+		background-position: left 50%;
 	}
 	
 	&__bricks {
-		background-image: url('../src/images/brick.png');
+		background-image: url('../images/brick.png');
 		background-position: left top;
 		background-repeat: repeat;
 		background-size: auto;
@@ -32,14 +33,14 @@
 		position: absolute;
 		width: 100%;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			position: absolute;
 		}
 		
 		@media #{$small-screen} {
 			background-size: 10%;
 			height: 10%;
-		}
+		}*/
 	}
 	
 	&__lakitu-henry {
@@ -55,7 +56,7 @@
 		transform-origin: bottom center;
 		width: 200px;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			left: 0;
 			margin: 50px auto;
 			position: relative;
@@ -63,7 +64,7 @@
 		
 		@media #{$small-screen} {
 			display: none;
-		}
+		}*/
 		
 		&__control {
 			margin: 0 auto 15px auto;
@@ -72,18 +73,19 @@
 				margin: 0 auto;
 			}
 			
-			@media #{$medium-screen} {
+			/*@media #{$medium-screen} {
 				display: none;
 				
 				&:last-child {
 					display: block;
 				}
-			}
+			}*/
 		}
 		
 		&__instructions {
-			background-color: $white;
-			border: 5px solid $black;
+			background-color: $color-white;
+			border: 5px solid $color-black;
+			box-sizing: border-box;
 			font-family: $font-font-awesome;
 			font-size: 18px;
 			font-weight: 600;
@@ -99,9 +101,9 @@
 		height: 116px;
 		text-decoration: none;
 		
-		@media #{$small-screen} {
+		/*@media #{$small-screen} {
 			height: auto;
-		}
+		}*/
 		
 		&:focus,
 		&:hover {
@@ -112,7 +114,7 @@
 				animation-iteration-count: infinite;
 				animation-name: up-down;
 				animation-timing-function: linear;
-				color: $black;
+				color: $color-black;
 				content: $down-arrow;
 				display: block;
 				font-family: $font-font-awesome;
@@ -128,26 +130,26 @@
 				width: 100%;
 				-webkit-font-smoothing: antialiased;
 				
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					display: none;
-				}
+				}*/
 			}
 		}
 		
 		&__image {
-			@media #{$small-screen} {
+			/*@media #{$small-screen} {
 				display: none;
-			}
+			}*/
 		}
 		
 		&__text {
 			display: none;
 			
-			@media #{$small-screen} {
-				color: $black;
+			/*@media #{$small-screen} {
+				color: $color-black;
 				display: block;
 				font-size: 18px;
-			}
+			}*/
 		}
 	}
 	
@@ -162,7 +164,7 @@
 		position: absolute;
 		width: 100%;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			flex-direction: column;
 			position: absolute;
 			text-align: center;
@@ -174,7 +176,7 @@
 			padding: 25px;
 			position: relative;
 			text-align: left;
-		}
+		}*/
 		
 		&__link-item {
 			display: inline-block;
@@ -183,12 +185,12 @@
 			position: relative;
 			width: 96px;
 			
-			@media #{$medium-screen} {
+			/*@media #{$medium-screen} {
 				margin-left: 10%;
 				
 				&::before {
 					align-items: center;
-					color: $black;
+					color: $color-black;
 					content: $down-arrow;
 					display: flex;
 					flex-direction: column;
@@ -215,12 +217,12 @@
 				&::before {
 					display: none;
 				}
-			}
+			}*/
 			
 			&--about {
 				margin-left: calc(50% - 200px);
 				
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					margin-left: 0;
 					
 					&::before {
@@ -231,23 +233,23 @@
 				@media #{$small-screen} {
 					margin-left: 15%;
 					margin-top: 0;
-				}
+				}*/
 			}
 			
 			&--portfolio {
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					&::before {
 						content: 'Portfolio \a' $down-arrow;
 					}
-				}
+				}*/
 			}
 			
 			&--resume {
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					&::before {
 						content: 'Resume \a' $down-arrow;
 					}
-				}
+				}*/
 			}
 		}
 	}
@@ -261,7 +263,7 @@
 		top: 8%;
 		width: 25%;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			margin-top: 5%;
 			width: 90%;
 		}
@@ -269,7 +271,7 @@
 		@media #{$small-screen} {
 			margin: 0;
 			width: 100%;
-		}
+		}*/
 	}
 	
 	&__name {
@@ -289,15 +291,15 @@
 		position: absolute;
 		width: 100%;
 		
-		@media #{$small-screen} {
+		/*@media #{$small-screen} {
 			flex-grow: 1;
 			font-size: 24px;
 			padding-left: 50px;
 			position: relative;
-		}
+		}*/
 		
 		&__name-item {
-			color: $black;
+			color: $color-black;
 			display: inline-block;
 			list-style-type: none;
 			position: relative;
@@ -306,33 +308,33 @@
 			&--about {
 				margin-left: calc(50% - 200px);
 				
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					margin-left: 0;
-				}
+				}*/
 			}
 			
 			&--portfolio {
 				margin-left: 120px;
 				
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					margin-left: 10%;
 				}
 				
 				@media #{$small-screen} {
 					top: 30%;
-				}
+				}*/
 			}
 			
 			&--resume {
 				margin-left: 115px;
 				
-				@media #{$medium-screen} {
+				/*@media #{$medium-screen} {
 					margin-left: 10%;
 				}
 				
 				@media #{$small-screen} {
 					top: 60%;
-				}
+				}*/
 			}
 		}
 	}
@@ -347,7 +349,7 @@
 		top: 0;
 		width: 100%;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			height: auto;
 			margin-bottom: 350px;
 			min-height: calc(100%  - 125px);
@@ -358,13 +360,13 @@
 			height: auto;
 			margin-bottom: 0;
 			padding: 25px;
-		}
+		}*/
 	}
 	
 	&__sprite-sheet {
 		display: none;
 		
-		@media #{$small-screen} {
+		/*@media #{$small-screen} {
 			bottom: 10%;
 			display: block;
 			overflow: hidden;
@@ -375,7 +377,7 @@
 				margin: 0 0 -1px -100%;
 				width:200%;
 			}
-		}
+		}*/
 	}
 	
 	&__underlay {
@@ -388,23 +390,29 @@
 		top: 0;
 		width: 100%;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			display: none;
-		}
+		}*/
 	}
 	
 	&__world {
 		display: block;
-		height: calc(100vh - 125px);
+		height: calc(100% - 125px);
 		position: relative;
-		width: 100vw;
+		width: 100%;
 		
-		@media #{$medium-screen} {
+		/*@media #{$medium-screen} {
 			display: none;
-		}
+		}*/
 	}
 	
 	img {
 		image-rendering: pixelated;
+	}
+}
+
+.is-gamified {
+	.super-mario-bros {
+		display: block;
 	}
 }

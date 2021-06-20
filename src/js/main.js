@@ -53,3 +53,5 @@ jsNavToggler.addEventListener('click', function() {
 		jsNavDrawer.classList.add('a-open-menu');
 	}
 });
+
+@import 'D:/GitHub/mySite/src/js/super-mario-bros.js';

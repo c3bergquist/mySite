@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Start imports */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -5102,11 +5103,11 @@ html {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0; }
 
-.default {
+.body {
   background: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   font-weight: 400; }
-  .default.is-dark-mode {
+  .body.is-dark-mode {
     background: #1f1f1f; }
 
 @media screen and (min-width: 961px) {
@@ -5135,6 +5136,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 .l-full-height {
   height: 100%; }
+
+.c-main-content {
+  display: block;
+  height: 100%;
+  width: 100%; }
+
+.is-gamified .c-main-content {
+  display: none; }
 
 /* Variables */
 /* Sitewide Colors */
@@ -5239,6 +5248,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* NES Colors */
 /* Font Awesome Content */
 .c-header {
+  display: none;
   position: fixed;
   top: 0;
   width: 100%;
@@ -5473,6 +5483,348 @@ h1, h2, h3, h4, h5, h6, p {
     color: #d6d6d6; }
   .is-dark-mode .c-menu__card-title {
     color: #d6d6d6; }
+
+/* Variables */
+/* Sitewide Colors */
+/* NES Colors */
+/* Font Awesome Content */
+.super-mario-bros {
+  background-color: #6699ff;
+  background-image: url("../images/headerBG.png");
+  background-position: 100% 40%;
+  background-repeat: repeat-x;
+  color: #000000;
+  display: none;
+  font-family: "Emulogic";
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  /*@media screen and (min-width: 961px) {
+		height: auto;
+		min-height: 100%;
+		position: absolute;
+	}*/ }
+  @media screen and (min-width: 961px) {
+    .super-mario-bros {
+      background-position: left 50%; } }
+  .super-mario-bros__bricks {
+    background-image: url("../images/brick.png");
+    background-position: left top;
+    background-repeat: repeat;
+    background-size: auto;
+    bottom: 0;
+    height: 125px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    /*@media screen and (min-width: 961px) {
+			position: absolute;
+		}
+		
+		@media screen and (min-width: 641px) {
+			background-size: 10%;
+			height: 10%;
+		}*/ }
+  .super-mario-bros__lakitu-henry {
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite;
+    animation-name: up-down;
+    animation-timing-function: linear;
+    display: block;
+    left: 5%;
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    transform-origin: bottom center;
+    width: 200px;
+    /*@media screen and (min-width: 961px) {
+			left: 0;
+			margin: 50px auto;
+			position: relative;
+		}
+		
+		@media screen and (min-width: 641px) {
+			display: none;
+		}*/ }
+    .super-mario-bros__lakitu-henry__control {
+      margin: 0 auto 15px auto;
+      /*@media screen and (min-width: 961px) {
+				display: none;
+				
+				&:last-child {
+					display: block;
+				}
+			}*/ }
+      .super-mario-bros__lakitu-henry__control:last-child {
+        margin: 0 auto; }
+    .super-mario-bros__lakitu-henry__instructions {
+      background-color: #ffffff;
+      border: 5px solid #000000;
+      box-sizing: border-box;
+      font-family: "Font Awesome 5 Free", "Emulogic";
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: -5px;
+      padding: 15px;
+      position: relative;
+      width: 100%; }
+  .super-mario-bros__link {
+    display: block;
+    height: 116px;
+    text-decoration: none;
+    /*@media screen and (min-width: 641px) {
+			height: auto;
+		}*/ }
+    .super-mario-bros__link:focus, .super-mario-bros__link:hover {
+      outline: none; }
+      .super-mario-bros__link:focus::before, .super-mario-bros__link:hover::before {
+        animation-duration: 1.0s;
+        animation-iteration-count: infinite;
+        animation-name: up-down;
+        animation-timing-function: linear;
+        color: #000000;
+        content: "";
+        display: block;
+        font-family: "Font Awesome 5 Free", "Emulogic";
+        font-size: 35px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 900;
+        position: absolute;
+        text-align: center;
+        text-rendering: auto;
+        top: -75px;
+        transform-origin: bottom center;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        /*@media screen and (min-width: 961px) {
+					display: none;
+				}*/ }
+    .super-mario-bros__link__image {
+      /*@media screen and (min-width: 641px) {
+				display: none;
+			}*/ }
+    .super-mario-bros__link__text {
+      display: none;
+      /*@media screen and (min-width: 641px) {
+				color: $color-black;
+				display: block;
+				font-size: 18px;
+			}*/ }
+  .super-mario-bros__link-list {
+    bottom: 125px;
+    display: block;
+    flex-grow: 0;
+    font-size: 18px;
+    height: 116px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    /*@media screen and (min-width: 961px) {
+			flex-direction: column;
+			position: absolute;
+			text-align: center;
+		}
+		
+		@media screen and (min-width: 641px) {
+			bottom: auto;
+			height: auto;
+			padding: 25px;
+			position: relative;
+			text-align: left;
+		}*/ }
+    .super-mario-bros__link-list__link-item {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0 4px 0 150px;
+      position: relative;
+      width: 96px;
+      /*@media screen and (min-width: 961px) {
+				margin-left: 10%;
+				
+				&::before {
+					align-items: center;
+					color: $color-black;
+					content: $down-arrow;
+					display: flex;
+					flex-direction: column;
+					font-family: $font-font-awesome;
+					font-size: 18px;
+					font-style: normal;
+					font-variant: normal;
+					font-weight: 600;
+					justify-content: center;
+					overflow: visible;
+					position: absolute;
+					text-rendering: auto;
+					top: -75px;
+					width: 100%;
+					-webkit-font-smoothing: antialiased;
+				}
+			}
+			
+			@media screen and (min-width: 641px) {
+				display: block;
+				margin: 50px 0 50px 15%;
+				width: auto;
+				
+				&::before {
+					display: none;
+				}
+			}*/ }
+      .super-mario-bros__link-list__link-item--about {
+        margin-left: calc(50% - 200px);
+        /*@media screen and (min-width: 961px) {
+					margin-left: 0;
+					
+					&::before {
+						content: 'About \a' $down-arrow;
+					}
+				}
+				
+				@media screen and (min-width: 641px) {
+					margin-left: 15%;
+					margin-top: 0;
+				}*/ }
+      .super-mario-bros__link-list__link-item--portfolio {
+        /*@media screen and (min-width: 961px) {
+					&::before {
+						content: 'Portfolio \a' $down-arrow;
+					}
+				}*/ }
+      .super-mario-bros__link-list__link-item--resume {
+        /*@media screen and (min-width: 961px) {
+					&::before {
+						content: 'Resume \a' $down-arrow;
+					}
+				}*/ }
+  .super-mario-bros__logo {
+    display: block;
+    flex-grow: 0;
+    margin: 0 auto;
+    max-width: 750px;
+    position: relative;
+    top: 8%;
+    width: 25%;
+    /*@media screen and (min-width: 961px) {
+			margin-top: 5%;
+			width: 90%;
+		}
+		
+		@media screen and (min-width: 641px) {
+			margin: 0;
+			width: 100%;
+		}*/ }
+  .super-mario-bros__name {
+    margin: 0;
+    text-align: center;
+    min-width: 96px; }
+  .super-mario-bros__names-list {
+    bottom: 225px;
+    display: block;
+    flex-grow: 0;
+    font-size: 18px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    /*@media screen and (min-width: 641px) {
+			flex-grow: 1;
+			font-size: 24px;
+			padding-left: 50px;
+			position: relative;
+		}*/ }
+    .super-mario-bros__names-list__name-item {
+      color: #000000;
+      display: inline-block;
+      list-style-type: none;
+      position: relative;
+      text-decoration: none; }
+      .super-mario-bros__names-list__name-item--about {
+        margin-left: calc(50% - 200px);
+        /*@media screen and (min-width: 961px) {
+					margin-left: 0;
+				}*/ }
+      .super-mario-bros__names-list__name-item--portfolio {
+        margin-left: 120px;
+        /*@media screen and (min-width: 961px) {
+					margin-left: 10%;
+				}
+				
+				@media screen and (min-width: 641px) {
+					top: 30%;
+				}*/ }
+      .super-mario-bros__names-list__name-item--resume {
+        margin-left: 115px;
+        /*@media screen and (min-width: 961px) {
+					margin-left: 10%;
+				}
+				
+				@media screen and (min-width: 641px) {
+					top: 60%;
+				}*/ }
+  .super-mario-bros__overlay {
+    display: block;
+    height: calc(100% - 125px);
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*@media screen and (min-width: 961px) {
+			height: auto;
+			margin-bottom: 350px;
+			min-height: calc(100%  - 125px);
+			position: relative;
+		}
+		
+		@media screen and (min-width: 641px) {
+			height: auto;
+			margin-bottom: 0;
+			padding: 25px;
+		}*/ }
+  .super-mario-bros__sprite-sheet {
+    display: none;
+    /*@media screen and (min-width: 641px) {
+			bottom: 10%;
+			display: block;
+			overflow: hidden;
+			padding-right: 25px;
+			position: absolute;
+			
+			&__image {
+				margin: 0 0 -1px -100%;
+				width:200%;
+			}
+		}*/ }
+  .super-mario-bros__underlay {
+    background: none;
+    display: block;
+    height: calc(100% - 125px);
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*@media screen and (min-width: 961px) {
+			display: none;
+		}*/ }
+  .super-mario-bros__world {
+    display: block;
+    height: calc(100% - 125px);
+    position: relative;
+    width: 100%;
+    /*@media screen and (min-width: 961px) {
+			display: none;
+		}*/ }
+  .super-mario-bros img {
+    image-rendering: pixelated; }
+
+.is-gamified .super-mario-bros {
+  display: block; }
 
 /*@import './super-mario-bros.scss';
 @import './majoras-mask.scss';

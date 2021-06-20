@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 
-.default {
+.body {
 	background: $color-lighter-grey;
 	font-family: $font-montserrat;
 	font-weight: 400;
@@ -59,4 +59,16 @@ h1, h2, h3, h4, h5, h6, p {
 
 .l-full-height {
 	height: 100%;
+}
+
+.c-main-content {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.is-gamified {
+	.c-main-content {
+		display: none;
+	}
 }
