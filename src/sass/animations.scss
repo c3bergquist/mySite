@@ -148,15 +148,15 @@
 
 @keyframes up-down {
 	from {
-		transform: translate3d(0,0,0);
+		transform: translate3d(0, 0, 0);
 	}
 
 	50% {
-		transform: translate3d(0,20px,0);
+		transform: translate3d(0, 1em, 0);
 	}
 
 	to {
-		transform: translate3d(0,0,0);
+		transform: translate3d(0, 0, 0);
 	}
 }
 
