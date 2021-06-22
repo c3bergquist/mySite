@@ -4,6 +4,7 @@
 	background-color: $color-super-mario-bros-blue;
 	color: $color-black;
 	display: none;
+	flex-direction: column;
 	font-family: $font-emulogic;
 	min-height: 100vh;
 	padding: 4.5em 0 8em 0;
@@ -15,6 +16,10 @@
 		background-position: 100% 40%;
 		background-repeat: repeat-x;
 		padding-bottom: 0;
+	}
+
+	@media #{$medium-screen} {
+		flex-direction: unset;
 	}
 
 	@media #{$large-screen} {
@@ -52,6 +57,10 @@
 			width: 11em;
 		}
 
+		@media #{$medium-screen} {
+			margin: 0 4em 0 auto;
+		}
+
 		@media #{$large-screen} {
 			left: 5%;
 			margin: 0;
@@ -77,6 +86,7 @@
 			}
 
 			@media #{$medium-screen} {
+				display: block;
 				margin: 0 auto 15px auto;
 				
 				&:last-child {
@@ -108,6 +118,15 @@
 		
 		@media #{$x-small-screen} {
 			margin-left: 0;
+		}
+
+		@media #{$medium-screen} {
+			display: inline-block;
+			margin-left: 150px;
+
+			&:first-child {
+				margin-left: 0;
+			}
 		}
 		
 		&:focus,
@@ -164,6 +183,10 @@
 					line-height: normal;
 				}
 			}
+
+			@media #{$medium-screen} {
+				display: none;
+			}
 		}
 	}
 	
@@ -192,6 +215,13 @@
 
 		@media #{$small-screen} {
 			max-width: 35em;
+		}
+
+		@media #{$medium-screen} {
+			display: block;
+			margin-left: calc(50% - 200px);
+			max-width: unset;
+			text-align: left;
 		}
 	}
 	
@@ -224,86 +254,22 @@
 		min-width: 96px;
 	}
 	
-	&__names-list {
-		bottom: 225px;
-		display: block;
-		flex-grow: 1;
-		font-size: 24px;
-		height: 20px;
-		margin: 0;
-		padding: 0 0 0 50px;
-		position: relative;
-		width: 100%;
-
-		@media #{$large-screen} {
-			flex-grow: 0;
-			font-size: 18px;
-			padding: 0;
-			position: absolute;
-		}
-		
-		&__name-item {
-			color: $color-black;
-			display: inline-block;
-			list-style-type: none;
-			position: relative;
-			text-decoration: none;
-
-			&--about {
-				margin-left: calc(50% - 200px);
-				
-				/*@media #{$medium-screen} {
-					margin-left: 0;
-				}*/
-			}
-			
-			&--portfolio {
-				margin-left: 120px;
-				
-				/*@media #{$medium-screen} {
-					margin-left: 10%;
-				}
-				
-				@media #{$small-screen} {
-					top: 30%;
-				}*/
-			}
-			
-			&--resume {
-				margin-left: 115px;
-				
-				/*@media #{$medium-screen} {
-					margin-left: 10%;
-				}
-				
-				@media #{$small-screen} {
-					top: 60%;
-				}*/
-			}
-		}
-	}
-	
 	&__overlay {
 		padding: 1em 0;
+		width: 100%;
 
 		@media #{$x-small-screen} {
 			padding-bottom: 24em;
 		}
 
 		@media #{$small-screen} {
-			padding: 2em 0;
+			padding: 2em 0 24em 0;
 		}
 
-		@media #{$large-screen} {
-			height: calc(100% - 125px);
-			padding: 0;
-			position: fixed;
+		@media #{$medium-screen} {
+			position: absolute;
+			width: auto;
 		}
-		
-		/*@media #{$medium-screen} {
-			height: auto;
-			margin-bottom: 350px;
-		}*/
 	}
 
 	&__overlay-container {
@@ -311,6 +277,37 @@
 			align-items: center;
 			display: flex;
 			flex-direction: row;
+		}
+	}
+
+	&__page-list {
+		display: none;
+
+		@media #{$medium-screen} {
+			bottom: 16em;
+			display: block;
+			padding: 0;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	&__page-list-container {
+		display: block;
+		margin-left: calc(50% - 200px);
+		max-width: unset;
+		text-align: left;
+	}
+
+	&__page-name {
+		display: inline-block;
+		margin-left: 126px;
+		min-width: 96px;
+		text-align: center;
+
+		&:first-child {
+			margin-left: 0;
 		}
 	}
 	
@@ -332,29 +329,21 @@
 		}
 	}
 	
-	&__underlay {
-		display: none;
-		
-		@media #{$large-screen} {
-			background: none;
-			display: block;
-			height: calc(100% - 125px);
-			left: 0;
-			padding: 0;
-			position: fixed;
-			top: 0;
-			width: 100%;
-		}
-	}
-	
 	&__world {
-		display: none;
-		
-		@media #{$large-screen} {
-			display: block;
-			height: calc(100% - 125px);
+		@media #{$medium-screen} {
+			height: calc(100% - 6em);
 			position: relative;
 			width: 100%;	
+		}
+	}
+
+	&__world-container {
+		display: none;
+
+		@media #{$medium-screen} {
+			display: block;
+			min-height: 45em;
+			width: 100%;
 		}
 	}
 	
@@ -365,6 +354,6 @@
 
 .is-gamified {
 	.c-super-mario-bros {
-		display: block;
+		display: flex;
 	}
 }
