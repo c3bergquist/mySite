@@ -5300,7 +5300,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: block;
     font-size: 1.4em;
     padding: 0.5em 0; }
-    .c-header__icon--utility-nav:focus:before, .c-header__icon--utility-nav:hover:before {
+    .c-header__icon--utility-nav:focus::before, .c-header__icon--utility-nav:hover::before {
       text-decoration: none; }
   .c-header__link {
     color: #000000;
@@ -5313,7 +5313,7 @@ h1, h2, h3, h4, h5, h6, p {
     .c-header__link--main-nav {
       font-size: 1.4em;
       position: relative; }
-      .c-header__link--main-nav:before {
+      .c-header__link--main-nav::before {
         opacity: 0; }
       .c-header__link--main-nav:not(:last-child) {
         margin-bottom: 1em; }
@@ -5324,15 +5324,15 @@ h1, h2, h3, h4, h5, h6, p {
         text-decoration: underline; }
         .c-header__link--main-nav:focus .fa-box, .c-header__link--main-nav:hover .fa-box {
           animation: spin 1s forwards; }
-          .c-header__link--main-nav:focus .fa-box:before, .c-header__link--main-nav:hover .fa-box:before {
+          .c-header__link--main-nav:focus .fa-box::before, .c-header__link--main-nav:hover .fa-box::before {
             animation: change-portfolio-icon 1s forwards; }
         .c-header__link--main-nav:focus .fa-info-circle, .c-header__link--main-nav:hover .fa-info-circle {
           animation: spin 1s forwards; }
-          .c-header__link--main-nav:focus .fa-info-circle:before, .c-header__link--main-nav:hover .fa-info-circle:before {
+          .c-header__link--main-nav:focus .fa-info-circle::before, .c-header__link--main-nav:hover .fa-info-circle::before {
             animation: change-about-icon 1s forwards; }
         .c-header__link--main-nav:focus .fa-user-tie, .c-header__link--main-nav:hover .fa-user-tie {
           animation: spin 1s forwards; }
-          .c-header__link--main-nav:focus .fa-user-tie:before, .c-header__link--main-nav:hover .fa-user-tie:before {
+          .c-header__link--main-nav:focus .fa-user-tie::before, .c-header__link--main-nav:hover .fa-user-tie::before {
             animation: change-resume-icon 1s forwards; }
   .c-header__logo {
     height: 2.5em;
