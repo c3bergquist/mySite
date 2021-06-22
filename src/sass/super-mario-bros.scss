@@ -47,6 +47,11 @@
 			width: 10em;
 		}
 
+		@media #{$small-screen} {
+			margin: 0 auto;
+			width: 11em;
+		}
+
 		@media #{$large-screen} {
 			left: 5%;
 			margin: 0;
@@ -55,6 +60,10 @@
 
 		&__cloud {
 			width: 10em;
+
+			@media #{$small-screen} {
+				width: 11em;
+			}
 		}
 		
 		&__control {
@@ -147,7 +156,7 @@
 				margin-bottom: 2em;
 
 				&::after {
-					content: "\f063";
+					content: $down-arrow;
 					display: block;
 					font-family: $font-font-awesome;
 					font-size: 1.2em;
@@ -180,6 +189,10 @@
 			flex-direction: row;
 			min-height: unset;
 		}
+
+		@media #{$small-screen} {
+			max-width: 35em;
+		}
 	}
 	
 	&__logo {
@@ -192,17 +205,17 @@
 			width: 75%;
 		}
 
+		@media #{$small-screen} {
+			margin: 0;
+			width: 60%;
+		}
+
 		@media #{$large-screen} {
 			max-width: 750px;
 			position: relative;
 			top: 8%;
 			width: 25%;
 		}
-		
-		/*@media #{$medium-screen} {
-			margin-top: 5%;
-			width: 90%;
-		}*/
 	}
 	
 	&__name {
@@ -273,6 +286,14 @@
 	&__overlay {
 		padding: 1em 0;
 
+		@media #{$x-small-screen} {
+			padding-bottom: 24em;
+		}
+
+		@media #{$small-screen} {
+			padding: 2em 0;
+		}
+
 		@media #{$large-screen} {
 			height: calc(100% - 125px);
 			padding: 0;
@@ -283,6 +304,14 @@
 			height: auto;
 			margin-bottom: 350px;
 		}*/
+	}
+
+	&__overlay-container {
+		@media #{$small-screen} {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+		}
 	}
 	
 	&__sprite-sheet {
