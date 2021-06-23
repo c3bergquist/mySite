@@ -5248,7 +5248,7 @@ h1, h2, h3, h4, h5, h6, p {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; }
+  z-index: 10000; }
   .c-header__button {
     background-color: transparent;
     border: none;
@@ -5437,13 +5437,18 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: #d6d6d6;
   display: block;
   height: 7.5em;
+  margin-bottom: 2em;
   overflow: hidden;
   padding: 1em;
   position: relative;
   text-decoration: none; }
-  .c-menu__card:not(:last-child) {
-    margin-bottom: 2em; }
   @media screen and (min-width: 961px) {
+    .c-menu__card {
+      flex-basis: 0;
+      flex-grow: 1;
+      height: 10em;
+      margin: 0 1em 0 0; } }
+  @media screen and (min-width: 1025px) {
     .c-menu__card:focus h3, .c-menu__card:hover h3 {
       letter-spacing: 0.5em;
       text-decoration: underline;
@@ -5451,12 +5456,17 @@ h1, h2, h3, h4, h5, h6, p {
     .c-menu__card:focus p, .c-menu__card:hover p {
       opacity: 1;
       transition: opacity 1s ease; } }
+  .c-menu__card:last-child {
+    margin-bottom: 0; }
+    @media screen and (min-width: 961px) {
+      .c-menu__card:last-child {
+        margin: 0; } }
   .c-menu__card-details {
     color: #000000;
     font-size: 1em;
     margin: 0;
     width: 75%; }
-    @media screen and (min-width: 961px) {
+    @media screen and (min-width: 1025px) {
       .c-menu__card-details {
         opacity: 0; } }
   .c-menu__card-image {
@@ -5473,7 +5483,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0.5em; }
     .c-menu__card-title:focus, .c-menu__card-title:hover {
       text-decoration: underline; }
-    @media screen and (min-width: 961px) {
+    @media screen and (min-width: 1025px) {
       .c-menu__card-title {
         letter-spacing: normal;
         transition: letter-spacing 0.5s ease; } }
@@ -5481,6 +5491,9 @@ h1, h2, h3, h4, h5, h6, p {
 .c-menu__container {
   display: flex;
   flex-direction: column; }
+  @media screen and (min-width: 961px) {
+    .c-menu__container {
+      flex-direction: row; } }
 
 .is-dark-mode .c-menu__card {
   background-color: #5c5c5c; }

@@ -5,16 +5,20 @@
 		background-color: $color-light-grey;
 		display: block;
 		height: 7.5em;
+		margin-bottom: 2em;
 		overflow: hidden;
 		padding: 1em;
 		position: relative;
 		text-decoration: none;
-		
-		&:not(:last-child) {
-			margin-bottom: 2em;
+
+		@media #{$medium-screen} {
+			flex-basis: 0;
+			flex-grow: 1;
+			height: 10em;
+			margin: 0 1em 0 0;
 		}
 		
-		@media #{$medium-screen} {
+		@media #{$large-screen} {
 			&:focus,
 			&:hover {
 				h3 {
@@ -30,13 +34,21 @@
 			}
 		}
 		
+		&:last-child {
+			margin-bottom: 0;
+
+			@media #{$medium-screen} {
+				margin: 0;
+			}
+		}
+		
 		&-details {
 			color: $color-black;
 			font-size: 1em;
 			margin: 0;
 			width: 75%;
 			
-			@media #{$medium-screen} {
+			@media #{$large-screen} {
 				opacity: 0;
 			}
 		}
@@ -61,7 +73,7 @@
 				text-decoration: underline;
 			}
 			
-			@media #{$medium-screen} {
+			@media #{$large-screen} {
 				letter-spacing: normal;
 				transition: letter-spacing 0.5s ease;
 			}
@@ -71,6 +83,10 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
+
+		@media #{$medium-screen} {
+			flex-direction: row;
+		}
 	}
 }
 
