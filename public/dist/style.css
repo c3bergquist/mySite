@@ -5248,7 +5248,7 @@ h1, h2, h3, h4, h5, h6, p {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100; }
+  z-index: 1000; }
   .c-header__button {
     background-color: transparent;
     border: none;
@@ -5512,9 +5512,6 @@ h1, h2, h3, h4, h5, h6, p {
   @media screen and (min-width: 961px) {
     .c-super-mario-bros {
       flex-direction: unset; } }
-  @media screen and (min-width: 1025px) {
-    .c-super-mario-bros {
-      background-position: left 50%; } }
   .c-super-mario-bros__bricks {
     background-image: url("../images/brick.png");
     background-position: left top;
@@ -5543,11 +5540,6 @@ h1, h2, h3, h4, h5, h6, p {
     @media screen and (min-width: 961px) {
       .c-super-mario-bros__lakitu-henry {
         margin: 0 4em 0 auto; } }
-    @media screen and (min-width: 1025px) {
-      .c-super-mario-bros__lakitu-henry {
-        left: 5%;
-        margin: 0;
-        position: absolute; } }
     .c-super-mario-bros__lakitu-henry__cloud {
       width: 10em; }
       @media screen and (min-width: 641px) {
@@ -5576,7 +5568,6 @@ h1, h2, h3, h4, h5, h6, p {
       width: 100%; }
   .c-super-mario-bros__link {
     display: block;
-    line-height: 3em;
     margin-left: 2em;
     text-decoration: none; }
     .c-super-mario-bros__link:last-child {
@@ -5594,25 +5585,17 @@ h1, h2, h3, h4, h5, h6, p {
       outline: none;
       text-decoration: underline; }
       .c-super-mario-bros__link:focus::before, .c-super-mario-bros__link:hover::before {
-        animation-duration: 1.0s;
-        animation-iteration-count: infinite;
-        animation-name: up-down;
-        animation-timing-function: linear;
+        animation: 1s linear 0s infinite normal both running up-down;
         color: #000000;
         content: "";
         display: block;
         font-family: "Font Awesome 5 Free", "Emulogic";
-        font-size: 35px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 900;
+        font-size: 1.8em;
+        font-weight: 600;
+        margin-left: 1.2em;
         position: absolute;
         text-align: center;
-        text-rendering: auto;
-        top: -75px;
-        transform-origin: bottom center;
-        width: 100%;
-        -webkit-font-smoothing: antialiased; }
+        top: -2.5em; }
     .c-super-mario-bros__link__image {
       display: none; }
       @media screen and (min-width: 481px) {
@@ -5622,7 +5605,8 @@ h1, h2, h3, h4, h5, h6, p {
     .c-super-mario-bros__link__text {
       color: #000000;
       display: block;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      line-height: 3em; }
       @media screen and (min-width: 481px) {
         .c-super-mario-bros__link__text {
           margin-bottom: 2em; }
@@ -5637,7 +5621,8 @@ h1, h2, h3, h4, h5, h6, p {
         .c-super-mario-bros__link__text {
           display: none; } }
   .c-super-mario-bros__link-list {
-    padding: 1em 0; }
+    padding: 1em 0;
+    z-index: 1000; }
     @media screen and (min-width: 481px) {
       .c-super-mario-bros__link-list {
         bottom: 6em;
@@ -5677,17 +5662,16 @@ h1, h2, h3, h4, h5, h6, p {
         width: 60%; } }
     @media screen and (min-width: 1025px) {
       .c-super-mario-bros__logo {
-        max-width: 750px;
-        position: relative;
-        top: 8%;
-        width: 25%; } }
+        margin: 0 auto;
+        max-width: 30em; } }
   .c-super-mario-bros__name {
     margin: 0;
     text-align: center;
     min-width: 96px; }
   .c-super-mario-bros__overlay {
     padding: 1em 0;
-    width: 100%; }
+    width: 100%;
+    z-index: 10; }
     @media screen and (min-width: 481px) {
       .c-super-mario-bros__overlay {
         padding-bottom: 24em; } }
@@ -5696,8 +5680,7 @@ h1, h2, h3, h4, h5, h6, p {
         padding: 2em 0 24em 0; } }
     @media screen and (min-width: 961px) {
       .c-super-mario-bros__overlay {
-        position: absolute;
-        width: auto; } }
+        position: absolute; } }
   @media screen and (min-width: 641px) {
     .c-super-mario-bros__overlay-container {
       align-items: center;
@@ -5707,7 +5690,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: none; }
     @media screen and (min-width: 961px) {
       .c-super-mario-bros__page-list {
-        bottom: 16em;
+        bottom: 18em;
         display: block;
         padding: 0;
         position: absolute;
@@ -5720,11 +5703,15 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: left; }
   .c-super-mario-bros__page-name {
     display: inline-block;
-    margin-left: 126px;
-    min-width: 96px;
+    font-size: 1.2em;
+    line-height: 3em;
+    margin-left: 110px;
+    min-width: 102px;
     text-align: center; }
     .c-super-mario-bros__page-name:first-child {
-      margin-left: 0; }
+      margin-left: -3px; }
+    .c-super-mario-bros__page-name:last-child {
+      margin-left: 96px; }
   .c-super-mario-bros__sprite-sheet {
     background: url("../images/marioMe_sprites.png");
     background-position-x: -26em;
@@ -5751,7 +5738,8 @@ h1, h2, h3, h4, h5, h6, p {
       .c-super-mario-bros__world-container {
         display: block;
         min-height: 45em;
-        width: 100%; } }
+        width: 100%;
+        z-index: 100; } }
   .c-super-mario-bros img {
     image-rendering: pixelated; }
 

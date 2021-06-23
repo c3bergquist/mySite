@@ -23,7 +23,7 @@
 	}
 
 	@media #{$large-screen} {
-		background-position: left 50%;
+		
 	}
 	
 	&__bricks {
@@ -62,9 +62,7 @@
 		}
 
 		@media #{$large-screen} {
-			left: 5%;
-			margin: 0;
-			position: absolute;
+			
 		}
 
 		&__cloud {
@@ -108,7 +106,6 @@
 	
 	&__link {
 		display: block;
-		line-height: 3em;
 		margin-left: 2em;
 		text-decoration: none;
 
@@ -135,25 +132,17 @@
 			text-decoration: underline;
 			
 			&::before {
-				animation-duration: 1.0s;
-				animation-iteration-count: infinite;
-				animation-name: up-down;
-				animation-timing-function: linear;
+				animation: 1s linear 0s infinite normal both running up-down;
 				color: $color-black;
 				content: $down-arrow;
 				display: block;
 				font-family: $font-font-awesome;
-				font-size: 35px;
-				font-style: normal;
-				font-variant: normal;
-				font-weight: 900;
+				font-size: 1.8em;
+				font-weight: 600;
+				margin-left: 1.2em;
 				position: absolute;
 				text-align: center;
-				text-rendering: auto;
-				top: -75px;
-				transform-origin: bottom center;
-				width: 100%;
-				-webkit-font-smoothing: antialiased;
+				top: -2.5em;
 			}
 		}
 		
@@ -170,6 +159,7 @@
 			color: $color-black;
 			display: block;
 			font-size: 1.2em;
+			line-height: 3em;
 			
 			@media #{$x-small-screen} {
 				margin-bottom: 2em;
@@ -192,6 +182,7 @@
 	
 	&__link-list {
 		padding: 1em 0;
+		z-index: 1000;
 
 		@media #{$x-small-screen} {
 			bottom: 6em;
@@ -241,10 +232,8 @@
 		}
 
 		@media #{$large-screen} {
-			max-width: 750px;
-			position: relative;
-			top: 8%;
-			width: 25%;
+			margin: 0 auto;
+			max-width: 30em;
 		}
 	}
 	
@@ -257,6 +246,7 @@
 	&__overlay {
 		padding: 1em 0;
 		width: 100%;
+		z-index: 10;
 
 		@media #{$x-small-screen} {
 			padding-bottom: 24em;
@@ -268,7 +258,6 @@
 
 		@media #{$medium-screen} {
 			position: absolute;
-			width: auto;
 		}
 	}
 
@@ -284,7 +273,7 @@
 		display: none;
 
 		@media #{$medium-screen} {
-			bottom: 16em;
+			bottom: 18em;
 			display: block;
 			padding: 0;
 			position: absolute;
@@ -302,12 +291,18 @@
 
 	&__page-name {
 		display: inline-block;
-		margin-left: 126px;
-		min-width: 96px;
+		font-size: 1.2em;
+		line-height: 3em;
+		margin-left: 110px;
+		min-width: 102px;
 		text-align: center;
 
 		&:first-child {
-			margin-left: 0;
+			margin-left: -3px;
+		}
+
+		&:last-child {
+			margin-left: 96px;
 		}
 	}
 	
@@ -344,6 +339,7 @@
 			display: block;
 			min-height: 45em;
 			width: 100%;
+			z-index: 100;
 		}
 	}
 	
