@@ -2,7 +2,7 @@ var gulp = require('gulp'),
 	htmlmin = require('gulp-htmlmin'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
-	sass = require('gulp-sass'),
+	sass = require('gulp-sass')(require('sass')),
 	uglify = require('gulp-uglify');
 
 gulp.task('default', function() {
@@ -19,7 +19,7 @@ gulp.task('html', function() {
 // Compile Sass
 gulp.task('sass', function() {
   return gulp.src('../src/sass/main.scss')
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
 	  .pipe(rename('style.css'))
     .pipe(gulp.dest('../public/dist'))
 });
