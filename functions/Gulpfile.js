@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
 	htmlmin = require('gulp-htmlmin'),
-	jsImport = require('gulp-js-import'),
+	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	sass = require('gulp-sass'),
 	uglify = require('gulp-uglify');
@@ -26,8 +26,8 @@ gulp.task('sass', function() {
 
 // Compile Js
 gulp.task('js', function() {
-  return gulp.src('../src/js/main.js')
-    .pipe(jsImport({hideConsole: true}))
+  return gulp.src('../src/js/*.js')
+    .pipe(concat('concat.js'))
     .pipe(rename('script.js'))
     .pipe(uglify())
     .pipe(gulp.dest('../public/dist'))
