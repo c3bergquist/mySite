@@ -1,0 +1,54 @@
+@import './variables.scss';
+
+.c-main-content {
+	display: block;
+	height: 100%;
+	width: 100%;
+	
+	&__content-block {
+		padding: 5em 0;
+	}
+	
+	&__intro {
+		background: $color-light-blue;
+		padding: 12em 0;
+
+		&-image {
+			display: block;
+			margin: 0 auto 1em auto;
+			max-width: 10em;
+		}
+
+		&-subtitle {
+			font-size: 1.2em;
+			margin: 0 auto;
+			max-width: 15em;
+			text-align: center;
+			text-transform: capitalize;
+		}
+		
+		&-title {
+			font-family: $font-montserrat--bold;
+			font-size: 2.5em;
+			font-weight: 500;
+			margin-bottom: 0.5em;
+			text-align: center;
+			text-transform: capitalize;
+		}
+	}
+}
+
+.is-dark-mode {
+	.c-main-content {
+		&__intro {
+			background-color: $color-dark-blue;
+			color: $color-light-grey;
+		}
+	}
+}
+
+.is-gamified {
+	.c-main-content {
+		display: none;
+	}
+}
