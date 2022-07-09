@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+.c-nav-overlay {
+	background-color: $color-black;
+	display: none;
+    height: 100%;
+	left: 0;
+	opacity: 80%;
+	position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.is-dark-mode {
+	.c-nav-overlay {
+
+	}
+}
+
+.is-gamified {
+	.c-nav-overlay {
+		
+	}
+}
